@@ -1,0 +1,250 @@
+/* ===== CONSULTANT BOT STYLES ===== */
+.consultant-container {
+    -fx-background-color: #ffffff;
+    -fx-border-color: #c8e6c9;
+    -fx-border-width: 2;
+    -fx-border-radius: 15;
+    -fx-background-radius: 15;
+    -fx-effect: dropshadow(three-pass-box, rgba(0,0,0,0.1), 15, 0, 0, 5);
+    -fx-padding: 20;
+}
+
+.chat-history {
+    -fx-background-color: #f9f9f9;
+    -fx-border-color: #c8e6c9;
+    -fx-border-width: 2;
+    -fx-border-radius: 12;
+    -fx-background-radius: 12;
+    -fx-padding: 8;
+    -fx-effect: innershadow(three-pass-box, rgba(0,0,0,0.05), 5, 0, 0, 2);
+}
+
+.chat-history .list-cell {
+    -fx-background-color: transparent;
+    -fx-padding: 8;
+    -fx-border-width: 0;
+}
+
+.chat-history .list-cell:odd {
+    -fx-background-color: transparent;
+}
+
+.chat-history .list-cell:selected {
+    -fx-background-color: transparent;
+}
+
+.chat-history .scroll-bar:vertical {
+    -fx-background-color: transparent;
+    -fx-pref-width: 14;
+}
+
+.chat-history .scroll-bar:vertical .track {
+    -fx-background-color: #f0f0f0;
+    -fx-background-radius: 7;
+    -fx-border-radius: 7;
+}
+
+.chat-history .scroll-bar:vertical .thumb {
+    -fx-background-color: #a5d6a7;
+    -fx-background-radius: 7;
+    -fx-border-radius: 7;
+}
+
+.chat-history .scroll-bar:vertical .thumb:hover {
+    -fx-background-color: #81c784;
+}
+
+.chat-history .scroll-bar:vertical .increment-button,
+.chat-history .scroll-bar:vertical .decrement-button {
+    -fx-background-color: transparent;
+    -fx-padding: 0;
+}
+
+/* TextFlow styles */
+.text-flow {
+    -fx-padding: 12;
+    -fx-background-radius: 12;
+    -fx-border-radius: 12;
+    -fx-margin: 5 0;
+}
+
+/* Welcome message specific */
+.welcome-message {
+    -fx-background-color: #e8f5e9;
+    -fx-padding: 18;
+    -fx-background-radius: 12;
+    -fx-border-radius: 12;
+    -fx-font-size: 14px;
+    -fx-border-color: #c8e6c9;
+    -fx-border-width: 1;
+}
+
+/* Status indicator */
+.status-label {
+    -fx-font-size: 13px;
+    -fx-padding: 0 0 0 10;
+}
+
+.progress-indicator {
+    -fx-progress-color: #2e7d32;
+}
+
+.progress-inditor .indicator {
+    -fx-background-color: transparent;
+}
+
+/* Model badge */
+.model-badge {
+    -fx-font-weight: bold;
+    -fx-text-fill: #1b5e20;
+    -fx-background-color: #e8f5e9;
+    -fx-padding: 5 15;
+    -fx-background-radius: 20;
+    -fx-font-size: 13px;
+    -fx-border-color: #a5d6a7;
+    -fx-border-width: 1;
+    -fx-border-radius: 20;
+}
+
+/* Input field focus effect */
+.text-field:focused {
+    -fx-border-color: #2e7d32 !important;
+    -fx-border-width: 2 !important;
+    -fx-effect: dropshadow(three-pass-box, rgba(46,125,50,0.2), 5, 0, 0, 0);
+}
+
+/* Button hover effects */
+.btn-primary:hover {
+    -fx-background-color: #1b5e20;
+    -fx-effect: dropshadow(three-pass-box, rgba(0,0,0,0.2), 5, 0, 0, 2);
+    -fx-cursor: hand;
+}
+
+.btn-light:hover {
+    -fx-background-color: #e0e0e0;
+    -fx-effect: dropshadow(three-pass-box, rgba(0,0,0,0.1), 5, 0, 0, 2);
+    -fx-cursor: hand;
+}
+
+/* Send button disabled state */
+.btn-primary:disabled {
+    -fx-background-color: #a5d6a7;
+    -fx-opacity: 0.7;
+    -fx-cursor: default;
+}
+
+/* Chat message containers */
+.message-user-container {
+    -fx-alignment: center-right;
+}
+
+.message-bot-container {
+    -fx-alignment: center-left;
+}
+
+/* Error message style */
+.error-message {
+    -fx-background-color: #ffebee;
+    -fx-border-color: #ef5350;
+    -fx-border-width: 1;
+    -fx-border-radius: 10;
+}
+
+/* ===== TODO LIST STYLES ===== */
+.todo-container {
+    -fx-background-color: #ffffff;
+    -fx-border-radius: 10;
+    -fx-background-radius: 10;
+    -fx-effect: dropshadow(three-pass-box, rgba(0,0,0,0.1), 10, 0, 0, 5);
+}
+
+.todo-table {
+    -fx-border-color: #c8e6c9;
+    -fx-border-width: 2;
+    -fx-border-radius: 10;
+    -fx-background-radius: 10;
+}
+
+.todo-table .column-header {
+    -fx-background-color: #e8f5e9;
+    -fx-border-color: #c8e6c9;
+    -fx-border-width: 0 0 2 0;
+    -fx-font-weight: bold;
+    -fx-text-fill: #2e7d32;
+}
+
+.todo-table .table-cell {
+    -fx-padding: 8;
+    -fx-border-color: #f0f0f0;
+    -fx-border-width: 0 0 1 0;
+}
+
+.todo-table .table-row-cell:odd {
+    -fx-background-color: #f9f9f9;
+}
+
+.todo-table .table-row-cell:selected {
+    -fx-background-color: #c8e6c9;
+}
+
+.todo-table .table-row-cell:selected .table-cell {
+    -fx-text-fill: #1b5e20;
+}
+
+.status-todo {
+    -fx-text-fill: #f39c12;
+    -fx-font-weight: bold;
+}
+
+.status-doing {
+    -fx-text-fill: #3498db;
+    -fx-font-weight: bold;
+}
+
+.status-done {
+    -fx-text-fill: #27ae60;
+    -fx-font-weight: bold;
+}
+
+/* Search section for todo */
+.search-section {
+    -fx-background-color: #f5f5f5;
+    -fx-border-radius: 10;
+    -fx-background-radius: 10;
+    -fx-padding: 15;
+    -fx-border-color: #c8e6c9;
+    -fx-border-width: 1;
+}
+
+/* Delete section for todo */
+.delete-section {
+    -fx-background-color: #fff3e0;
+    -fx-border-radius: 10;
+    -fx-background-radius: 10;
+    -fx-padding: 15;
+    -fx-border-color: #ffb74d;
+    -fx-border-width: 1;
+}
+
+/* Form grid for todo */
+.form-grid {
+    -fx-background-color: #f9f9f9;
+    -fx-border-radius: 10;
+    -fx-background-radius: 10;
+    -fx-padding: 20;
+    -fx-border-color: #c8e6c9;
+    -fx-border-width: 1;
+}
+
+/* Count label for todo */
+.count-label {
+    -fx-font-size: 14px;
+    -fx-font-weight: bold;
+    -fx-text-fill: #2e7d32;
+    -fx-background-color: #e8f5e9;
+    -fx-padding: 8 20;
+    -fx-background-radius: 20;
+    -fx-border-radius: 20;
+    -fx-border-color: #a5d6a7;
+    -fx-border-width: 1;
+}

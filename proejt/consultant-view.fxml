@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.TextFlow?>
+
+<fx:root type="javafx.scene.layout.VBox" xmlns:fx="http://javafx.com/fxml"
+         spacing="15" styleClass="form-container">
+    <padding>
+        <Insets top="20" right="20" bottom="20" left="20"/>
+    </padding>
+
+    <!-- Title -->
+    <Label styleClass="form-title" text="🤖 Consultant IA"/>
+
+    <!-- Model selection -->
+    <HBox spacing="10" alignment="CENTER_LEFT">
+        <Label text="Modèle:" styleClass="form-label"/>
+        <ComboBox fx:id="modelComboBox" prefWidth="200" styleClass="form-combo"/>
+        <Label fx:id="statusLabel" text="Prêt" styleClass="status-label"/>
+        <ProgressIndicator fx:id="loadingIndicator" prefWidth="20" prefHeight="20" visible="false"/>
+    </HBox>
+
+    <!-- Chat history area -->
+    <Label text="💬 Conversation" styleClass="section-title"/>
+    <ListView fx:id="chatHistory" prefHeight="450" styleClass="chat-history"/>
+
+    <!-- Message input area -->
+    <Label text="Votre message:" styleClass="form-label"/>
+    <HBox spacing="10" alignment="CENTER_LEFT">
+        <TextField fx:id="messageInput" promptText="Posez votre question au consultant..."
+                   prefHeight="40" HBox.hgrow="ALWAYS" styleClass="form-input"/>
+        <Button fx:id="sendButton" text="Envoyer" prefWidth="120" prefHeight="40" styleClass="btn-primary"/>
+        <Button text="Effacer" prefWidth="120" prefHeight="40" styleClass="btn-light" onAction="#clearChat"/>
+    </HBox>
+</fx:root>
