@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<ScrollPane xmlns="http://javafx.com/javafx"
+            xmlns:fx="http://javafx.com/fxml"
+            fx:controller="controllers.advancedfeatures.PlantDiseaseController"
+            fitToWidth="true"
+            style="-fx-background-color: transparent; -fx-background: transparent;">
+
+    <VBox fx:id="mainContainer" spacing="20" alignment="TOP_CENTER"
+          style="-fx-background-color: linear-gradient(to bottom right, #f0fdf4, #ecfdf5, #d1fae5); -fx-padding: 30;">
+
+        <!-- Titre principal -->
+        <VBox alignment="CENTER" spacing="8">
+            <Label text="🔬 Analyse des Plantes"
+                   style="-fx-font-size: 28px; -fx-font-weight: bold; -fx-text-fill: #065f46;
+                          -fx-effect: dropshadow(gaussian, rgba(16, 185, 129, 0.2), 3, 0, 0, 1);"/>
+            <Label text="Identifiez vos plantes grâce à l'intelligence artificielle PlantNet"
+                   style="-fx-font-size: 14px; -fx-text-fill: #6b7280;"/>
+        </VBox>
+
+        <!-- Zone d'upload -->
+        <VBox fx:id="dropZone" alignment="CENTER" spacing="15"
+              style="-fx-background-color: linear-gradient(to bottom, #ffffff, #f0fdf4);
+                     -fx-background-radius: 20; -fx-border-color: #d1fae5; -fx-border-width: 2;
+                     -fx-border-style: dashed; -fx-border-radius: 20; -fx-padding: 40;
+                     -fx-min-height: 250; -fx-pref-width: 500;
+                     -fx-effect: dropshadow(gaussian, rgba(16, 185, 129, 0.1), 15, 0, 0, 5);
+                     -fx-cursor: hand;">
+
+            <!-- Image uploadée (cachée par défaut) -->
+            <ImageView fx:id="uploadedImage" fitWidth="200" fitHeight="200"
+                       preserveRatio="true" visible="false"
+                       style="-fx-effect: dropshadow(gaussian, rgba(0,0,0,0.15), 10, 0, 0, 3);"/>
+
+            <!-- Icône d'upload -->
+            <Label text="🌱" style="-fx-font-size: 48px;"/>
+
+            <!-- Label d'instruction -->
+            <Label fx:id="uploadLabel"
+                   text="📁 Glissez une image ici ou cliquez pour parcourir"
+                   style="-fx-font-size: 14px; -fx-text-fill: #374151; -fx-font-weight: bold;"/>
+
+            <Label text="Formats supportés: JPG, JPEG, PNG, GIF, BMP"
+                   style="-fx-font-size: 11px; -fx-text-fill: #9ca3af;"/>
+
+            <!-- Bouton parcourir -->
+            <Button text="📷 Parcourir les fichiers" onAction="#handleBrowseImage"
+                    style="-fx-background-color: linear-gradient(to right, #059669, #10b981);
+                           -fx-text-fill: white; -fx-font-weight: bold; -fx-font-size: 13px;
+                           -fx-background-radius: 25; -fx-padding: 12 30;
+                           -fx-cursor: hand; -fx-effect: dropshadow(gaussian, rgba(5, 150, 105, 0.3), 8, 0, 0, 3);"/>
+        </VBox>
+
+        <!-- Boutons d'action -->
+        <HBox alignment="CENTER" spacing="15">
+            <Button text="🔍 Analyser la plante" onAction="#handleAnalyze"
+                    style="-fx-background-color: linear-gradient(to right, #047857, #059669);
+                           -fx-text-fill: white; -fx-font-weight: bold; -fx-font-size: 14px;
+                           -fx-background-radius: 12; -fx-padding: 15 35;
+                           -fx-cursor: hand; -fx-effect: dropshadow(gaussian, rgba(4, 120, 87, 0.4), 10, 0, 0, 4);"/>
+
+            <Button text="🗑 Effacer" onAction="#handleClear"
+                    style="-fx-background-color: #f3f4f6; -fx-text-fill: #374151;
+                           -fx-font-weight: bold; -fx-font-size: 14px;
+                           -fx-background-radius: 12; -fx-padding: 15 30;
+                           -fx-cursor: hand; -fx-border-color: #d1d5db; -fx-border-radius: 12;"/>
+        </HBox>
+
+        <!-- Indicateur de chargement -->
+        <HBox alignment="CENTER" spacing="10">
+            <ProgressIndicator fx:id="loadingIndicator" prefWidth="30" prefHeight="30" visible="false"/>
+            <Label fx:id="statusLabel" text="" style="-fx-font-size: 14px;"/>
+        </HBox>
+
+        <!-- Conteneur des résultats -->
+        <ScrollPane fx:id="resultsScrollPane" fitToWidth="true" visible="false"
+                    style="-fx-background-color: transparent; -fx-background: transparent;
+                           -fx-border-width: 0; -fx-padding: 0;"
+                    maxHeight="500">
+            <VBox fx:id="resultsContainer" spacing="20"
+                  style="-fx-padding: 10;">
+            </VBox>
+        </ScrollPane>
+
+        <!-- Footer informatif -->
+        <VBox alignment="CENTER" spacing="5" style="-fx-padding: 20 0 0 0;">
+            <Label text="🌿 Propulsé par PlantNet API"
+                   style="-fx-font-size: 11px; -fx-text-fill: #9ca3af;"/>
+            <Label text="Pour de meilleurs résultats, utilisez des images claires de feuilles ou fleurs"
+                   style="-fx-font-size: 10px; -fx-text-fill: #d1d5db;"/>
+        </VBox>
+
+    </VBox>
+</ScrollPane>
+

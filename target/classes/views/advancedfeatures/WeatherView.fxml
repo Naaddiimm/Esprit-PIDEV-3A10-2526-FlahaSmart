@@ -1,0 +1,114 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<VBox stylesheets="@/styles/style.css" xmlns:fx="http://javafx.com/fxml"
+      fx:controller="controllers.advancedfeatures.WeatherWidgetController" spacing="25" alignment="TOP_CENTER">
+
+    <HBox styleClass="form-header" alignment="CENTER_LEFT" spacing="15">
+        <padding>
+            <Insets top="25" right="30" bottom="25" left="30"/>
+        </padding>
+        <VBox spacing="5">
+            <Label text="🌤 Météo" styleClass="form-page-title"/>
+            <Label text="Consultez la météo pour optimiser vos opérations agricoles" styleClass="form-page-subtitle"/>
+        </VBox>
+    </HBox>
+
+    <!-- Contenu principal -->
+    <HBox spacing="30" alignment="TOP_CENTER">
+        <padding>
+            <Insets top="30" right="40" bottom="30" left="40"/>
+        </padding>
+
+        <!-- Carte de recherche météo -->
+        <VBox fx:id="weatherContainer" styleClass="weather-page-card" spacing="20" alignment="CENTER"
+              prefWidth="450">
+
+            <padding>
+                <Insets top="25" right="25" bottom="25" left="25"/>
+            </padding>
+
+            <!-- Titre du widget -->
+            <Label text="☀ Conditions actuelles" styleClass="weather-card-title"/>
+
+            <!-- Barre de recherche -->
+            <HBox spacing="15" alignment="CENTER">
+                <TextField fx:id="cityInput" promptText="Entrez une ville..." styleClass="weather-input-large"
+                           prefWidth="280" onAction="#onSearchWeather"/>
+                <Button text="🔍" onAction="#onSearchWeather" styleClass="weather-search-btn-large"/>
+            </HBox>
+
+            <!-- Indicateur de chargement -->
+            <Label fx:id="loadingLabel" text="⏳ Chargement des données météo..." styleClass="loading-label"
+                   visible="false" managed="false"/>
+
+            <!-- Contenu météo principal -->
+            <VBox spacing="15" alignment="CENTER" styleClass="weather-main-content">
+
+                <!-- Localisation -->
+                <Label fx:id="locationLabel" text="--" styleClass="weather-location-large"/>
+
+                <!-- Température -->
+                <Label fx:id="temperatureLabel" text="--°C" styleClass="weather-temperature-large"/>
+
+                <!-- Description -->
+                <Label fx:id="descriptionLabel" text="" styleClass="weather-description-large"/>
+
+            </VBox>
+
+            <!-- Détails météo -->
+            <HBox spacing="20" alignment="CENTER" styleClass="weather-details-row">
+                <VBox spacing="5" alignment="CENTER" styleClass="weather-detail-card">
+                    <Label text="🌡 Ressenti" styleClass="detail-label"/>
+                    <Label fx:id="feelsLikeLabel" text="--°C" styleClass="detail-value"/>
+                </VBox>
+                <VBox spacing="5" alignment="CENTER" styleClass="weather-detail-card">
+                    <Label text="💧 Humidité" styleClass="detail-label"/>
+                    <Label fx:id="humidityLabel" text="--%"  styleClass="detail-value"/>
+                </VBox>
+                <VBox spacing="5" alignment="CENTER" styleClass="weather-detail-card">
+                    <Label text="💨 Vent" styleClass="detail-label"/>
+                    <Label fx:id="windLabel" text="-- km/h" styleClass="detail-value"/>
+                </VBox>
+            </HBox>
+
+            <!-- Heure de mise à jour -->
+            <Label fx:id="timeLabel" text="🕐 Dernière mise à jour: --" styleClass="weather-time"/>
+
+        </VBox>
+
+        <!-- Conseils agricoles dynamiques basés sur la météo -->
+        <VBox styleClass="weather-tips-card" spacing="15" prefWidth="400" minWidth="380">
+            <padding>
+                <Insets top="25" right="25" bottom="25" left="25"/>
+            </padding>
+
+            <HBox alignment="CENTER_LEFT" spacing="10">
+                <Label text="🌾" style="-fx-font-size: 22px;"/>
+                <VBox spacing="2">
+                    <Label text="Conseils Agricoles" styleClass="tips-title"/>
+                    <Label text="Analyse en temps réel basée sur les données météo"
+                           style="-fx-font-size: 11px; -fx-text-fill: #6b7280;"/>
+                </VBox>
+            </HBox>
+
+            <ScrollPane fitToWidth="true" maxHeight="420"
+                        style="-fx-background-color: transparent; -fx-background: transparent; -fx-border-color: transparent;">
+                <VBox fx:id="tipsContainer" spacing="10" styleClass="tips-content">
+                    <!-- Les conseils dynamiques seront générés ici -->
+                    <HBox spacing="10" alignment="CENTER" style="-fx-padding: 30;">
+                        <Label text="🔄 Chargement des conseils..."
+                               style="-fx-font-size: 12px; -fx-text-fill: #9ca3af; -fx-font-style: italic;"/>
+                    </HBox>
+                </VBox>
+            </ScrollPane>
+
+        </VBox>
+
+    </HBox>
+
+</VBox>
+

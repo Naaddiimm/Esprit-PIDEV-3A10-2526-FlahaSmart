@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.chart.PieChart?>
+
+<ScrollPane fitToWidth="true" fitToHeight="true"
+            stylesheets="@/styles/style.css"
+            xmlns="http://javafx.com/javafx"
+            xmlns:fx="http://javafx.com/fxml"
+            fx:controller="controllers.advancedfeatures.DashboardController">
+
+    <VBox spacing="30" alignment="TOP_CENTER">
+
+        <padding>
+            <Insets top="25" right="25" bottom="25" left="25"/>
+        </padding>
+
+        <!-- titre -->
+        <Label text="📊 Tableau de bord" styleClass="dashboard-title"/>
+
+        <!-- Section principale avec stats -->
+        <HBox spacing="20" alignment="TOP_CENTER">
+
+            <!-- Colonne principale: Cards et Stats -->
+            <VBox spacing="30" HBox.hgrow="ALWAYS">
+
+                <!-- CARDS statistiques operations -->
+                <HBox fx:id="cardsContainer" spacing="20" alignment="CENTER" styleClass="cards-row" />
+
+                <!-- Statistiques avancées - Ligne 1 -->
+                <HBox spacing="20" alignment="TOP_CENTER">
+
+                    <!-- Opérations par type -->
+                    <VBox spacing="15" styleClass="card" HBox.hgrow="ALWAYS">
+                        <Label text="📈 Opérations par type" styleClass="card-title"/>
+                        <VBox fx:id="operationsByTypeContainer" spacing="10"/>
+                    </VBox>
+                    <!-- bloc statistiques par type (équipements) -->
+                    <VBox spacing="15" styleClass="card">
+                        <Label text="📈  Équipements par type" styleClass="card-title"/>
+                        <VBox fx:id="statsContainer" spacing="12"/>
+                    </VBox>
+
+                    <!-- Taux d'utilisation des équipements -->
+                    <VBox spacing="15" styleClass="card" HBox.hgrow="ALWAYS">
+                        <Label text="📈 Utilisation des équipements" styleClass="card-title"/>
+                        <VBox fx:id="equipementUsageContainer" spacing="10"/>
+                    </VBox>
+
+                </HBox>
+
+                <!-- Statistiques avancées - Ligne 2: Opérations urgentes -->
+                <HBox spacing="20" alignment="TOP_CENTER">
+
+                    <!-- Opérations urgentes / les plus proches -->
+                    <VBox spacing="15" styleClass="card" HBox.hgrow="ALWAYS">
+                        <Label text="🚨 Opérations Urgentes" styleClass="card-title"/>
+                        <VBox fx:id="urgentOperationsContainer" spacing="10"/>
+                    </VBox>
+
+                </HBox>
+
+
+            </VBox>
+
+        </HBox>
+
+    </VBox>
+
+</ScrollPane>
+

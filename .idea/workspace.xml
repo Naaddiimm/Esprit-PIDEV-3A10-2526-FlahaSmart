@@ -4,65 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="0dd62393-fca9-412a-8652-b090a5ec4918" name="Changes" comment="Finale 2.1">
+    <list default="true" id="0dd62393-fca9-412a-8652-b090a5ec4918" name="Changes" comment="Finale 2.2">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/controllers/ChatbotController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/controllers/advancedfeatures/ChatbotController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/controllers/DashboardController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/controllers/advancedfeatures/DashboardController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/controllers/IrrigationController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/controllers/advancedfeatures/IrrigationController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/controllers/MainLayoutController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/controllers/MainLayoutController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/controllers/PlantDiseaseController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/controllers/advancedfeatures/PlantDiseaseController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/controllers/RotationCultureController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/controllers/advancedfeatures/RotationCultureController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/controllers/WeatherWidgetController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/controllers/advancedfeatures/WeatherWidgetController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/controllers/operation/Ajout_Op_Controller.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/controllers/operation/Ajout_Op_Controller.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/controllers/operation/ListeOpController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/controllers/operation/ListeOpController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/models/ChatMessage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/models/advancedfeatures/ChatMessage.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/models/IrrigationPlan.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/models/advancedfeatures/IrrigationPlan.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/models/Operation.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/models/Operation.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/models/Parcelle.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/models/advancedfeatures/Parcelle.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/models/RecommandationCulture.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/models/advancedfeatures/RecommandationCulture.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/models/Weather.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/models/advancedfeatures/Weather.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/services/AgriChatbotService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/services/advancedfeatures/AgriChatbotService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/services/IrrigationService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/services/advancedfeatures/IrrigationService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/services/OperationService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/services/OperationService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/services/PlantDiseaseService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/services/advancedfeatures/PlantDiseaseService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/services/RotationCultureService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/services/advancedfeatures/RotationCultureService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/services/WeatherService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/services/advancedfeatures/WeatherService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/views/ChatbotView.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/views/advancedfeatures/ChatbotView.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/views/Dashboard.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/views/advancedfeatures/Dashboard.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/views/IrrigationView.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/views/advancedfeatures/IrrigationView.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/views/PlantDiseaseView.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/views/advancedfeatures/PlantDiseaseView.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/views/RotationCultureView.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/views/advancedfeatures/RotationCultureView.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/views/WeatherView.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/views/advancedfeatures/WeatherView.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/controllers/ChatbotController.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/controllers/DashboardController.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/controllers/IrrigationController$1.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/controllers/IrrigationController.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/controllers/MainLayoutController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/controllers/MainLayoutController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/controllers/PlantDiseaseController.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/controllers/RotationCultureController.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/controllers/WeatherWidgetController$1.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/controllers/WeatherWidgetController$AgriculturalTip.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/controllers/WeatherWidgetController.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/controllers/operation/ListeOpController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/controllers/operation/ListeOpController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/models/ChatMessage.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/models/IrrigationPlan.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/models/Operation.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/models/Operation.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/models/Parcelle.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/models/RecommandationCulture.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/models/Weather.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/services/AgriChatbotService.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/services/IrrigationService$1.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/services/IrrigationService$2.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/services/IrrigationService.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/services/OperationService.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/services/OperationService.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/services/PlantDiseaseService$PlantIdentificationResult.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/services/PlantDiseaseService.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/services/RotationCultureService.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/services/WeatherService.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/views/IrrigationView.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/views/IrrigationView.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/views/RotationCultureView.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/views/RotationCultureView.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst" beforeDir="false" afterPath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" beforeDir="false" afterPath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/controllers/operation/Ajout_Op_Controller.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/controllers/operation/Ajout_Op_Controller.class" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -98,12 +42,12 @@
     &quot;assignee&quot;: &quot;Naaddiimm&quot;
   }
 }</component>
-  <component name="GithubPullRequestsUISettings">{
-  &quot;selectedUrlAndAccountId&quot;: {
-    &quot;url&quot;: &quot;https://github.com/Noureslem/FlahaSmart.git&quot;,
-    &quot;accountId&quot;: &quot;09672f29-5ae0-430e-92ad-d7285b122f27&quot;
+  <component name="GithubPullRequestsUISettings"><![CDATA[{
+  "selectedUrlAndAccountId": {
+    "url": "https://github.com/Naaddiimm/Esprit-PIDEV-3A10-2526-FlahaSmart.git",
+    "accountId": "09672f29-5ae0-430e-92ad-d7285b122f27"
   }
-}</component>
+}]]></component>
   <component name="ProblemsViewState">
     <option name="selectedTabId" value="CurrentFile" />
   </component>
@@ -320,7 +264,9 @@
       <workItem from="1772104044073" duration="4821000" />
       <workItem from="1772314307275" duration="15218000" />
       <workItem from="1772389511817" duration="13014000" />
-      <workItem from="1772474447734" duration="4533000" />
+      <workItem from="1772474447734" duration="7155000" />
+      <workItem from="1772489178615" duration="1188000" />
+      <workItem from="1772566513929" duration="1844000" />
     </task>
     <task id="LOCAL-00001" summary="API 1">
       <option name="closed" value="true" />
@@ -378,7 +324,15 @@
       <option name="project" value="LOCAL" />
       <updated>1772407942226</updated>
     </task>
-    <option name="localTasksCounter" value="8" />
+    <task id="LOCAL-00008" summary="Finale 2.2">
+      <option name="closed" value="true" />
+      <created>1772479657592</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1772479657592</updated>
+    </task>
+    <option name="localTasksCounter" value="9" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -391,7 +345,8 @@
     <MESSAGE value="Persque finale 2" />
     <MESSAGE value="Finale 2" />
     <MESSAGE value="Finale 2.1" />
-    <option name="LAST_COMMIT_MESSAGE" value="Finale 2.1" />
+    <MESSAGE value="Finale 2.2" />
+    <option name="LAST_COMMIT_MESSAGE" value="Finale 2.2" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />

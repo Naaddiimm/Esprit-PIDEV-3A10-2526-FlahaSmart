@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<VBox stylesheets="@/styles/style.css"
+      xmlns:fx="http://javafx.com/fxml"
+      fx:controller="controllers.advancedfeatures.ChatbotController"
+      spacing="15" >
+
+    <HBox styleClass="form-header" alignment="CENTER_LEFT" spacing="15">
+        <padding>
+            <Insets top="25" right="30" bottom="25" left="30"/>
+        </padding>
+        <VBox spacing="5">
+            <Label text="🤖 AgriBot - Assistant Agricole Intelligent" styleClass="form-page-title"/>
+            <Label text="Posez vos questions sur l'agriculture, les cultures, l'irrigation et plus encore !" styleClass="form-page-subtitle"/>
+        </VBox>
+    </HBox>
+
+
+
+    <!-- Contenu principal du chatbot -->
+    <HBox spacing="25" VBox.vgrow="ALWAYS" alignment="TOP_CENTER">
+        <padding>
+            <Insets top="25" right="30" bottom="25" left="30"/>
+        </padding>
+        <!-- Zone de chat principale -->
+        <VBox styleClass="chatbot-page-container" spacing="15" HBox.hgrow="ALWAYS">
+
+            <padding>
+                <Insets top="20" right="20" bottom="20" left="20"/>
+            </padding>
+
+            <!-- En-tête du chat -->
+            <HBox styleClass="chatbot-page-header" spacing="10" alignment="CENTER_LEFT">
+                <Label text="💬 Conversation" styleClass="chat-section-title"/>
+                <Region HBox.hgrow="ALWAYS"/>
+                <Button text="🗑 Effacer" onAction="#onClearChat" styleClass="clear-chat-btn"/>
+            </HBox>
+
+            <!-- Zone de messages -->
+            <ScrollPane fx:id="scrollPane" fitToWidth="true" VBox.vgrow="ALWAYS"
+                        styleClass="chat-scroll-pane-large">
+                <VBox fx:id="chatContainer" spacing="12" styleClass="chat-messages-large">
+                    <padding>
+                        <Insets top="15" right="15" bottom="15" left="15"/>
+                    </padding>
+                </VBox>
+            </ScrollPane>
+
+            <!-- Zone de saisie -->
+            <HBox spacing="15" alignment="CENTER" styleClass="chat-input-area-large">
+                <TextField fx:id="userInput" promptText="Posez votre question sur l'agriculture..."
+                           HBox.hgrow="ALWAYS" styleClass="chat-input-large"
+                           onAction="#onSendMessage"/>
+                <Button text="📤 Envoyer" onAction="#onSendMessage" styleClass="send-btn-large"/>
+            </HBox>
+
+        </VBox>
+
+        <!-- Panel d'aide -->
+        <VBox styleClass="chatbot-help-panel" spacing="15" prefWidth="280">
+
+            <padding>
+                <Insets top="20" right="20" bottom="20" left="20"/>
+            </padding>
+
+            <Label text="💡 Suggestions" styleClass="help-title"/>
+
+            <VBox spacing="10">
+                <Button text="🌱 Comment planter des tomates ?"
+                        onAction="#onSuggestionClick" styleClass="suggestion-btn"
+                        maxWidth="Infinity" userData="Comment planter des tomates ?"/>
+                <Button text="💧 Quand arroser mes cultures ?"
+                        onAction="#onSuggestionClick" styleClass="suggestion-btn"
+                        maxWidth="Infinity" userData="Quand dois-je arroser mes cultures ?"/>
+                <Button text="🐛 Lutter contre les parasites"
+                        onAction="#onSuggestionClick" styleClass="suggestion-btn"
+                        maxWidth="Infinity" userData="Comment lutter contre les parasites de manière naturelle ?"/>
+                <Button text="🌿 Engrais naturels"
+                        onAction="#onSuggestionClick" styleClass="suggestion-btn"
+                        maxWidth="Infinity" userData="Quels sont les meilleurs engrais naturels ?"/>
+                <Button text="🚜 Entretien équipement"
+                        onAction="#onSuggestionClick" styleClass="suggestion-btn"
+                        maxWidth="Infinity" userData="Comment entretenir mon tracteur ?"/>
+            </VBox>
+
+            <Region VBox.vgrow="ALWAYS"/>
+
+            <VBox spacing="8" styleClass="help-info">
+                <Label text="À propos" styleClass="info-title"/>
+                <Label text="AgriBot utilise l'IA Gemini pour répondre à vos questions agricoles de manière intelligente."
+                       styleClass="info-text" wrapText="true"/>
+            </VBox>
+
+        </VBox>
+
+    </HBox>
+
+</VBox>
+
