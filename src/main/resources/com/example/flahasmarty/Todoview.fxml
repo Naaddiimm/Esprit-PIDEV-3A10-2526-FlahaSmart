@@ -5,7 +5,7 @@
 <?import javafx.scene.layout.*?>
 
 <VBox spacing="15" xmlns:fx="http://javafx.com/fxml"
-      fx:controller="com.example.flahasmarty.TodoController"
+      fx:controller="com.example.flahasmarty.controllers.TodoController"
       styleClass="form-container">
     <padding>
         <Insets top="25" right="25" bottom="25" left="25"/>

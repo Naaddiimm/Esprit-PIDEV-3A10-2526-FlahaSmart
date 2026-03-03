@@ -11,7 +11,7 @@
     </padding>
 
     <!-- Title -->
-    <Label styleClass="form-title" text="🤖 Consultation IA"
+    <Label styleClass="form-title" text="Faire une Consultation"
            style="-fx-font-size: 20px; -fx-text-fill: #2e7d32; -fx-font-weight: bold;"/>
 
     <!-- Status section -->
@@ -31,10 +31,10 @@
               style="-fx-background-color: #f9f9f9; -fx-border-color: #c8e6c9; -fx-border-width: 2; -fx-border-radius: 10; -fx-background-radius: 10;"/>
 
     <!-- Message input area -->
-    <Label text="Votre question:" styleClass="form-label"
+    <Label text="Votre Consultation:" styleClass="form-label"
            style="-fx-font-weight: bold; -fx-text-fill: #2e7d32; -fx-font-size: 14px; -fx-padding: 10 0 0 0;"/>
     <HBox spacing="10" alignment="CENTER_LEFT">
-        <TextField fx:id="messageInput" promptText="Posez votre question ici..."
+        <TextField fx:id="messageInput" promptText="Consulter ici..."
                    prefHeight="45" HBox.hgrow="ALWAYS"
                    style="-fx-border-radius: 8; -fx-background-radius: 8; -fx-font-size: 14px; -fx-padding: 10;"/>
         <Button fx:id="sendButton" text="Envoyer" prefWidth="120" prefHeight="45"
