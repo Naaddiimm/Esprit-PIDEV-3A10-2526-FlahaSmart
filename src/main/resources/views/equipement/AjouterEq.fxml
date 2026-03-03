@@ -8,7 +8,7 @@
       xmlns:fx="http://javafx.com/fxml"
       fx:controller="controllers.equipement.Ajout_Eq_Controller"
       spacing="0" alignment="TOP_CENTER"
-      stylesheets="@/styles/style.css"
+      stylesheets="@/styles/style_css.css"
       VBox.vgrow="ALWAYS" HBox.hgrow="ALWAYS">
 
     <!-- En-tête de la page -->

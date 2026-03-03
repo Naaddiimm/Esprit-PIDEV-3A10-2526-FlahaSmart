@@ -4,7 +4,7 @@
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
 
-<VBox stylesheets="@/styles/style.css"
+<VBox stylesheets="@/styles/style_css.css"
       xmlns:fx="http://javafx.com/fxml"
       fx:controller="controllers.advancedfeatures.ChatbotController"
       spacing="15" >

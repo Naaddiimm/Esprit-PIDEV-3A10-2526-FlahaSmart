@@ -4,7 +4,7 @@
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
 
-<VBox stylesheets="@/styles/style.css" xmlns:fx="http://javafx.com/fxml"
+<VBox stylesheets="@/styles/style_css.css" xmlns:fx="http://javafx.com/fxml"
       fx:controller="controllers.advancedfeatures.WeatherWidgetController" spacing="25" alignment="TOP_CENTER">
 
     <HBox styleClass="form-header" alignment="CENTER_LEFT" spacing="15">

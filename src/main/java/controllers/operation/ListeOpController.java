@@ -125,7 +125,7 @@ public class ListeOpController {
             Stage stage = new Stage();
             Scene scene = new Scene(root, 600, 500);
             scene.getStylesheets().add(
-                    getClass().getResource("/styles/style.css").toExternalForm()
+                    getClass().getResource("/styles/style_css.css").toExternalForm()
             );
 
             stage.setScene(scene);

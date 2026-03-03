@@ -17,7 +17,7 @@ public class MainApp extends Application {
         Scene scene = new Scene(loader.load());
         stage.setTitle("Gestion des opérations");
         scene.getStylesheets().add(
-                getClass().getResource("/styles/style.css").toExternalForm()
+                getClass().getResource("/styles/style_css.css").toExternalForm()
         );
 
         stage.setScene(scene);
