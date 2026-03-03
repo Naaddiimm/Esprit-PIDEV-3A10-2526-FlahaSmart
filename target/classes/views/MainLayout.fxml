@@ -9,7 +9,7 @@
             fx:id="root"
             fx:controller="controllers.MainLayoutController"
             prefHeight="600.0" prefWidth="800.0"
-            stylesheets="@/styles/style.css">
+            stylesheets="@/styles/style_css.css">
 
     <left>
         <VBox spacing="10" prefWidth="250" styleClass="sidebar">

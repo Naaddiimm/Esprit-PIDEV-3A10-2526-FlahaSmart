@@ -4,10 +4,17 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="0dd62393-fca9-412a-8652-b090a5ec4918" name="Changes" comment="Finale 2.3">
+    <list default="true" id="0dd62393-fca9-412a-8652-b090a5ec4918" name="Changes" comment="Finale 2.4">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/services/advancedfeatures/WeatherService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/services/advancedfeatures/WeatherService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/controllers/operation/ListeOpController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/controllers/operation/ListeOpController.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/services/advancedfeatures/WeatherService.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/services/advancedfeatures/WeatherService.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/testes/MainApp.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/testes/MainApp.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/views/MainLayout.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/views/MainLayout.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/views/advancedfeatures/ChatbotView.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/views/advancedfeatures/ChatbotView.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/views/advancedfeatures/Dashboard.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/views/advancedfeatures/Dashboard.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/views/advancedfeatures/WeatherView.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/views/advancedfeatures/WeatherView.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/views/equipement/AjouterEq.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/views/equipement/AjouterEq.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/views/operation/AjouterOp.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/views/operation/AjouterOp.fxml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -267,7 +274,7 @@
       <workItem from="1772389511817" duration="13014000" />
       <workItem from="1772474447734" duration="7155000" />
       <workItem from="1772489178615" duration="1188000" />
-      <workItem from="1772566513929" duration="7557000" />
+      <workItem from="1772566513929" duration="10277000" />
     </task>
     <task id="LOCAL-00001" summary="API 1">
       <option name="closed" value="true" />
@@ -341,7 +348,15 @@
       <option name="project" value="LOCAL" />
       <updated>1772573863161</updated>
     </task>
-    <option name="localTasksCounter" value="10" />
+    <task id="LOCAL-00010" summary="Finale 2.4">
+      <option name="closed" value="true" />
+      <created>1772576810879</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1772576810879</updated>
+    </task>
+    <option name="localTasksCounter" value="11" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -356,7 +371,8 @@
     <MESSAGE value="Finale 2.1" />
     <MESSAGE value="Finale 2.2" />
     <MESSAGE value="Finale 2.3" />
-    <option name="LAST_COMMIT_MESSAGE" value="Finale 2.3" />
+    <MESSAGE value="Finale 2.4" />
+    <option name="LAST_COMMIT_MESSAGE" value="Finale 2.4" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
