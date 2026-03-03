@@ -26,6 +26,7 @@ import java.util.ResourceBundle;
 import java.util.regex.Pattern;
 
 import org.json.JSONObject;
+import services.EmailService;
 
 public class Register implements Initializable {
 
@@ -299,7 +300,14 @@ public class Register implements Initializable {
 
             userService.addEntity(user);
 
-            showSuccess("✅ Inscription réussie !");
+            // Envoyer l'email de bienvenue (asynchrone)
+            EmailService.sendWelcomeEmail(
+                    emailText,
+                    nom.getText().trim(),
+                    selectedRole.name()
+            );
+
+            showSuccess("✅ Inscription réussie ! Un email de bienvenue vous a été envoyé.");
 
             new Thread(() -> {
                 try {
