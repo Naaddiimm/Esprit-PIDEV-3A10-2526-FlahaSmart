@@ -2,6 +2,7 @@ package controllers.Auth;
 
 import controllers.Dashbord.DashboardAdmController;
 import controllers.Dashbord.ClientHomeController;
+import controllers.Dashbord.DashboardAgriculteurController; // IMPORTANT À AJOUTER
 import entities.User;
 import entities.Role;
 import services.UserService;
@@ -46,14 +47,7 @@ public class Login implements Initializable {
     private String            currentCaptchaCode;
     private int               captchaAttempts  = 0;
 
-    // ─── Caractères sans ambiguïté visuelle (0/O, 1/I/l retirés)
-    // FIX #5 : suppression des caractères spéciaux (@#$%&) impossibles
-    //          à saisir sur certains claviers
     private static final String CAPTCHA_CHARS = "ABCDEFGHJKLMNPQRSTUVWXYZ23456789";
-
-    // ─────────────────────────────────────────────────────────────────────────
-    // Initialisation
-    // ─────────────────────────────────────────────────────────────────────────
 
     @Override
     public void initialize(URL location, ResourceBundle resources) {
@@ -61,43 +55,33 @@ public class Login implements Initializable {
         if (errorMessage != null) {
             errorMessage.setVisible(false);
         }
-        // FIX #3 : generateCaptcha() n'est plus @FXML ; appelée normalement
         generateCaptcha();
     }
 
-    // ─────────────────────────────────────────────────────────────────────────
-    // CAPTCHA
-    // ─────────────────────────────────────────────────────────────────────────
-
-    /** Génère un code de 6 caractères alphanumériques sans ambiguïté. */
     private String generateCaptchaCode() {
         StringBuilder code = new StringBuilder();
-        int length = 6 + random.nextInt(3); // 6 à 8 caractères
+        int length = 6 + random.nextInt(3);
         for (int i = 0; i < length; i++) {
             code.append(CAPTCHA_CHARS.charAt(random.nextInt(CAPTCHA_CHARS.length())));
         }
         return code.toString();
     }
 
-    /** Crée l'image bruitée du captcha sur un Canvas. */
     private Image createComplexCaptchaImage(String code) {
         int width = 280, height = 80;
         Canvas canvas = new Canvas(width, height);
         GraphicsContext gc = canvas.getGraphicsContext2D();
 
-        // Fond dégradé
         gc.setFill(new javafx.scene.paint.LinearGradient(0, 0, width, height, false,
                 javafx.scene.paint.CycleMethod.NO_CYCLE,
                 new javafx.scene.paint.Stop(0, Color.rgb(240, 240, 240)),
                 new javafx.scene.paint.Stop(1, Color.rgb(220, 220, 220))));
         gc.fillRect(0, 0, width, height);
 
-        // Bordure
         gc.setStroke(Color.GRAY);
         gc.setLineWidth(2);
         gc.strokeRect(1, 1, width - 2, height - 2);
 
-        // Lignes courbes de bruit
         gc.setStroke(Color.rgb(150, 150, 150, 0.3));
         gc.setLineWidth(1.5);
         for (int i = 0; i < 8; i++) {
@@ -112,14 +96,12 @@ public class Login implements Initializable {
             gc.stroke();
         }
 
-        // Points de bruit
         gc.setFill(Color.rgb(100, 100, 100, 0.3));
         for (int i = 0; i < 80; i++) {
             gc.fillOval(random.nextInt(width), random.nextInt(height),
                     2 + random.nextInt(3), 2 + random.nextInt(3));
         }
 
-        // Caractères
         double startX = 30;
         double y      = height / 2.0 + 10;
         for (int i = 0; i < code.length(); i++) {
@@ -139,8 +121,6 @@ public class Login implements Initializable {
         return canvas.snapshot(null, null);
     }
 
-    // FIX #3 : @FXML retiré — méthode interne appelée depuis initialize()
-    //          et depuis handleRefreshCaptcha()
     private void generateCaptcha() {
         currentCaptchaCode = generateCaptchaCode();
         if (captchaImageView != null) {
@@ -153,10 +133,6 @@ public class Login implements Initializable {
         generateCaptcha();
         if (captchaField != null) captchaField.clear();
     }
-
-    // ─────────────────────────────────────────────────────────────────────────
-    // FIX #1 : méthode manquante référencée dans le FXML
-    // ─────────────────────────────────────────────────────────────────────────
 
     @FXML
     private void handleForgotPasswordAction(ActionEvent event) {
@@ -173,23 +149,17 @@ public class Login implements Initializable {
         }
     }
 
-    // ─────────────────────────────────────────────────────────────────────────
-    // Connexion
-    // ─────────────────────────────────────────────────────────────────────────
-
     @FXML
     protected void handleLoginButtonAction(ActionEvent event) {
         String email          = username.getText().trim();
         String password       = passwordField.getText();
         String enteredCaptcha = captchaField != null ? captchaField.getText().trim() : "";
 
-        // Champs obligatoires
         if (email.isEmpty() || password.isEmpty()) {
             showError("Veuillez remplir tous les champs.");
             return;
         }
 
-        // Vérification du CAPTCHA
         if (captchaField != null) {
             if (enteredCaptcha.isEmpty()) {
                 showError("Veuillez entrer le code de vérification.");
@@ -197,7 +167,6 @@ public class Login implements Initializable {
                 return;
             }
 
-            // FIX #2 : equals() (sensible à la casse) au lieu de equalsIgnoreCase()
             if (!enteredCaptcha.equals(currentCaptchaCode)) {
                 captchaAttempts++;
                 generateCaptcha();
@@ -207,7 +176,6 @@ public class Login implements Initializable {
                     loginButton.setDisable(true);
                     refreshCaptchaButton.setDisable(true);
 
-                    // FIX #4 : PauseTransition au lieu d'un Thread brut
                     PauseTransition pause = new PauseTransition(Duration.seconds(30));
                     pause.setOnFinished(e -> {
                         loginButton.setDisable(false);
@@ -225,7 +193,6 @@ public class Login implements Initializable {
             }
         }
 
-        // Authentification
         try {
             User user = userService.getUserByEmail(email);
 
@@ -253,7 +220,6 @@ public class Login implements Initializable {
                 return;
             }
 
-            // Succès
             captchaAttempts = 0;
             errorMessage.setVisible(false);
             Session.login(user);
@@ -267,10 +233,7 @@ public class Login implements Initializable {
         }
     }
 
-    // ─────────────────────────────────────────────────────────────────────────
-    // Redirection selon le rôle
-    // ─────────────────────────────────────────────────────────────────────────
-
+    // ===================== MÉTHODE REDIRECTUSER CORRIGÉE =====================
     private void redirectUser(User user, ActionEvent event) {
         try {
             Role  role  = user.getRole();
@@ -292,7 +255,15 @@ public class Login implements Initializable {
                     stage.setTitle("FlahaSmart - Accueil");
                 }
                 case AGRICULTEUR -> {
-                    Parent root = FXMLLoader.load(getClass().getResource("/DashboardAgriculteur.fxml"));
+                    // ✅ CORRECTION : Passage de l'utilisateur au DashboardAgriculteur
+                    FXMLLoader loader = new FXMLLoader(getClass().getResource("/DashboardAgriculteur.fxml"));
+                    Parent root = loader.load();
+
+                    // Récupérer le contrôleur et passer l'utilisateur
+                    DashboardAgriculteurController controller = loader.getController();
+                    controller.setLoggedInUser(user);
+                    System.out.println("✅ Utilisateur passé au DashboardAgriculteur: " + user.getEmail());
+
                     stage.setScene(new Scene(root));
                     stage.setTitle("FlahaSmart - Espace Agriculteur");
                 }
@@ -310,10 +281,7 @@ public class Login implements Initializable {
             showError("Erreur de redirection : " + e.getMessage());
         }
     }
-
-    // ─────────────────────────────────────────────────────────────────────────
-    // Inscription
-    // ─────────────────────────────────────────────────────────────────────────
+    // =========================================================================
 
     @FXML
     protected void handleRegisterButtonAction(ActionEvent event) {
@@ -329,10 +297,6 @@ public class Login implements Initializable {
             showError("Erreur lors du chargement de l'inscription.");
         }
     }
-
-    // ─────────────────────────────────────────────────────────────────────────
-    // Utilitaire
-    // ─────────────────────────────────────────────────────────────────────────
 
     private void showError(String message) {
         if (errorMessage != null) {

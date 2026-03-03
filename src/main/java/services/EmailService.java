@@ -1,32 +1,30 @@
 package services;
 
-import org.json.JSONArray;
-import org.json.JSONObject;
+import javax.mail.*;
+import javax.mail.internet.InternetAddress;
+import javax.mail.internet.MimeMessage;
 
-import java.io.OutputStream;
-import java.net.HttpURLConnection;
-import java.net.URL;
-import java.nio.charset.StandardCharsets;
 import java.util.HashMap;
 import java.util.Map;
+import java.util.Properties;
 import java.util.Random;
 
 /**
- * Service d'envoi d'emails via l'API SendGrid v3.
+ * Service d'envoi d'emails via Gmail SMTP.
  *
  * 🔑 Configuration :
- *   1. Créez un compte sur https://sendgrid.com (gratuit jusqu'à 100 emails/jour)
- *   2. Allez dans Settings > API Keys > Create API Key
- *   3. Remplacez SENDGRID_API_KEY par votre clé
- *   4. Remplacez SENDER_EMAIL par votre email vérifié dans SendGrid
+ *   1. Activez la validation en 2 étapes : https://myaccount.google.com/security
+ *   2. Générez un mot de passe d'application : https://myaccount.google.com/apppasswords
+ *      → Nom : FlahaSmart → Créer → Copier le code 16 caractères
+ *   3. Remplacez GMAIL_USER par votre adresse Gmail
+ *   4. Remplacez GMAIL_APP_PASSWORD par le code généré (sans espaces)
  */
 public class EmailService {
 
     // ─── Configuration ────────────────────────────────────────────────────────
-    private static final String SENDGRID_API_KEY = "SG.VOTRE_CLE_API_ICI";
-    private static final String SENDER_EMAIL     = "dhaouadi.eya@esprit.tn";
-    private static final String SENDER_NAME      = "FlahaSmart";
-    private static final String API_URL          = "https://api.sendgrid.com/v3/mail/send";
+    private static final String GMAIL_USER         = "dhaouadi.eya@esprit.tn";
+    private static final String GMAIL_APP_PASSWORD = "ypwxsuxogbcbsipp"; // 16 caractères sans espaces
+    private static final String SENDER_NAME        = "FlahaSmart";
 
     // ─── Stockage des tokens de réinitialisation (en mémoire) ─────────────────
     // Clé = email, Valeur = [token, timestamp]
@@ -36,62 +34,39 @@ public class EmailService {
     // ─── Envoi générique ──────────────────────────────────────────────────────
 
     /**
-     * Envoie un email via SendGrid API v3.
+     * Envoie un email via Gmail SMTP.
      * @return true si envoyé avec succès, false sinon
      */
     private static boolean sendEmail(String toEmail, String toName,
                                      String subject, String htmlContent) {
         try {
-            // Construire le payload JSON
-            JSONObject payload = new JSONObject();
+            // Configuration SMTP Gmail
+            Properties props = new Properties();
+            props.put("mail.smtp.auth",            "true");
+            props.put("mail.smtp.starttls.enable", "true");
+            props.put("mail.smtp.host",            "smtp.gmail.com");
+            props.put("mail.smtp.port",            "587");
+            props.put("mail.smtp.ssl.trust",       "smtp.gmail.com");
 
-            // Expéditeur
-            JSONObject from = new JSONObject();
-            from.put("email", SENDER_EMAIL);
-            from.put("name", SENDER_NAME);
-            payload.put("from", from);
+            // Authentification
+            javax.mail.Session session = javax.mail.Session.getInstance(props, new javax.mail.Authenticator() {
+                @Override
+                protected javax.mail.PasswordAuthentication getPasswordAuthentication() {
+                    return new javax.mail.PasswordAuthentication(GMAIL_USER, GMAIL_APP_PASSWORD);
+                }
+            });
 
-            // Destinataire
-            JSONArray personalizations = new JSONArray();
-            JSONObject personalization = new JSONObject();
-            JSONArray toList = new JSONArray();
-            JSONObject toObj = new JSONObject();
-            toObj.put("email", toEmail);
-            toObj.put("name", toName);
-            toList.put(toObj);
-            personalization.put("to", toList);
-            personalizations.put(personalization);
-            payload.put("personalizations", personalizations);
+            // Construire le message
+            MimeMessage message = new MimeMessage(session);
+            message.setFrom(new InternetAddress(GMAIL_USER, SENDER_NAME));
+            message.setRecipients(MimeMessage.RecipientType.TO, InternetAddress.parse(toEmail));
+            message.setSubject(subject);
+            message.setContent(htmlContent, "text/html; charset=UTF-8");
 
-            // Sujet et contenu
-            payload.put("subject", subject);
-            JSONArray contentArray = new JSONArray();
-            JSONObject content = new JSONObject();
-            content.put("type", "text/html");
-            content.put("value", htmlContent);
-            contentArray.put(content);
-            payload.put("content", contentArray);
+            javax.mail.Transport.send(message);
 
-            // Envoyer la requête HTTP
-            URL url = new URL(API_URL);
-            HttpURLConnection conn = (HttpURLConnection) url.openConnection();
-            conn.setRequestMethod("POST");
-            conn.setRequestProperty("Authorization", "Bearer " + SENDGRID_API_KEY);
-            conn.setRequestProperty("Content-Type", "application/json");
-            conn.setDoOutput(true);
-            conn.setConnectTimeout(8000);
-            conn.setReadTimeout(8000);
-
-            byte[] body = payload.toString().getBytes(StandardCharsets.UTF_8);
-            try (OutputStream os = conn.getOutputStream()) {
-                os.write(body);
-            }
-
-            int responseCode = conn.getResponseCode();
-            System.out.println("📧 SendGrid response: " + responseCode + " → " + toEmail);
-
-            // SendGrid retourne 202 pour un envoi réussi
-            return responseCode == 202;
+            System.out.println("📧 Gmail SMTP envoyé → " + toEmail);
+            return true;
 
         } catch (Exception e) {
             System.err.println("❌ Erreur envoi email: " + e.getMessage());

@@ -26,7 +26,9 @@ import java.util.ResourceBundle;
 import java.util.regex.Pattern;
 
 import org.json.JSONObject;
+import org.mindrot.jbcrypt.BCrypt;
 import services.EmailService;
+import javafx.stage.Modality;
 
 public class Register implements Initializable {
 
@@ -289,7 +291,8 @@ public class Register implements Initializable {
             user.setNom(nom.getText().trim());
             user.setPrenom(prenom.getText().trim());
             user.setEmail(emailText);
-            user.setPassword(passwordField.getText());
+            // Hash BCrypt
+            user.setPassword(BCrypt.hashpw(passwordField.getText(), BCrypt.gensalt(12)));
             user.setTelephone(telephone.getText().trim().isEmpty() ? null : telephone.getText().trim());
             user.setAdresse(adresse.getText().trim().isEmpty() ? null : adresse.getText().trim());
             user.setVille(ville.getText().trim());
@@ -300,12 +303,8 @@ public class Register implements Initializable {
 
             userService.addEntity(user);
 
-            // Envoyer l'email de bienvenue (asynchrone)
-            EmailService.sendWelcomeEmail(
-                    emailText,
-                    nom.getText().trim(),
-                    selectedRole.name()
-            );
+            // Email de bienvenue
+            EmailService.sendWelcomeEmail(emailText, nom.getText().trim(), selectedRole.name());
 
             showSuccess("✅ Inscription réussie ! Un email de bienvenue vous a été envoyé.");
 

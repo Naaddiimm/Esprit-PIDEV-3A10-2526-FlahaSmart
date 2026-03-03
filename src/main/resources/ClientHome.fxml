@@ -83,6 +83,7 @@
             <VBox spacing="40" style="-fx-padding: 30 50;">
 
                 <!-- Section Hero - CORRIGÉE avec classe CSS -->
+                <!-- Section Hero - CORRIGÉE avec classe CSS -->
                 <VBox spacing="20" alignment="CENTER" styleClass="hero-section">
                     <Text fx:id="welcometext" text="Bienvenue sur FlahaSmart"
                           style="-fx-font-size: 48px; -fx-font-weight: bold; -fx-fill: white;"/>

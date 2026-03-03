@@ -19,120 +19,162 @@ import java.time.format.DateTimeFormatter;
 import java.util.Locale;
 import java.util.ResourceBundle;
 
-/**
- * Contrôleur du tableau de bord Agriculteur.
- * ✅ Tous les @FXML sont null-safe — NullPointerException impossible.
- */
 public class DashboardAgriculteurController implements Initializable {
 
-    // ── Champs FXML optionnels ────────────────────────────────────────────────
-    @FXML private Label  welcomeLabel;
-    @FXML private Text   welcomeText;
-    @FXML private Text   dateText;     // ← était null → crash corrigé
-    @FXML private Label  dateLabel;
-    @FXML private Label  statusLabel;
-
-    // Panneaux de contenu
-    @FXML private Pane   panelAccueil;
-    @FXML private Pane   panelStatistiques;
-    @FXML private Pane   panelProduits;
-    @FXML private Pane   panelCommandes;
-    @FXML private Pane   panelParcelles;
-    @FXML private Pane   panelMeteo;
-    @FXML private Pane   panelProfil;
-    @FXML private Pane   panelMessages;
-    @FXML private Pane   panelAlerte;
-    @FXML private Pane   panelCalendrier;
-    @FXML private Pane   panelRapports;
-    @FXML private Pane   panelParametres;
+    @FXML private Label welcomeLabel;
+    @FXML private Text welcomeText;
+    @FXML private Text dateText;
+    @FXML private Label dateLabel;
+    @FXML private Label statusLabel;
+    @FXML private StackPane contentArea;
 
     private User loggedInUser;
 
-    // ─────────────────────────────────────────────────────────────────────────
-    // Initialisation — 100% null-safe
-    // ─────────────────────────────────────────────────────────────────────────
 
-    @Override
-    public void initialize(URL location, ResourceBundle resources) {
-        System.out.println("✅ DashboardAgriculteurController initialisé");
-
-        // FIX : null-check AVANT tout appel sur un champ @FXML
-        String today = LocalDate.now()
-                .format(DateTimeFormatter.ofPattern("EEEE dd MMMM yyyy", Locale.FRENCH));
-
-        if (dateText  != null) dateText.setText(today);
-        if (dateLabel != null) dateLabel.setText(today);
-
-        showPanel(panelAccueil);
-    }
-
-    /** Injecte l'utilisateur connecté depuis Login. */
+    // Méthode pour recevoir l'utilisateur connecté
     public void setLoggedInUser(User user) {
         this.loggedInUser = user;
-        if (user == null) return;
+        System.out.println("✅ Utilisateur reçu dans DashboardAgriculteurController: " +
+                (user != null ? user.getEmail() : "NULL"));
 
-        String prenom = user.getPrenom() != null ? user.getPrenom() : "";
-        String nom    = user.getNom()    != null ? user.getNom()    : "";
-        String full   = (prenom + " " + nom).trim();
-
-        if (welcomeLabel != null) welcomeLabel.setText("Bienvenue, " + full + " 👋");
-        if (welcomeText  != null) welcomeText.setText("Bienvenue, " + full + " 👋");
-        System.out.println("👤 Utilisateur chargé : " + full);
+        if (user != null) {
+            if (welcomeLabel != null) {
+                welcomeLabel.setText(user.getPrenom() + " " + user.getNom());
+            }
+            if (welcomeText != null) {
+                welcomeText.setText("Bienvenue, " + user.getPrenom() + " " + user.getNom() + " !");
+            }
+        }
     }
 
-    // ─────────────────────────────────────────────────────────────────────────
-    // Handlers navigation
-    // ─────────────────────────────────────────────────────────────────────────
+    private void loadView(String fxmlPath) {
+        if (contentArea == null) {
+            System.err.println("❌ contentArea est null");
+            return;
+        }
 
-    @FXML public void handleAccueil(ActionEvent e)      { showPanel(panelAccueil);      setStatus("Accueil"); }
-    @FXML public void handleStatistiques(ActionEvent e) { showPanel(panelStatistiques); setStatus("Statistiques"); }
-    @FXML public void handleProduits(ActionEvent e)     { showPanel(panelProduits);     setStatus("Produits"); }
-    @FXML public void handleCommandes(ActionEvent e)    { showPanel(panelCommandes);    setStatus("Commandes"); }
-    @FXML public void handleParcelles(ActionEvent e)    { showPanel(panelParcelles);    setStatus("Parcelles"); }
-    @FXML public void handleMeteo(ActionEvent e)        { showPanel(panelMeteo);        setStatus("Météo"); }
-    @FXML public void handleProfil(ActionEvent e)       { showPanel(panelProfil);       setStatus("Profil"); }
-    @FXML public void handleMessages(ActionEvent e)     { showPanel(panelMessages);     setStatus("Messages"); }
-    @FXML public void handleAlertes(ActionEvent e)      { showPanel(panelAlerte);       setStatus("Alertes"); }
-    @FXML public void handleCalendrier(ActionEvent e)   { showPanel(panelCalendrier);   setStatus("Calendrier"); }
-    @FXML public void handleRapports(ActionEvent e)     { showPanel(panelRapports);     setStatus("Rapports"); }
-    @FXML public void handleParametres(ActionEvent e)   { showPanel(panelParametres);   setStatus("Paramètres"); }
+        try {
+            URL resourceUrl = getClass().getResource(fxmlPath);
+            if (resourceUrl == null) {
+                System.err.println("⚠️ Vue non trouvée: " + fxmlPath);
+                showPlaceholder(fxmlPath);
+                return;
+            }
 
-    // Alias noms alternatifs
-    @FXML public void handleStatistique(ActionEvent e)  { handleStatistiques(e); }
-    @FXML public void handleStat(ActionEvent e)         { handleStatistiques(e); }
-    @FXML public void handleProduit(ActionEvent e)      { handleProduits(e); }
-    @FXML public void handleCommande(ActionEvent e)     { handleCommandes(e); }
-    @FXML public void handleParcelle(ActionEvent e)     { handleParcelles(e); }
-    @FXML public void handleAlerte(ActionEvent e)       { handleAlertes(e); }
-    @FXML public void handleMessage(ActionEvent e)      { handleMessages(e); }
-    @FXML public void handleRapport(ActionEvent e)      { handleRapports(e); }
-    @FXML public void handleHome(ActionEvent e)         { handleAccueil(e); }
-    @FXML public void handleDashboard(ActionEvent e)    { handleAccueil(e); }
-    @FXML public void handleSettings(ActionEvent e)     { handleParametres(e); }
-    @FXML public void handleProfile(ActionEvent e)      { handleProfil(e); }
-    @FXML public void handleWeather(ActionEvent e)      { handleMeteo(e); }
-    @FXML public void handleCalendar(ActionEvent e)     { handleCalendrier(e); }
-    @FXML public void handleOrders(ActionEvent e)       { handleCommandes(e); }
-    @FXML public void handleProducts(ActionEvent e)     { handleProduits(e); }
-    @FXML public void handleReports(ActionEvent e)      { handleRapports(e); }
+            FXMLLoader loader = new FXMLLoader(resourceUrl);
+            Parent view = loader.load();
 
-    // ─────────────────────────────────────────────────────────────────────────
-    // Actions internes
-    // ─────────────────────────────────────────────────────────────────────────
+            // Passer l'utilisateur si le contrôleur a la méthode setLoggedInUser
+            Object controller = loader.getController();
+            if (controller != null && loggedInUser != null) {
+                try {
+                    controller.getClass().getMethod("setLoggedInUser", User.class)
+                            .invoke(controller, loggedInUser);
+                } catch (Exception ignored) {}
+            }
 
-    @FXML public void handleRefresh(ActionEvent e)         { setStatus("Actualisé"); }
-    @FXML public void handleExport(ActionEvent e)          { setStatus("Export en cours..."); }
-    @FXML public void handleAjouterProduit(ActionEvent e)  { setStatus("Ajout produit"); }
-    @FXML public void handleAjouterParcelle(ActionEvent e) { setStatus("Ajout parcelle"); }
+            contentArea.getChildren().clear();
+            contentArea.getChildren().add(view);
+            System.out.println("✅ Vue chargée: " + fxmlPath);
 
-    // ─────────────────────────────────────────────────────────────────────────
-    // Déconnexion
-    // ─────────────────────────────────────────────────────────────────────────
+        } catch (IOException e) {
+            e.printStackTrace();
+            showPlaceholder(fxmlPath);
+        }
+    }
 
+    private void showPlaceholder(String fxmlPath) {
+        VBox placeholder = new VBox(20);
+        placeholder.setAlignment(javafx.geometry.Pos.CENTER);
+        placeholder.setStyle("-fx-padding: 50;");
+
+        Label title = new Label("🚧 Vue en construction");
+        title.setStyle("-fx-font-size: 24px; -fx-font-weight: bold; -fx-text-fill: #2d3436;");
+
+        Label info = new Label("Fichier: " + fxmlPath);
+        info.setStyle("-fx-font-size: 14px; -fx-text-fill: #636e72;");
+
+        placeholder.getChildren().addAll(title, info);
+
+        contentArea.getChildren().clear();
+        contentArea.getChildren().add(placeholder);
+    }
+
+    // Handlers de navigation
+    @FXML public void handleAccueil(ActionEvent e) { loadView("/views/agriculteur/Accueil.fxml"); setStatus("Accueil"); }
+    @FXML public void handleStatistiques(ActionEvent e) { loadView("/views/agriculteur/Statistiques.fxml"); setStatus("Statistiques"); }
+    @FXML public void handleParametres(ActionEvent e) { loadView("/views/agriculteur/Parametres.fxml"); setStatus("Paramètres"); }
+    @FXML public void handleMeteo(ActionEvent e) { loadView("/views/agriculteur/Meteo.fxml"); setStatus("Météo"); }
+
+    // Opérations
+    @FXML public void handleAjouterOperation(ActionEvent e) { loadView("/views/agriculteur/AjouterOperation.fxml"); setStatus("Ajouter opération"); }
+    @FXML public void handleListeOperations(ActionEvent e) { loadView("/views/agriculteur/ListeOperations.fxml"); setStatus("Liste opérations"); }
+    @FXML public void handleAjouterEquipement(ActionEvent e) { loadView("/views/agriculteur/AjouterEquipement.fxml"); setStatus("Ajouter équipement"); }
+    @FXML public void handleListeEquipements(ActionEvent e) { loadView("/views/agriculteur/ListeEquipements.fxml"); setStatus("Liste équipements"); }
+
+    // Outils
+    @FXML public void handleAgriBot(ActionEvent e) { loadView("/views/agriculteur/AgriBot.fxml"); setStatus("AgriBot"); }
+    @FXML public void handleAnalyseMaladie(ActionEvent e) { loadView("/views/agriculteur/AnalyseMaladie.fxml"); setStatus("Analyse Maladie"); }
+    @FXML public void handleIrrigation(ActionEvent e) { loadView("/views/agriculteur/Irrigation.fxml"); setStatus("Irrigation"); }
+    @FXML public void handleRotationCultures(ActionEvent e) { loadView("/views/agriculteur/RotationCultures.fxml"); setStatus("Rotation Cultures"); }
+
+    // PROFIL - CORRIGÉ
+    @FXML
+    public void handleProfil(ActionEvent event) {
+        try {
+            System.out.println("🟢 Ouverture du profil...");
+
+            if (loggedInUser == null) {
+                System.out.println("❌ loggedInUser est NULL !");
+                return;
+            }
+
+            System.out.println("👤 Utilisateur: " + loggedInUser.getPrenom() + " " + loggedInUser.getNom());
+
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("/DashboardUser.fxml"));
+            Parent profilView = loader.load();
+
+            DashboardUser controller = loader.getController();
+            if (controller != null) {
+                controller.setLoggedInUser(loggedInUser);
+                System.out.println("✅ Utilisateur passé à DashboardUser");
+            }
+
+            contentArea.getChildren().clear();
+            contentArea.getChildren().add(profilView);
+            setStatus("Mon Profil");
+
+        } catch (IOException e) {
+            System.err.println("❌ Erreur: " + e.getMessage());
+            e.printStackTrace();
+        }
+    }
+
+    // MODIFIER PROFIL
+    @FXML
+    public void handleEditProfile(ActionEvent event) {
+        try {
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("/ProfileUser.fxml"));
+            Parent editView = loader.load();
+
+            ProfileUserController controller = loader.getController();
+            if (controller != null && loggedInUser != null) {
+                controller.setUser(loggedInUser);
+            }
+
+            contentArea.getChildren().clear();
+            contentArea.getChildren().add(editView);
+            setStatus("Modifier Profil");
+
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
+
+    // DÉCONNEXION
     @FXML
     public void handleDeconnexion(ActionEvent event) {
         System.out.println("🚪 Déconnexion");
-        controllers.Auth.Session.logout();
         try {
             Parent root = FXMLLoader.load(getClass().getResource("/Login.fxml"));
             Stage stage = getStage();
@@ -146,40 +188,34 @@ public class DashboardAgriculteurController implements Initializable {
             e.printStackTrace();
         }
     }
+    @Override
+    public void initialize(URL location, ResourceBundle resources) {
+        System.out.println("✅ DashboardAgriculteurController initialisé");
 
-    @FXML public void handleLogout(ActionEvent e)     { handleDeconnexion(e); }
-    @FXML public void handleSignOut(ActionEvent e)    { handleDeconnexion(e); }
-    @FXML public void handleDisconnect(ActionEvent e) { handleDeconnexion(e); }
-
-    // ─────────────────────────────────────────────────────────────────────────
-    // Utilitaires privés
-    // ─────────────────────────────────────────────────────────────────────────
-
-    private void showPanel(Pane target) {
-        Pane[] all = {
-                panelAccueil, panelStatistiques, panelProduits, panelCommandes,
-                panelParcelles, panelMeteo, panelProfil, panelMessages,
-                panelAlerte, panelCalendrier, panelRapports, panelParametres
-        };
-        for (Pane p : all) {
-            if (p != null) { p.setVisible(false); p.setManaged(false); }
+        // Log pour voir si l'utilisateur est déjà là
+        if (loggedInUser == null) {
+            System.out.println("⚠️ loggedInUser est NULL dans initialize");
+        } else {
+            System.out.println("👤 loggedInUser présent: " + loggedInUser.getEmail());
         }
-        if (target != null) { target.setVisible(true); target.setManaged(true); }
+
+        String today = LocalDate.now()
+                .format(DateTimeFormatter.ofPattern("EEEE dd MMMM yyyy", Locale.FRENCH));
+
+        if (dateText != null) dateText.setText(today);
+        if (dateLabel != null) dateLabel.setText(today);
+
+        loadView("/views/agriculteur/Accueil.fxml");
     }
 
     private void setStatus(String msg) {
         if (statusLabel != null) statusLabel.setText(msg);
-        System.out.println("📌 Section : " + msg);
+        System.out.println("📌 Section: " + msg);
     }
 
     private Stage getStage() {
-        if (welcomeLabel != null && welcomeLabel.getScene() != null)
-            return (Stage) welcomeLabel.getScene().getWindow();
-        if (welcomeText != null && welcomeText.getScene() != null)
-            return (Stage) welcomeText.getScene().getWindow();
-        return javafx.stage.Stage.getWindows().stream()
-                .filter(w -> w instanceof Stage && w.isShowing())
-                .map(w -> (Stage) w)
-                .findFirst().orElse(null);
+        if (contentArea != null && contentArea.getScene() != null)
+            return (Stage) contentArea.getScene().getWindow();
+        return null;
     }
 }
