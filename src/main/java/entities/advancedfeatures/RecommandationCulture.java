@@ -1,4 +1,4 @@
-package models.advancedfeatures;
+package entities.advancedfeatures;
 
 /**
  * Modèle pour une recommandation de culture dans le cadre de la rotation

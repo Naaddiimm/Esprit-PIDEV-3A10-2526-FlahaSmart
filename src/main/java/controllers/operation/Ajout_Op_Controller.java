@@ -1,22 +1,17 @@
 package controllers.operation;
 
-import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
-import javafx.fxml.Initializable;
 import javafx.scene.control.Alert;
 import javafx.scene.control.ComboBox;
 import javafx.scene.control.DatePicker;
 import javafx.scene.control.TextField;
-import models.Equipement;
-import models.Operation;
+import entities.Equipement;
+import entities.Operation;
 import services.EquipementService;
-import services.Iservice;
 import services.OperationService;
 
-import java.net.URL;
 import java.sql.Date;
 import java.sql.SQLException;
-import java.util.ResourceBundle;
 
 public class Ajout_Op_Controller  {
 

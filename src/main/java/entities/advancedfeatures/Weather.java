@@ -1,4 +1,4 @@
-package models.advancedfeatures;
+package entities.advancedfeatures;
 
 public class Weather {
     private String location;

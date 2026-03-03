@@ -1,12 +1,11 @@
 package testes;
 
-import models.Equipement;
-import models.Operation;
+import entities.Equipement;
+import entities.Operation;
 import services.EquipementService;
 import services.Iservice;
 import services.OperationService;
 
-import java.sql.SQLException;
 import java.util.List;
 import java.sql.Date;
 import java.text.SimpleDateFormat;

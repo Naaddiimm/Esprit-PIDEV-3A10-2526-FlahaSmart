@@ -5,7 +5,7 @@ import javafx.geometry.Insets;
 import javafx.geometry.Pos;
 import javafx.scene.control.*;
 import javafx.scene.layout.*;
-import models.advancedfeatures.Parcelle;
+import entities.advancedfeatures.Parcelle;
 import services.advancedfeatures.RotationCultureService;
 
 import java.util.List;

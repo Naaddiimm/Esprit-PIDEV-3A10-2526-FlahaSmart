@@ -1,7 +1,5 @@
 package services;
 
-import models.Operation;
-
 import java.sql.SQLException;
 import java.util.List;
 

@@ -1,7 +1,7 @@
 package services.advancedfeatures;
 
-import models.advancedfeatures.Parcelle;
-import models.advancedfeatures.RecommandationCulture;
+import entities.advancedfeatures.Parcelle;
+import entities.advancedfeatures.RecommandationCulture;
 
 import java.util.*;
 import java.util.stream.Collectors;

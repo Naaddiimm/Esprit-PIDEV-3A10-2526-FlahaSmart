@@ -6,8 +6,8 @@ import javafx.scene.control.ComboBox;
 import javafx.scene.control.DatePicker;
 import javafx.scene.control.TextField;
 import javafx.stage.Stage;
-import models.Equipement;
-import models.Operation;
+import entities.Equipement;
+import entities.Operation;
 import services.EquipementService;
 import services.OperationService;
 

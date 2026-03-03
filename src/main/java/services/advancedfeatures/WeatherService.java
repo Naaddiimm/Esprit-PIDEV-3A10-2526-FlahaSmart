@@ -2,7 +2,7 @@ package services.advancedfeatures;
 
 import com.google.gson.JsonObject;
 import com.google.gson.JsonParser;
-import models.advancedfeatures.Weather;
+import entities.advancedfeatures.Weather;
 import java.io.BufferedReader;
 import java.io.InputStreamReader;
 import java.net.HttpURLConnection;
@@ -15,7 +15,7 @@ import java.util.logging.Logger;
 public class WeatherService {
 
     private static final Logger LOGGER = Logger.getLogger(WeatherService.class.getName());
-    private static final String API_KEY = "365b2999f38ef18672fba0abd909f8dc";
+    private static final String API_KEY = "";
     private static final String BASE_URL = "http://api.weatherstack.com/current";
 
     public Weather getWeather(String city) {

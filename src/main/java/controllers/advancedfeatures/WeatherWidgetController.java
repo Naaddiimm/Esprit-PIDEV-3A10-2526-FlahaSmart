@@ -10,7 +10,7 @@ import javafx.scene.control.TextField;
 import javafx.scene.layout.HBox;
 import javafx.scene.layout.VBox;
 import javafx.scene.image.ImageView;
-import models.advancedfeatures.Weather;
+import entities.advancedfeatures.Weather;
 import services.advancedfeatures.WeatherService;
 
 import java.util.ArrayList;

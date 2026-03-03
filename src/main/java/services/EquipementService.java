@@ -1,6 +1,6 @@
 package services;
 
-import models.Equipement;
+import entities.Equipement;
 import utilies.MyDataBase;
 
 import java.sql.Connection;

@@ -1,8 +1,8 @@
 package services.advancedfeatures;
 
-import models.advancedfeatures.IrrigationPlan;
-import models.Operation;
-import models.advancedfeatures.Weather;
+import entities.advancedfeatures.IrrigationPlan;
+import entities.Operation;
+import entities.advancedfeatures.Weather;
 import services.OperationService;
 
 import java.sql.SQLException;

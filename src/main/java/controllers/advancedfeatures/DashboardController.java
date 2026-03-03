@@ -8,10 +8,10 @@ import javafx.scene.layout.HBox;
 import javafx.scene.layout.Priority;
 import javafx.scene.layout.Region;
 import javafx.scene.layout.VBox;
-import models.Equipement;
+import entities.Equipement;
 import services.EquipementService;
 import services.OperationService;
-import models.Operation;
+import entities.Operation;
 
 import java.util.Map;
 import java.util.Set;

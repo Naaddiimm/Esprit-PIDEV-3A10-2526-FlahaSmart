@@ -1,4 +1,4 @@
-package models.advancedfeatures;
+package entities.advancedfeatures;
 
 import java.time.LocalDateTime;
 

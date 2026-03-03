@@ -17,9 +17,9 @@ import javafx.scene.layout.VBox;
 import javafx.stage.Stage;
 
 import java.util.Optional;
-import services.EquipementService;
+
 import services.OperationService;
-import models.Operation;
+import entities.Operation;
 
 import java.sql.SQLException;
 import java.util.List;

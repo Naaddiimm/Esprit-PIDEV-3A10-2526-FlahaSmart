@@ -6,7 +6,7 @@ import javafx.geometry.Insets;
 import javafx.geometry.Pos;
 import javafx.scene.control.*;
 import javafx.scene.layout.*;
-import models.advancedfeatures.IrrigationPlan;
+import entities.advancedfeatures.IrrigationPlan;
 import services.advancedfeatures.IrrigationService;
 
 import java.time.LocalDate;

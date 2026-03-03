@@ -9,7 +9,7 @@ import javafx.scene.control.Label;
 import javafx.scene.layout.VBox;
 import javafx.geometry.Pos;
 import javafx.geometry.Insets;
-import models.advancedfeatures.ChatMessage;
+import entities.advancedfeatures.ChatMessage;
 import services.advancedfeatures.AgriChatbotService;
 
 public class ChatbotController {

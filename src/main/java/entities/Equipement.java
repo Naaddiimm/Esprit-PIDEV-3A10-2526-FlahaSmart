@@ -1,4 +1,4 @@
-package models;
+package entities;
 
 public class Equipement {
     private int id_equipement;

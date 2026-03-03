@@ -1,6 +1,6 @@
 package services;
 
-import models.Operation;
+import entities.Operation;
 import utilies.MyDataBase;
 
 import java.sql.*;

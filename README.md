@@ -382,7 +382,7 @@ Limite: 100 requêtes/mois (gratuit)
 ```
 Modèle: Gemini 2.5 Flash
 Usage: Chatbot agricole intelligent
-Endpoint: https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash
+Endpoint: https://generativelanguage.googleapis.com/v1beta/entities/gemini-2.5-flash
 ```
 
 ### PlantNet API
@@ -410,7 +410,7 @@ AgriManager-Pro/
 │   │   │   │   ├── PlantDiseaseController.java
 │   │   │   │   ├── equipement/
 │   │   │   │   └── operation/
-│   │   │   ├── models/
+│   │   │   ├── entities/
 │   │   │   │   ├── Equipement.java
 │   │   │   │   ├── Operation.java
 │   │   │   │   ├── Weather.java
