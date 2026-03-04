@@ -58,7 +58,7 @@
 
             <!-- Menu principal avec animations -->
             <VBox styleClass="nav-menu" spacing="4" VBox.vgrow="ALWAYS">
-                <padding><Insets top="20" bottom="20" left="20" right="20"/></padding>
+                <padding><Insets top="20" bottom="100" left="20" right="20"/></padding>
 
                 <Label text="TABLEAU DE BORD" styleClass="nav-section"/>
 
@@ -130,14 +130,7 @@
                     </graphic>
                     <text>Mon Profil</text>
                 </Button>
-
-                <Button styleClass="nav-item" maxWidth="Infinity" onAction="#handleParametres">
-                    <graphic>
-                        <FontAwesomeIconView glyphName="COG" size="16" styleClass="nav-icon"/>
-                    </graphic>
-                    <text>Paramètres</text>
-                </Button>
-
+                
                 <!-- Bouton de déconnexion -->
                 <Button styleClass="nav-item, logout" maxWidth="Infinity" onAction="#handleDeconnexion">
                     <graphic>
@@ -164,18 +157,6 @@
                     <!-- Texte de bienvenue dynamique -->
                     <Text fx:id="welcomeText" text="Bienvenue sur votre espace" styleClass="page-subtitle"/>
                 </VBox>
-
-                <!-- Recherche -->
-                <HBox styleClass="search-glass" alignment="CENTER_LEFT" spacing="12">
-                    <FontAwesomeIconView glyphName="SEARCH" size="14" styleClass="search-icon"/>
-                    <TextField promptText="Rechercher..." styleClass="search-input" prefWidth="260"/>
-                </HBox>
-
-                <!-- Notifications -->
-                <StackPane styleClass="notification-pulse">
-                    <FontAwesomeIconView glyphName="BELL" size="18" styleClass="icon-btn"/>
-                    <Label text="5" styleClass="notification-badge"/>
-                </StackPane>
 
                 <!-- Menu avatar avec profil et déconnexion -->
                 <MenuButton styleClass="avatar-menu">

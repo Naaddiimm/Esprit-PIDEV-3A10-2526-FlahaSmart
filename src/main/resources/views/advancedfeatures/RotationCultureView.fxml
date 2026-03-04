@@ -7,29 +7,25 @@
 <ScrollPane xmlns="http://javafx.com/javafx"
             xmlns:fx="http://javafx.com/fxml"
             fx:controller="controllers.advancedfeatures.RotationCultureController"
-            fitToWidth="true"
-            style="-fx-background-color: transparent; -fx-background: transparent;">
+            fitToWidth="true" fitToHeight="true"
+            VBox.vgrow="ALWAYS" HBox.hgrow="ALWAYS"
+            style="-fx-background-color: transparent; -fx-background: transparent;"
+            stylesheets="@/styles/style_css.css">
 
     <VBox spacing="15" alignment="TOP_CENTER"
-          style="-fx-background-color: linear-gradient(to bottom right, #f0fdf4, #ecfdf5, #d1fae5); ">
-
-        <HBox styleClass="form-header" alignment="CENTER_LEFT" spacing="15">
-            <padding>
-                <Insets top="25" right="30" left="30" bottom="25" />
-            </padding>
-            <VBox >
-                <Label text="🔄 Rotation des Cultures Optimisée" styleClass="form-page-title"/>
-                <Label text="Optimisez vos rotations pour préserver la fertilité du sol et maximiser les rendements" styleClass="form-page-subtitle"/>
-            </VBox>
-        </HBox>
+          style="-fx-background-color: linear-gradient(to bottom right, #f0fdf4, #ecfdf5, #d1fae5);"
+          VBox.vgrow="ALWAYS">
+        <padding>
+            <Insets top="20" right="20" bottom="120" left="20"/>
+        </padding>
 
         <!-- Section principale -->
-        <HBox spacing="20" alignment="TOP_CENTER">
+        <HBox spacing="20" alignment="TOP_CENTER" HBox.hgrow="ALWAYS" VBox.vgrow="ALWAYS">
 
             <!-- Formulaire de configuration -->
-            <VBox spacing="15" style="-fx-padding: 20; -fx-background-color: white; -fx-background-radius: 16;
+            <VBox spacing="15" HBox.hgrow="ALWAYS" style="-fx-padding: 20; -fx-background-color: white; -fx-background-radius: 16;
                                       -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.08), 15, 0, 0, 5);
-                                      -fx-min-width: 380;">
+                                      -fx-max-width: 450;">
 
                 <Label text="🌍 Configuration de la Parcelle"
                        style="-fx-font-size: 16px; -fx-font-weight: bold; -fx-text-fill: #065f46;"/>
@@ -143,13 +139,21 @@
             </VBox>
 
             <!-- Résultats -->
-            <VBox spacing="15" style="-fx-min-width: 450;" VBox.vgrow="ALWAYS">
+            <VBox spacing="15" HBox.hgrow="ALWAYS" VBox.vgrow="ALWAYS"
+                  style="-fx-min-width: 350; -fx-background-color: white; -fx-background-radius: 16;
+                         -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.08), 15, 0, 0, 5); -fx-padding: 20;">
+
+                <Label text="📊 Résultats de l'Analyse"
+                       style="-fx-font-size: 16px; -fx-font-weight: bold; -fx-text-fill: #065f46;"/>
 
                 <!-- Résumé et plan -->
-                <VBox fx:id="resultContainer" spacing="15">
-                    <Label text="📊 Les résultats s'afficheront ici après l'analyse"
-                           style="-fx-font-size: 13px; -fx-text-fill: #6b7280; -fx-font-style: italic;"/>
-                </VBox>
+                <ScrollPane fitToWidth="true" VBox.vgrow="ALWAYS"
+                            style="-fx-background-color: transparent; -fx-background: transparent;">
+                    <VBox fx:id="resultContainer" spacing="15">
+                        <Label text="📊 Les résultats s'afficheront ici après l'analyse"
+                               style="-fx-font-size: 13px; -fx-text-fill: #6b7280; -fx-font-style: italic;"/>
+                    </VBox>
+                </ScrollPane>
 
             </VBox>
         </HBox>

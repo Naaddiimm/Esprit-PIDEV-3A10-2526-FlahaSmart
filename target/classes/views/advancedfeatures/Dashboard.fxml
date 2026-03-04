@@ -14,11 +14,8 @@
     <VBox spacing="30" alignment="TOP_CENTER">
 
         <padding>
-            <Insets top="25" right="25" bottom="25" left="25"/>
+            <Insets top="25" right="25" bottom="125" left="25"/>
         </padding>
-
-        <!-- titre -->
-        <Label text="📊 Tableau de bord" styleClass="dashboard-title"/>
 
         <!-- Section principale avec stats -->
         <HBox spacing="20" alignment="TOP_CENTER">

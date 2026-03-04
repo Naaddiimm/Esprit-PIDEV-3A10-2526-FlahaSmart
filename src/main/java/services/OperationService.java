@@ -1,5 +1,6 @@
 package services;
 
+import controllers.Auth.Session;
 import entities.Operation;
 import utilies.MyDataBase;
 
@@ -16,13 +17,17 @@ public class OperationService implements Iservice<Operation> {
     }
     @Override
     public void ajouter(Operation operation) throws SQLException {
-        int user = 1; // ID de l'utilisateur par défaut
+        // Récupérer l'ID de l'utilisateur connecté via Session
+        int userId = Session.isLoggedIn() ? Session.getCurrentUser().getId_user() : -1;
+        if (userId == -1) {
+            throw new SQLException("Aucun utilisateur connecté. Impossible d'ajouter l'opération.");
+        }
 
         String sql = "INSERT INTO operation (id_equipement, id_user, type_operation, date_debut, date_fin) VALUES (?, ?, ?, ?, ?)";
 
         PreparedStatement ps = connection.prepareStatement(sql);
         ps.setInt(1, operation.getId_equipement());
-        ps.setInt(2, user);
+        ps.setInt(2, userId);
         ps.setString(3, operation.getType_operation());
         ps.setDate(4, operation.getDate_debut());
         ps.setDate(5, operation.getDate_fin());
@@ -109,10 +114,19 @@ public class OperationService implements Iservice<Operation> {
     public List<Operation> afficher() throws SQLException {
         List<Operation> operations = new ArrayList<>();
 
-        String sql = "SELECT o.*, e.nom AS nom_equipement\n" +
-                "FROM operation o\n" +
-                "JOIN equipement e ON o.id_equipement = e.id_equipement";
+        // Récupérer l'ID de l'utilisateur connecté
+        int userId = Session.isLoggedIn() ? Session.getCurrentUser().getId_user() : -1;
+        if (userId == -1) {
+            System.out.println("⚠️ Aucun utilisateur connecté. Liste vide.");
+            return operations;
+        }
+
+        String sql = "SELECT o.*, e.nom AS nom_equipement " +
+                "FROM operation o " +
+                "JOIN equipement e ON o.id_equipement = e.id_equipement " +
+                "WHERE o.id_user = ?";
         PreparedStatement ps = connection.prepareStatement(sql);
+        ps.setInt(1, userId);
         ResultSet rs = ps.executeQuery();
 
         while (rs.next()) {

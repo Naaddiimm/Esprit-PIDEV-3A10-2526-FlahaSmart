@@ -10,20 +10,15 @@
             xmlns:fx="http://javafx.com/fxml"
             fx:controller="controllers.advancedfeatures.PlantDiseaseController"
             fitToWidth="true"
-            style="-fx-background-color: transparent; -fx-background: transparent;">
+            style="-fx-background-color: transparent; -fx-background: transparent;"
+             stylesheets="@/styles/style_css.css" >
 
     <VBox fx:id="mainContainer" spacing="20" alignment="TOP_CENTER"
           style="-fx-background-color: linear-gradient(to bottom right, #f0fdf4, #ecfdf5, #d1fae5); -fx-padding: 30;">
 
-        <!-- Titre principal -->
-        <VBox alignment="CENTER" spacing="8">
-            <Label text="🔬 Analyse des Plantes"
-                   style="-fx-font-size: 28px; -fx-font-weight: bold; -fx-text-fill: #065f46;
-                          -fx-effect: dropshadow(gaussian, rgba(16, 185, 129, 0.2), 3, 0, 0, 1);"/>
-            <Label text="Identifiez vos plantes grâce à l'intelligence artificielle PlantNet"
-                   style="-fx-font-size: 14px; -fx-text-fill: #6b7280;"/>
-        </VBox>
-
+        <padding>
+            <Insets top="25" right="30" bottom="125" left="30"/>
+        </padding>
         <!-- Zone d'upload -->
         <VBox fx:id="dropZone" alignment="CENTER" spacing="15"
               style="-fx-background-color: linear-gradient(to bottom, #ffffff, #f0fdf4);

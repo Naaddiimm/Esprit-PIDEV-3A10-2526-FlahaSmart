@@ -4,35 +4,23 @@
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
 
-<VBox xmlns="http://javafx.com/javafx"
-      xmlns:fx="http://javafx.com/fxml"
-      fx:controller="controllers.operation.Ajout_Op_Controller"
-      spacing="0" alignment="TOP_CENTER"
-      stylesheets="@/styles/style_css.css"
-      VBox.vgrow="ALWAYS" HBox.hgrow="ALWAYS">
+<StackPane xmlns="http://javafx.com/javafx"
+           xmlns:fx="http://javafx.com/fxml"
+           fx:controller="controllers.operation.Ajout_Op_Controller"
+           stylesheets="@/styles/style_css.css"
+           VBox.vgrow="ALWAYS" HBox.hgrow="ALWAYS"
+           style="-fx-background-color: linear-gradient(to bottom right, #f0fdf4, #ecfdf5, #d1fae5);">
 
-    <!-- En-tête de la page -->
-    <HBox styleClass="form-header" alignment="CENTER_LEFT" spacing="15">
-        <padding>
-            <Insets top="25" right="30" bottom="25" left="30"/>
-        </padding>
-        <VBox spacing="5">
-            <Label text="➕ Nouvelle Opération" styleClass="form-page-title"/>
-            <Label text="Remplissez les informations pour créer une nouvelle opération agricole" styleClass="form-page-subtitle"/>
-        </VBox>
-    </HBox>
-
-    <!-- Contenu principal -->
-    <ScrollPane fitToWidth="true" fitToHeight="true" VBox.vgrow="ALWAYS" styleClass="form-scroll-pane">
-        <VBox alignment="CENTER" VBox.vgrow="ALWAYS">
-            <padding>
-                <Insets top="40" right="50" bottom="40" left="50"/>
-            </padding>
-
+    <!-- Contenu principal centré -->
+    <ScrollPane fitToWidth="true"
+                style="-fx-background-color: transparent; -fx-background: transparent;"
+                StackPane.alignment="CENTER">
+        <StackPane style="-fx-background-color: transparent;">
             <!-- Carte du formulaire -->
-            <VBox styleClass="form-card" spacing="25" maxWidth="600" minWidth="400">
+            <VBox styleClass="form-card" spacing="25" maxWidth="550" minWidth="400"
+                  StackPane.alignment="CENTER">
                 <padding>
-                    <Insets top="35" right="40" bottom="35" left="40"/>
+                    <Insets top="70" right="40" bottom="135" left="40"/>
                 </padding>
 
                 <!-- Icône et titre -->
@@ -86,7 +74,7 @@
                 </HBox>
 
             </VBox>
-        </VBox>
+        </StackPane>
     </ScrollPane>
 
-</VBox>
+</StackPane>

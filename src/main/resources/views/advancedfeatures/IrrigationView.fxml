@@ -8,20 +8,14 @@
             xmlns:fx="http://javafx.com/fxml"
             fx:controller="controllers.advancedfeatures.IrrigationController"
             fitToWidth="true"
-            style="-fx-background-color: transparent; -fx-background: transparent;">
+            style="-fx-background-color: transparent; -fx-background: transparent;"
+            stylesheets="@/styles/style_css.css" >
 
     <VBox fx:id="mainContainer" spacing="20" alignment="TOP_CENTER"
           style="-fx-background-color: linear-gradient(to bottom right, #f0fdf4, #ecfdf5, #d1fae5); -fx-padding: 25;">
-        <HBox styleClass="form-header" alignment="CENTER_LEFT" spacing="15">
-            <padding>
-                <Insets top="25" right="30" bottom="25" left="30"/>
-            </padding>
-            <VBox spacing="5">
-                <Label text="💧 Contrôle de l’Eau pour vos Cultures" styleClass="form-page-title"/>
-                <Label text="Optimisez votre irrigation selon la météo, le sol et vos cultures" styleClass="form-page-subtitle"/>
-            </VBox>
-        </HBox>
-
+        <padding>
+            <Insets top="25" right="30" bottom="125" left="30"/>
+        </padding>
         <!-- Section Configuration -->
         <HBox spacing="20" alignment="TOP_CENTER">
 

@@ -9,5 +9,8 @@
         <module name="CRUD_Operation" />
       </profile>
     </annotationProcessing>
+    <bytecodeTargetLevel>
+      <module name="FlahaSmart" target="17" />
+    </bytecodeTargetLevel>
   </component>
 </project>

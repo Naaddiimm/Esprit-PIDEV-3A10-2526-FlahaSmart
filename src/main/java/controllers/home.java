@@ -30,8 +30,11 @@ public class home extends Application {
             Parent root = FXMLLoader.load(getClass().getResource("/login.fxml"));
             Scene scene = new Scene(root);
             stage.setScene(scene);
-            stage.setFullScreen(true);
-            stage.setMaximized(true);
+            //stage.setFullScreen(true);
+            //stage.setMaximized(true);
+            scene.getStylesheets().add(
+                    getClass().getResource("/styles/style_css.css").toExternalForm()
+            );
             stage.setTitle("FlahaSmart - Connexion");
             stage.show();
 

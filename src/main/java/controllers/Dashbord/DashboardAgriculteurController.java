@@ -102,21 +102,21 @@ public class DashboardAgriculteurController implements Initializable {
 
     // Handlers de navigation
     @FXML public void handleAccueil(ActionEvent e) { loadView("/views/agriculteur/Accueil.fxml"); setStatus("Accueil"); }
-    @FXML public void handleStatistiques(ActionEvent e) { loadView("/views/agriculteur/Statistiques.fxml"); setStatus("Statistiques"); }
+    @FXML public void handleStatistiques(ActionEvent e) { loadView("/views/advancedfeatures/Dashboard.fxml"); setStatus("Statistiques"); }
     @FXML public void handleParametres(ActionEvent e) { loadView("/views/agriculteur/Parametres.fxml"); setStatus("Paramètres"); }
-    @FXML public void handleMeteo(ActionEvent e) { loadView("/views/agriculteur/Meteo.fxml"); setStatus("Météo"); }
+    @FXML public void handleMeteo(ActionEvent e) { loadView("/views/advancedfeatures/WeatherView.fxml"); setStatus("Météo"); }
 
     // Opérations
-    @FXML public void handleAjouterOperation(ActionEvent e) { loadView("/views/agriculteur/AjouterOperation.fxml"); setStatus("Ajouter opération"); }
-    @FXML public void handleListeOperations(ActionEvent e) { loadView("/views/agriculteur/ListeOperations.fxml"); setStatus("Liste opérations"); }
-    @FXML public void handleAjouterEquipement(ActionEvent e) { loadView("/views/agriculteur/AjouterEquipement.fxml"); setStatus("Ajouter équipement"); }
-    @FXML public void handleListeEquipements(ActionEvent e) { loadView("/views/agriculteur/ListeEquipements.fxml"); setStatus("Liste équipements"); }
+    @FXML public void handleAjouterOperation(ActionEvent e) { loadView("/views/operation/AjouterOp.fxml"); setStatus("Ajouter opération"); }
+    @FXML public void handleListeOperations(ActionEvent e) { loadView("/views/operation/ListeOp.fxml"); setStatus("Liste opérations"); }
+    @FXML public void handleAjouterEquipement(ActionEvent e) { loadView("/views/equipement/AjouterEq.fxml"); setStatus("Ajouter équipement"); }
+    @FXML public void handleListeEquipements(ActionEvent e) { loadView("/views/equipement/ListeEq.fxml"); setStatus("Liste équipements"); }
 
     // Outils
-    @FXML public void handleAgriBot(ActionEvent e) { loadView("/views/agriculteur/AgriBot.fxml"); setStatus("AgriBot"); }
-    @FXML public void handleAnalyseMaladie(ActionEvent e) { loadView("/views/agriculteur/AnalyseMaladie.fxml"); setStatus("Analyse Maladie"); }
-    @FXML public void handleIrrigation(ActionEvent e) { loadView("/views/agriculteur/Irrigation.fxml"); setStatus("Irrigation"); }
-    @FXML public void handleRotationCultures(ActionEvent e) { loadView("/views/agriculteur/RotationCultures.fxml"); setStatus("Rotation Cultures"); }
+    @FXML public void handleAgriBot(ActionEvent e) { loadView("/views/advancedfeatures/ChatbotView.fxml"); setStatus("AgriBot"); }
+    @FXML public void handleAnalyseMaladie(ActionEvent e) { loadView("/views/advancedfeatures/PlantDiseaseView.fxml"); setStatus("Analyse Maladie"); }
+    @FXML public void handleIrrigation(ActionEvent e) { loadView("/views/advancedfeatures/IrrigationView.fxml"); setStatus("Irrigation"); }
+    @FXML public void handleRotationCultures(ActionEvent e) { loadView("/views/advancedfeatures/RotationCultureView.fxml"); setStatus("Rotation Cultures"); }
 
     // PROFIL - CORRIGÉ
     @FXML
@@ -205,7 +205,7 @@ public class DashboardAgriculteurController implements Initializable {
         if (dateText != null) dateText.setText(today);
         if (dateLabel != null) dateLabel.setText(today);
 
-        loadView("/views/agriculteur/Accueil.fxml");
+        loadView("/views/advancedfeatures/Dashboard.fxml");
     }
 
     private void setStatus(String msg) {
