@@ -9,7 +9,7 @@
 <h1 align="center">🌾 FlahaSmart</h1>
 
 <p align="center">
-  <strong>Plateforme intelligente de gestion agricole avec IA et APIs intégrées</strong>
+  <strong>Plateform iintelligente de gestion agricole avec IA et APIs intégrées</strong>
 </p>
 
 <p align="center">
