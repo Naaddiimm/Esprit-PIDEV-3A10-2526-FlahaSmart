@@ -1,0 +1,166 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.geometry.Insets?>
+
+<ScrollPane xmlns="http://javafx.com/javafx"
+            xmlns:fx="http://javafx.com/fxml"
+            fx:controller="controllers.RotationCultureController"
+            fitToWidth="true"
+            style="-fx-background-color: transparent; -fx-background: transparent;">
+
+    <VBox spacing="15" alignment="TOP_CENTER"
+          style="-fx-background-color: linear-gradient(to bottom right, #f0fdf4, #ecfdf5, #d1fae5); ">
+
+        <HBox styleClass="form-header" alignment="CENTER_LEFT" spacing="15">
+            <padding>
+                <Insets top="25" right="30" left="30" bottom="25" />
+            </padding>
+            <VBox >
+                <Label text="🔄 Rotation des Cultures Optimisée" styleClass="form-page-title"/>
+                <Label text="Optimisez vos rotations pour préserver la fertilité du sol et maximiser les rendements" styleClass="form-page-subtitle"/>
+            </VBox>
+        </HBox>
+
+        <!-- Section principale -->
+        <HBox spacing="20" alignment="TOP_CENTER">
+
+            <!-- Formulaire de configuration -->
+            <VBox spacing="15" style="-fx-padding: 20; -fx-background-color: white; -fx-background-radius: 16;
+                                      -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.08), 15, 0, 0, 5);
+                                      -fx-min-width: 380;">
+
+                <Label text="🌍 Configuration de la Parcelle"
+                       style="-fx-font-size: 16px; -fx-font-weight: bold; -fx-text-fill: #065f46;"/>
+
+                <VBox spacing="15">
+                    <!-- Type de sol -->
+                    <VBox spacing="5">
+                        <Label text="🟤 Type de sol" style="-fx-font-size: 12px; -fx-text-fill: #374151;"/>
+                        <ComboBox fx:id="typeSolCombo" prefWidth="340"/>
+                    </VBox>
+
+                    <VBox spacing="5">
+                        <Label text="Surface (ha)" style="-fx-font-size: 12px; -fx-text-fill: #374151;"/>
+                        <TextField fx:id="surfaceField" promptText="Ex: 5.0" prefWidth="100"/>
+                    </VBox>
+                </VBox>
+
+                <Separator/>
+
+                <!-- Historique des cultures -->
+                <Label text="📜 Historique des Cultures"
+                       style="-fx-font-size: 14px; -fx-font-weight: bold; -fx-text-fill: #059669;"/>
+
+                <HBox spacing="15">
+                    <VBox spacing="5" HBox.hgrow="ALWAYS">
+                        <Label text="Dernière culture" style="-fx-font-size: 12px; -fx-text-fill: #374151;"/>
+                        <ComboBox fx:id="derniereCultureCombo" maxWidth="Infinity"/>
+                    </VBox>
+                    <VBox spacing="5" HBox.hgrow="ALWAYS">
+                        <Label text="Avant-dernière" style="-fx-font-size: 12px; -fx-text-fill: #374151;"/>
+                        <ComboBox fx:id="avantDerniereCultureCombo" maxWidth="Infinity"/>
+                    </VBox>
+                </HBox>
+
+                <HBox spacing="10" alignment="CENTER_LEFT">
+                    <Label text="Années depuis jachère:" style="-fx-font-size: 12px; -fx-text-fill: #374151;"/>
+                    <Spinner fx:id="anneesJachereSpinner" prefWidth="80"/>
+                </HBox>
+
+                <Separator/>
+
+                <!-- État nutritionnel -->
+                <Label text=" État Nutritionnel du Sol"
+                       style="-fx-font-size: 14px; -fx-font-weight: bold; -fx-text-fill: #059669;"/>
+
+                <!-- Azote -->
+                <VBox spacing="10" alignment="CENTER_LEFT">
+                    <Label text="Azote (N):" prefWidth="100" style="-fx-font-size: 12px; -fx-text-fill: #374151;"/>
+                   <HBox>
+                       <Slider fx:id="azoteSlider" min="1" max="10" value="5"
+                               showTickLabels="true" showTickMarks="true" majorTickUnit="1"
+                               HBox.hgrow="ALWAYS"/>
+                       <Label fx:id="azoteValue" text="5/10" prefWidth="50"/>
+                   </HBox>
+                </VBox>
+
+                <!-- Phosphore -->
+                <VBox spacing="10" alignment="CENTER_LEFT">
+                    <Label text="Phosphore (P):" prefWidth="100" style="-fx-font-size: 12px; -fx-text-fill: #374151"/>
+                    <HBox>
+                        <Slider fx:id="phosphoreSlider" min="1" max="10" value="5"
+                                showTickLabels="true" showTickMarks="true" majorTickUnit="1"
+                                HBox.hgrow="ALWAYS"/>
+                        <Label fx:id="phosphoreValue" text="5/10" prefWidth="50"/>
+                    </HBox>
+                </VBox>
+
+                <!-- Potassium -->
+                <VBox spacing="10" alignment="CENTER_LEFT">
+                    <Label text="Potassium (K):" prefWidth="100" style="-fx-font-size: 12px; -fx-text-fill: #374151"/>
+                    <HBox>
+                        <Slider fx:id="potassiumSlider" min="1" max="10" value="5"
+                                showTickLabels="true" showTickMarks="true" majorTickUnit="1"
+                                HBox.hgrow="ALWAYS"/>
+                        <Label fx:id="potassiumValue" text="5/10" prefWidth="50"/>
+                    </HBox>
+                </VBox>
+
+                <!-- pH -->
+                <VBox spacing="10" alignment="CENTER_LEFT">
+                    <Label text="pH du sol:" prefWidth="100" style="-fx-font-size: 12px; -fx-text-fill: #374151"/>
+                    <HBox>
+                        <Slider fx:id="phSlider" min="4.0" max="9.0" value="6.5"
+                                showTickLabels="true" showTickMarks="true" majorTickUnit="1"
+                                HBox.hgrow="ALWAYS"/>
+                        <Label fx:id="phValue" text="6.5" prefWidth="50"/>
+                    </HBox>
+                </VBox>
+
+                <Separator/>
+
+                <!-- Années de rotation -->
+                <HBox spacing="10" alignment="CENTER_LEFT">
+                    <Label text="📅 Plan sur:" style="-fx-font-size: 12px; -fx-text-fill: #374151"/>
+                    <Spinner fx:id="anneesRotationSpinner" prefWidth="80"/>
+                    <Label text="années" style="-fx-font-size: 12px; -fx-text-fill: #374151"/>
+                </HBox>
+
+                <!-- Boutons -->
+                <HBox spacing="15" alignment="CENTER">
+                    <Button text="🔍 Analyser et Recommander" onAction="#handleAnalyser"
+                            style="-fx-background-color: linear-gradient(to right, #047857, #059669);
+                                   -fx-text-fill: white; -fx-font-weight: bold; -fx-font-size: 14px;
+                                   -fx-background-radius: 12; -fx-padding: 14 25; -fx-cursor: hand;"/>
+                    <Button text="🔄 Réinitialiser" onAction="#handleReset"
+                            style="-fx-background-color: #f3f4f6; -fx-text-fill: #374151;
+                                   -fx-font-weight: bold; -fx-background-radius: 12; -fx-padding: 14 20;"/>
+                </HBox>
+
+                <Label fx:id="statusLabel" text="" style="-fx-font-size: 12px;"/>
+            </VBox>
+
+            <!-- Résultats -->
+            <VBox spacing="15" style="-fx-min-width: 450;" VBox.vgrow="ALWAYS">
+
+                <!-- Résumé et plan -->
+                <VBox fx:id="resultContainer" spacing="15">
+                    <Label text="📊 Les résultats s'afficheront ici après l'analyse"
+                           style="-fx-font-size: 13px; -fx-text-fill: #6b7280; -fx-font-style: italic;"/>
+                </VBox>
+
+            </VBox>
+        </HBox>
+
+
+        <!-- Footer -->
+        <VBox alignment="CENTER" spacing="5">
+            <Label text="💡 Conseil: Alternez légumineuses et céréales pour optimiser l'azote naturellement"
+                   style="-fx-font-size: 11px; -fx-text-fill: #6b7280;"/>
+        </VBox>
+
+    </VBox>
+</ScrollPane>
+

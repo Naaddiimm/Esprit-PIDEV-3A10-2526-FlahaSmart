@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<VBox xmlns="http://javafx.com/javafx"
+      xmlns:fx="http://javafx.com/fxml"
+      fx:controller="controllers.equipement.Ajout_Eq_Controller"
+      spacing="0" alignment="TOP_CENTER"
+      stylesheets="@/styles/style.css"
+      VBox.vgrow="ALWAYS" HBox.hgrow="ALWAYS">
+
+    <!-- En-tête de la page -->
+    <HBox styleClass="form-header" alignment="CENTER_LEFT" spacing="15">
+        <padding>
+            <Insets top="25" right="30" bottom="25" left="30"/>
+        </padding>
+        <VBox spacing="5">
+            <Label text="🔧 Nouvel Équipement" styleClass="form-page-title"/>
+            <Label text="Ajoutez un nouvel équipement agricole à votre inventaire" styleClass="form-page-subtitle"/>
+        </VBox>
+    </HBox>
+
+    <!-- Contenu principal -->
+    <ScrollPane fitToWidth="true" fitToHeight="true" VBox.vgrow="ALWAYS" styleClass="form-scroll-pane">
+        <VBox alignment="CENTER" VBox.vgrow="ALWAYS">
+            <padding>
+                <Insets top="40" right="50" bottom="40" left="50"/>
+            </padding>
+
+            <!-- Carte du formulaire -->
+            <VBox styleClass="form-card" spacing="25" maxWidth="550" minWidth="400">
+                <padding>
+                    <Insets top="35" right="40" bottom="35" left="40"/>
+                </padding>
+
+                <!-- Icône et titre -->
+                <VBox alignment="CENTER" spacing="10">
+                    <Label text="🚜" styleClass="form-icon"/>
+                    <Label text="Informations de l'équipement" styleClass="form-section-title"/>
+                </VBox>
+
+                <!-- Champs du formulaire -->
+                <VBox spacing="20">
+
+                    <!-- Nom de l'équipement -->
+                    <VBox spacing="8" styleClass="form-group">
+                        <Label text="Nom de l'équipement" styleClass="form-label"/>
+                        <TextField fx:id="nomField" promptText="Ex: Tracteur, Drone..."
+                                   styleClass="form-input" prefHeight="45"/>
+                    </VBox>
+
+                    <!-- Type d'équipement -->
+                    <VBox spacing="8" styleClass="form-group">
+                        <Label text="Type d'équipement" styleClass="form-label"/>
+                        <ComboBox fx:id="typeCombo" promptText="Sélectionnez le type d'équipement"
+                                  styleClass="form-input" prefHeight="45" maxWidth="Infinity"/>
+                    </VBox>
+
+                    <!-- Info supplémentaire -->
+                    <HBox spacing="10" alignment="CENTER_LEFT" styleClass="form-info-box">
+                        <Label text="ℹ️" styleClass="info-icon"/>
+                        <Label text="L'équipement sera automatiquement disponible pour les opérations après l'ajout."
+                               styleClass="form-info-text" wrapText="true"/>
+                    </HBox>
+
+                </VBox>
+
+                <!-- Boutons d'action -->
+                <HBox spacing="15" alignment="CENTER">
+                    <padding>
+                        <Insets top="15"/>
+                    </padding>
+
+                    <Button text=" Ajouter l'équipement" onAction="#ajouterEquipement"
+                            styleClass="form-submit-button" prefWidth="200" prefHeight="45"/>
+                </HBox>
+
+            </VBox>
+        </VBox>
+    </ScrollPane>
+
+</VBox>

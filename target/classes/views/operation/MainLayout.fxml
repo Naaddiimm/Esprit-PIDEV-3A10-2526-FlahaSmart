@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<BorderPane xmlns="http://javafx.com/javafx"
+            xmlns:fx="http://javafx.com/fxml"
+            fx:id="root"
+            fx:controller="controllers.operation.MainLayoutController"
+            prefHeight="600.0" prefWidth="800.0">
+
+    <left>
+        <VBox spacing="10" prefWidth="250" styleClass="sidebar">
+            <children>
+                <Button text="Ajouter une opération " onAction="#goToAdd" styleClass="menu-button"/>
+                <Button text="liste des opérations " onAction="#goToList" styleClass="menu-button"/>
+                <Button text="Ajouter une opération " onAction="#goToAdd" styleClass="menu-button"/>
+                <Button text="liste des opérations " onAction="#goToList" styleClass="menu-button"/>
+            </children>
+        </VBox>
+    </left>
+
+</BorderPane>

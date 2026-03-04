@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.geometry.Insets?>
+
+<StackPane xmlns="http://javafx.com/javafx"
+           xmlns:fx="http://javafx.com/fxml"
+           fx:controller="controllers.operation.ModifierOpController">
+
+    <VBox spacing="15" maxWidth="350" styleClass="card" >
+        <padding>
+            <Insets top="20" right="20" bottom="20" left="20"/>
+        </padding>
+
+        <Label text="Modification " styleClass="title"/>
+
+        <Label text="Type"/>
+        <TextField fx:id="typeField" promptText="Entrer le type"/>
+
+        <Label text="Équipement"/>
+        <ComboBox fx:id="equipementCombo" promptText="Choisir équipement"/>
+
+        <Label text="Date début"/>
+        <DatePicker fx:id="dateDebutPicker"/>
+
+        <Label text="Date fin"/>
+        <DatePicker fx:id="dateFinPicker"/>
+
+        <Button text="Enregistrer"
+                onAction="#updateOperation"
+                styleClass="primary-button"/>
+    </VBox>
+
+</StackPane>

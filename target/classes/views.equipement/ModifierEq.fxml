@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<StackPane xmlns="http://javafx.com/javafx"
+           xmlns:fx="http://javafx.com/fxml"
+           fx:controller="controllers.equipement.ModifierEqController">
+
+    <VBox spacing="15" maxWidth="350" styleClass="card">
+        <padding>
+            <Insets top="20" right="20" bottom="20" left="20"/>
+        </padding>
+
+        <Label text="Ajouter un équipement" styleClass="title"/>
+
+        <Label text="Nom"/>
+        <TextField fx:id="nomField"/>
+
+        <Label text="Type"/>
+        <ComboBox fx:id="typeCombo" promptText="Choisir type"/>
+        <Button text="modifier" onAction="#updateEquipement" styleClass="primary-button"/>
+
+    </VBox>
+
+</StackPane>

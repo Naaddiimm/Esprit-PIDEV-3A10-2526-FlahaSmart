@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.geometry.Insets?>
+
+<VBox spacing="15"
+      xmlns="http://javafx.com/javafx"
+      xmlns:fx="http://javafx.com/fxml"
+      fx:controller="controllers.equipement.ListeEqController">
+
+    <HBox styleClass="form-header" alignment="CENTER_LEFT" spacing="15">
+        <padding>
+            <Insets top="25" right="30" bottom="25" left="30"/>
+        </padding>
+        <VBox spacing="5">
+            <Label text="📋 Liste des Equipement" styleClass="form-page-title"/>
+            <Label text="Visualisez et gérez vos équipements agricoles" styleClass="form-page-subtitle"/>
+        </VBox>
+    </HBox>
+
+    <!-- ================= BARRE OUTILS ================= -->
+    <HBox spacing="10">
+        <padding>
+            <Insets top="20" right="20" left="20"/>
+        </padding>
+
+        <TextField fx:id="searchField"
+                   promptText="Rechercher par type..."
+                   HBox.hgrow="ALWAYS"/>
+
+        <Button text="Trier A-Z"  onAction="#trier" styleClass="form-submit-button" />
+    </HBox>
+
+    <HBox alignment="CENTER">
+    <Label text="Liste des Équipements" styleClass="liste"/>
+    </HBox>
+
+    <!-- ================= LISTE ================= -->
+    <ScrollPane fitToWidth="true" VBox.vgrow="ALWAYS">
+        <content>
+            <VBox fx:id="listContainer" spacing="15">
+                <padding>
+                    <Insets right="20" bottom="20" left="20"/>
+                </padding>
+            </VBox>
+        </content>
+    </ScrollPane>
+
+</VBox>

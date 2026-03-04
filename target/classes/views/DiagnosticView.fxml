@@ -1,0 +1,250 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<ScrollPane xmlns="http://javafx.com/javafx"
+            xmlns:fx="http://javafx.com/fxml"
+            fx:controller="controllers.DiagnosticController"
+            fitToWidth="true"
+            style="-fx-background-color: transparent; -fx-background: transparent;">
+
+    <VBox spacing="20" alignment="TOP_CENTER"
+          style="-fx-background-color: linear-gradient(to bottom right, #f0fdf4, #ecfdf5, #d1fae5); -fx-padding: 25;">
+
+        <!-- Titre principal -->
+        <VBox alignment="CENTER" spacing="8">
+            <Label text="🔧 Diagnostic Intelligent des Équipements"
+                   style="-fx-font-size: 26px; -fx-font-weight: bold; -fx-text-fill: #065f46;
+                          -fx-effect: dropshadow(gaussian, rgba(16, 185, 129, 0.2), 3, 0, 0, 1);"/>
+            <Label text="Analysez l'état de vos équipements et recevez des conseils professionnels"
+                   style="-fx-font-size: 13px; -fx-text-fill: #6b7280;"/>
+        </VBox>
+
+        <!-- Section Configuration -->
+        <HBox spacing="20" alignment="TOP_CENTER">
+
+            <!-- Formulaire de diagnostic -->
+            <VBox spacing="15" style="-fx-padding: 20; -fx-background-color: white; -fx-background-radius: 16;
+                                      -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.08), 15, 0, 0, 5);
+                                      -fx-min-width: 450;">
+
+                <Label text="📋 Critères de Diagnostic"
+                       style="-fx-font-size: 16px; -fx-font-weight: bold; -fx-text-fill: #065f46;"/>
+
+                <!-- Sélection équipement -->
+                <VBox spacing="5">
+                    <Label text="🔧 Équipement à diagnostiquer" style="-fx-font-size: 12px; -fx-text-fill: #374151;"/>
+                    <ComboBox fx:id="equipementCombo" prefWidth="400" promptText="Sélectionner un équipement"/>
+                </VBox>
+
+                <Separator/>
+
+                <!-- Critères avec sliders -->
+                <Label text="📊 Évaluation des critères (1-10)"
+                       style="-fx-font-size: 13px; -fx-font-weight: bold; -fx-text-fill: #059669;"/>
+
+                <!-- État Général -->
+                <HBox spacing="10" alignment="CENTER_LEFT">
+                    <Label text="État Général:" prefWidth="150" style="-fx-font-size: 12px; -fx-text-fill: #059669;"/>
+                    <Slider fx:id="etatGeneralSlider" min="1" max="10" value="5"
+                            showTickLabels="true" showTickMarks="true" majorTickUnit="1" minorTickCount="0"
+                            HBox.hgrow="ALWAYS"/>
+                    <Label fx:id="etatGeneralValue" text="5" prefWidth="30"/>
+                </HBox>
+
+                <!-- Usure -->
+                <HBox spacing="10" alignment="CENTER_LEFT">
+                    <Label text="Niveau d'Usure:" prefWidth="150" style="-fx-font-size: 12px;"/>
+                    <Slider fx:id="usureSlider" min="1" max="10" value="5"
+                            showTickLabels="true" showTickMarks="true" majorTickUnit="1" minorTickCount="0"
+                            HBox.hgrow="ALWAYS"/>
+                    <Label fx:id="usureValue" text="5" prefWidth="30"/>
+                </HBox>
+
+                <!-- Performance Moteur -->
+                <HBox spacing="10" alignment="CENTER_LEFT">
+                    <Label text="Performance Moteur:" prefWidth="150" style="-fx-font-size: 12px;"/>
+                    <Slider fx:id="moteurSlider" min="1" max="10" value="5"
+                            showTickLabels="true" showTickMarks="true" majorTickUnit="1" minorTickCount="0"
+                            HBox.hgrow="ALWAYS"/>
+                    <Label fx:id="moteurValue" text="5" prefWidth="30"/>
+                </HBox>
+
+                <!-- Système Hydraulique -->
+                <HBox spacing="10" alignment="CENTER_LEFT">
+                    <Label text="Système Hydraulique:" prefWidth="150" style="-fx-font-size: 12px;"/>
+                    <Slider fx:id="hydrauliqueSlider" min="1" max="10" value="5"
+                            showTickLabels="true" showTickMarks="true" majorTickUnit="1" minorTickCount="0"
+                            HBox.hgrow="ALWAYS"/>
+                    <Label fx:id="hydrauliqueValue" text="5" prefWidth="30"/>
+                </HBox>
+
+                <!-- Pneumatiques -->
+                <HBox spacing="10" alignment="CENTER_LEFT">
+                    <Label text="Pneumatiques:" prefWidth="150" style="-fx-font-size: 12px;"/>
+                    <Slider fx:id="pneumatiquesSlider" min="1" max="10" value="5"
+                            showTickLabels="true" showTickMarks="true" majorTickUnit="1" minorTickCount="0"
+                            HBox.hgrow="ALWAYS"/>
+                    <Label fx:id="pneumatiquesValue" text="5" prefWidth="30"/>
+                </HBox>
+
+                <!-- Système Électrique -->
+                <HBox spacing="10" alignment="CENTER_LEFT">
+                    <Label text="Système Électrique:" prefWidth="150" style="-fx-font-size: 12px;"/>
+                    <Slider fx:id="electriqueSlider" min="1" max="10" value="5"
+                            showTickLabels="true" showTickMarks="true" majorTickUnit="1" minorTickCount="0"
+                            HBox.hgrow="ALWAYS"/>
+                    <Label fx:id="electriqueValue" text="5" prefWidth="30"/>
+                </HBox>
+
+                <!-- Freinage -->
+                <HBox spacing="10" alignment="CENTER_LEFT">
+                    <Label text="Système de Freinage:" prefWidth="150" style="-fx-font-size: 12px;"/>
+                    <Slider fx:id="freinageSlider" min="1" max="10" value="5"
+                            showTickLabels="true" showTickMarks="true" majorTickUnit="1" minorTickCount="0"
+                            HBox.hgrow="ALWAYS"/>
+                    <Label fx:id="freinageValue" text="5" prefWidth="30"/>
+                </HBox>
+
+                <!-- Niveau Huile -->
+                <HBox spacing="10" alignment="CENTER_LEFT">
+                    <Label text="Niveau d'Huile:" prefWidth="150" style="-fx-font-size: 12px;"/>
+                    <Slider fx:id="huileSlider" min="1" max="10" value="5"
+                            showTickLabels="true" showTickMarks="true" majorTickUnit="1" minorTickCount="0"
+                            HBox.hgrow="ALWAYS"/>
+                    <Label fx:id="huileValue" text="5" prefWidth="30"/>
+                </HBox>
+
+                <!-- Filtres -->
+                <HBox spacing="10" alignment="CENTER_LEFT">
+                    <Label text="État des Filtres:" prefWidth="150" style="-fx-font-size: 12px;"/>
+                    <Slider fx:id="filtresSlider" min="1" max="10" value="5"
+                            showTickLabels="true" showTickMarks="true" majorTickUnit="1" minorTickCount="0"
+                            HBox.hgrow="ALWAYS"/>
+                    <Label fx:id="filtresValue" text="5" prefWidth="30"/>
+                </HBox>
+
+                <!-- Courroies -->
+                <HBox spacing="10" alignment="CENTER_LEFT">
+                    <Label text="État des Courroies:" prefWidth="150" style="-fx-font-size: 12px;"/>
+                    <Slider fx:id="courroiesSlider" min="1" max="10" value="5"
+                            showTickLabels="true" showTickMarks="true" majorTickUnit="1" minorTickCount="0"
+                            HBox.hgrow="ALWAYS"/>
+                    <Label fx:id="courroiesValue" text="5" prefWidth="30"/>
+                </HBox>
+
+                <Separator/>
+
+                <!-- Informations complémentaires -->
+                <Label text="⏱ Informations d'utilisation"
+                       style="-fx-font-size: 13px; -fx-font-weight: bold; -fx-text-fill: #059669;"/>
+
+                <HBox spacing="20">
+                    <VBox spacing="5" HBox.hgrow="ALWAYS">
+                        <Label text="Heures d'utilisation" style="-fx-font-size: 12px; -fx-text-fill: #374151;"/>
+                        <TextField fx:id="heuresField" promptText="Ex: 500"/>
+                    </VBox>
+                    <VBox spacing="5" HBox.hgrow="ALWAYS">
+                        <Label text="Jours depuis entretien" style="-fx-font-size: 12px; -fx-text-fill: #374151;"/>
+                        <TextField fx:id="joursEntretienField" promptText="Ex: 30"/>
+                    </VBox>
+                </HBox>
+
+                <!-- Boutons -->
+                <HBox spacing="15" alignment="CENTER">
+                    <Button text="🔍 Lancer le Diagnostic" onAction="#handleDiagnostic"
+                            style="-fx-background-color: linear-gradient(to right, #047857, #059669);
+                                   -fx-text-fill: white; -fx-font-weight: bold; -fx-font-size: 14px;
+                                   -fx-background-radius: 12; -fx-padding: 14 30; -fx-cursor: hand;
+                                   -fx-effect: dropshadow(gaussian, rgba(4, 120, 87, 0.4), 10, 0, 0, 4);"/>
+                    <Button text="🔄 Réinitialiser" onAction="#handleReset"
+                            style="-fx-background-color: #f3f4f6; -fx-text-fill: #374151;
+                                   -fx-font-weight: bold; -fx-font-size: 14px;
+                                   -fx-background-radius: 12; -fx-padding: 14 25; -fx-cursor: hand;"/>
+                </HBox>
+
+                <!-- Status -->
+                <HBox alignment="CENTER" spacing="10">
+                    <ProgressIndicator fx:id="loadingIndicator" prefWidth="24" prefHeight="24" visible="false"/>
+                    <Label fx:id="statusLabel" text="" style="-fx-font-size: 12px;"/>
+                </HBox>
+            </VBox>
+
+            <!-- Légende -->
+            <VBox spacing="15" style="-fx-padding: 20; -fx-background-color: white; -fx-background-radius: 16;
+                                      -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.08), 15, 0, 0, 5);
+                                      -fx-min-width: 200;">
+
+                <Label text="📖 Légende des scores"
+                       style="-fx-font-size: 14px; -fx-font-weight: bold; -fx-text-fill: #065f46;"/>
+
+                <VBox spacing="8">
+                    <HBox spacing="8" alignment="CENTER_LEFT">
+                        <Label text="✅" style="-fx-font-size: 14px;"/>
+                        <Label text="8-10: Excellent" style="-fx-font-size: 12px; -fx-text-fill: #059669;"/>
+                    </HBox>
+                    <HBox spacing="8" alignment="CENTER_LEFT">
+                        <Label text="🟢" style="-fx-font-size: 14px;"/>
+                        <Label text="6-7: Bon" style="-fx-font-size: 12px; -fx-text-fill: #22c55e;"/>
+                    </HBox>
+                    <HBox spacing="8" alignment="CENTER_LEFT">
+                        <Label text="🟡" style="-fx-font-size: 14px;"/>
+                        <Label text="4-5: Acceptable" style="-fx-font-size: 12px; -fx-text-fill: #f59e0b;"/>
+                    </HBox>
+                    <HBox spacing="8" alignment="CENTER_LEFT">
+                        <Label text="🟠" style="-fx-font-size: 14px;"/>
+                        <Label text="2-3: À surveiller" style="-fx-font-size: 12px; -fx-text-fill: #ea580c;"/>
+                    </HBox>
+                    <HBox spacing="8" alignment="CENTER_LEFT">
+                        <Label text="🔴" style="-fx-font-size: 14px;"/>
+                        <Label text="1: Critique" style="-fx-font-size: 12px; -fx-text-fill: #dc2626;"/>
+                    </HBox>
+                </VBox>
+
+                <Separator/>
+
+                <Label text="⚠️ Niveaux d'urgence"
+                       style="-fx-font-size: 14px; -fx-font-weight: bold; -fx-text-fill: #065f46;"/>
+
+                <VBox spacing="8">
+                    <HBox spacing="8" alignment="CENTER_LEFT">
+                        <Label text="💚" style="-fx-font-size: 14px;"/>
+                        <Label text="EXCELLENT" style="-fx-font-size: 11px; -fx-text-fill: #059669;"/>
+                    </HBox>
+                    <HBox spacing="8" alignment="CENTER_LEFT">
+                        <Label text="🟢" style="-fx-font-size: 14px;"/>
+                        <Label text="BON" style="-fx-font-size: 11px; -fx-text-fill: #22c55e;"/>
+                    </HBox>
+                    <HBox spacing="8" alignment="CENTER_LEFT">
+                        <Label text="🟡" style="-fx-font-size: 14px;"/>
+                        <Label text="ATTENTION" style="-fx-font-size: 11px; -fx-text-fill: #f59e0b;"/>
+                    </HBox>
+                    <HBox spacing="8" alignment="CENTER_LEFT">
+                        <Label text="🟠" style="-fx-font-size: 14px;"/>
+                        <Label text="URGENT" style="-fx-font-size: 11px; -fx-text-fill: #ea580c;"/>
+                    </HBox>
+                    <HBox spacing="8" alignment="CENTER_LEFT">
+                        <Label text="🔴" style="-fx-font-size: 14px;"/>
+                        <Label text="CRITIQUE" style="-fx-font-size: 11px; -fx-text-fill: #dc2626;"/>
+                    </HBox>
+                </VBox>
+
+                <Separator/>
+
+                <Label text="💡 Conseil"
+                       style="-fx-font-size: 14px; -fx-font-weight: bold; -fx-text-fill: #065f46;"/>
+                <Label text="Évaluez chaque critère honnêtement pour obtenir un diagnostic précis et des conseils adaptés."
+                       style="-fx-font-size: 11px; -fx-text-fill: #6b7280;" wrapText="true"/>
+            </VBox>
+        </HBox>
+
+        <!-- Résultats du diagnostic -->
+        <VBox fx:id="resultContainer" spacing="20" alignment="TOP_CENTER">
+            <!-- Les résultats seront affichés ici -->
+        </VBox>
+
+    </VBox>
+</ScrollPane>
+

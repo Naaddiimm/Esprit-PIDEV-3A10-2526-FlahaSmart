@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<ScrollPane xmlns="http://javafx.com/javafx"
+            xmlns:fx="http://javafx.com/fxml"
+            fx:controller="controllers.IrrigationController"
+            fitToWidth="true"
+            style="-fx-background-color: transparent; -fx-background: transparent;">
+
+    <VBox fx:id="mainContainer" spacing="20" alignment="TOP_CENTER"
+          style="-fx-background-color: linear-gradient(to bottom right, #f0fdf4, #ecfdf5, #d1fae5); -fx-padding: 25;">
+        <HBox styleClass="form-header" alignment="CENTER_LEFT" spacing="15">
+            <padding>
+                <Insets top="25" right="30" bottom="25" left="30"/>
+            </padding>
+            <VBox spacing="5">
+                <Label text="💧 Contrôle de l’Eau pour vos Cultures" styleClass="form-page-title"/>
+                <Label text="Optimisez votre irrigation selon la météo, le sol et vos cultures" styleClass="form-page-subtitle"/>
+            </VBox>
+        </HBox>
+
+        <!-- Section Configuration -->
+        <HBox spacing="20" alignment="TOP_CENTER">
+
+            <!-- Formulaire de calcul -->
+            <VBox spacing="15" style="-fx-padding: 20; -fx-background-color: white; -fx-background-radius: 16;
+                                      -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.08), 15, 0, 0, 5);
+                                      -fx-min-width: 320;">
+
+                <Label text="⚙ Configuration Irrigation"
+                       style="-fx-font-size: 16px; -fx-font-weight: bold; -fx-text-fill: #065f46;"/>
+
+                <!-- Type de culture -->
+                <VBox spacing="5">
+                    <Label text="🌾 Type de culture" style="-fx-font-size: 12px; -fx-text-fill: #374151;"/>
+                    <ComboBox fx:id="cultureCombo" prefWidth="280" promptText="Sélectionner une culture"
+                              style="-fx-background-radius: 10; -fx-border-radius: 10;"/>
+                </VBox>
+
+                <!-- Surface -->
+                <VBox spacing="5">
+                    <Label text="📐 Surface (hectares)" style="-fx-font-size: 12px; -fx-text-fill: #374151;"/>
+                    <TextField fx:id="surfaceField" promptText="Ex: 2.5"
+                               style="-fx-background-radius: 10; -fx-border-radius: 10;"/>
+                </VBox>
+
+                <!-- Ville pour météo -->
+                <VBox spacing="5">
+                    <Label text="🏙 Ville (pour météo)" style="-fx-font-size: 12px; -fx-text-fill: #374151;"/>
+                    <TextField fx:id="villeField" promptText="Ex: Tunis"
+                               style="-fx-background-radius: 10; -fx-border-radius: 10;"/>
+                </VBox>
+
+                <!-- Séparateur -->
+                <Label text="📊 Historique "
+                       style="-fx-font-size: 13px; -fx-font-weight: bold; -fx-text-fill: #059669; -fx-padding: 8 0 0 0;"/>
+
+                <!-- Dernière date d'irrigation -->
+                <VBox spacing="5">
+                    <Label text="📅 Dernière irrigation" style="-fx-font-size: 12px; -fx-text-fill: #374151;"/>
+                    <DatePicker fx:id="derniereDatePicker" prefWidth="280" promptText="Date de dernière irrigation"
+                                style="-fx-background-radius: 10; -fx-border-radius: 10;"/>
+                </VBox>
+
+                <!-- Quantité d'eau précédente -->
+                <VBox spacing="5">
+                    <Label text="💦 Quantité précédente (litres)" style="-fx-font-size: 12px; -fx-text-fill: #374151;"/>
+                    <TextField fx:id="quantitePrecedenteField" promptText="Ex: 5000"
+                               style="-fx-background-radius: 10; -fx-border-radius: 10;"/>
+                </VBox>
+
+                <!-- Bouton générer -->
+                <Button text="🔍 Générer le plan d'irrigation" onAction="#handleGenererPlan"
+                        prefWidth="280"
+                        style="-fx-background-color: linear-gradient(to right, #047857, #059669);
+                               -fx-text-fill: white; -fx-font-weight: bold; -fx-font-size: 14px;
+                               -fx-background-radius: 12; -fx-padding: 14 20; -fx-cursor: hand;
+                               -fx-effect: dropshadow(gaussian, rgba(4, 120, 87, 0.4), 10, 0, 0, 4);"/>
+
+                <!-- Indicateur de chargement -->
+                <HBox alignment="CENTER" spacing="10">
+                    <ProgressIndicator fx:id="loadingIndicator" prefWidth="24" prefHeight="24" visible="false"/>
+                    <Label fx:id="statusLabel" text="" style="-fx-font-size: 12px;"/>
+                </HBox>
+            </VBox>
+        </HBox>
+
+        <!-- Résultat du plan généré -->
+        <VBox fx:id="resultContainer" spacing="15" alignment="TOP_CENTER">
+            <!-- Le plan généré sera affiché ici -->
+        </VBox>
+
+
+
+        <!-- Footer -->
+        <VBox alignment="CENTER" spacing="5">
+            <Label text="💡 Le calcul prend en compte: température, humidité sol/air, précipitations prévues"
+                   style="-fx-font-size: 11px; -fx-text-fill: #9ca3af;"/>
+        </VBox>
+
+    </VBox>
+</ScrollPane>
+

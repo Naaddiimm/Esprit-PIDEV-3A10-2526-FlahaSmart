@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<VBox styleClass="chatbot-container" xmlns:fx="http://javafx.com/fxml"
+      fx:controller="controllers.ChatbotController" spacing="10">
+
+    <padding>
+        <Insets top="15" right="15" bottom="15" left="15"/>
+    </padding>
+
+    <!-- En-tête -->
+    <HBox styleClass="chatbot-header" spacing="10" alignment="CENTER_LEFT">
+        <Label text="🤖 AgriBot - Assistant Agricole" styleClass="chatbot-title"/>
+        <Region HBox.hgrow="ALWAYS"/>
+        <Button text="🗑 Effacer" onAction="#onClearChat" styleClass="clear-chat-btn"/>
+    </HBox>
+
+    <!-- Zone de messages -->
+    <ScrollPane fx:id="scrollPane" fitToWidth="true" VBox.vgrow="ALWAYS"
+                styleClass="chat-scroll-pane">
+        <VBox fx:id="chatContainer" spacing="10" styleClass="chat-messages">
+            <padding>
+                <Insets top="10" right="10" bottom="10" left="10"/>
+            </padding>
+        </VBox>
+    </ScrollPane>
+
+    <!-- Zone de saisie -->
+    <HBox spacing="10" alignment="CENTER" styleClass="chat-input-area">
+        <TextField fx:id="userInput" promptText="Posez votre question sur l'agriculture..."
+                   HBox.hgrow="ALWAYS" styleClass="chat-input"
+                   onAction="#onSendMessage"/>
+        <Button text="📤 Envoyer" onAction="#onSendMessage" styleClass="send-btn"/>
+    </HBox>
+
+</VBox>
+
