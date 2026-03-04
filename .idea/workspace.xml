@@ -4,17 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="0dd62393-fca9-412a-8652-b090a5ec4918" name="Changes" comment="Finale 2.4">
+    <list default="true" id="0dd62393-fca9-412a-8652-b090a5ec4918" name="Changes" comment="Finale 2.5">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/controllers/operation/ListeOpController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/controllers/operation/ListeOpController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/services/advancedfeatures/WeatherService.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/services/advancedfeatures/WeatherService.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/testes/MainApp.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/testes/MainApp.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/views/MainLayout.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/views/MainLayout.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/views/advancedfeatures/ChatbotView.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/views/advancedfeatures/ChatbotView.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/views/advancedfeatures/Dashboard.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/views/advancedfeatures/Dashboard.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/views/advancedfeatures/WeatherView.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/views/advancedfeatures/WeatherView.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/views/equipement/AjouterEq.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/views/equipement/AjouterEq.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/views/operation/AjouterOp.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/views/operation/AjouterOp.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -274,7 +266,7 @@
       <workItem from="1772389511817" duration="13014000" />
       <workItem from="1772474447734" duration="7155000" />
       <workItem from="1772489178615" duration="1188000" />
-      <workItem from="1772566513929" duration="10277000" />
+      <workItem from="1772566513929" duration="15013000" />
     </task>
     <task id="LOCAL-00001" summary="API 1">
       <option name="closed" value="true" />
@@ -356,7 +348,15 @@
       <option name="project" value="LOCAL" />
       <updated>1772576810879</updated>
     </task>
-    <option name="localTasksCounter" value="11" />
+    <task id="LOCAL-00011" summary="Finale 2.5">
+      <option name="closed" value="true" />
+      <created>1772579461631</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1772579461631</updated>
+    </task>
+    <option name="localTasksCounter" value="12" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -372,7 +372,8 @@
     <MESSAGE value="Finale 2.2" />
     <MESSAGE value="Finale 2.3" />
     <MESSAGE value="Finale 2.4" />
-    <option name="LAST_COMMIT_MESSAGE" value="Finale 2.4" />
+    <MESSAGE value="Finale 2.5" />
+    <option name="LAST_COMMIT_MESSAGE" value="Finale 2.5" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
