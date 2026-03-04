@@ -1,0 +1,149 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+<?import javafx.geometry.Insets?>
+<?import de.jensd.fx.glyphs.fontawesome.FontAwesomeIconView?>
+<?import javafx.scene.shape.Circle?>
+
+<ScrollPane xmlns="http://javafx.com/javafx/17"
+            xmlns:fx="http://javafx.com/fxml/1"
+            fx:controller="controllers.Dashbord.DashboardUser"
+            stylesheets="@/css/dashboard-user.css"
+            fitToWidth="true"
+            style="-fx-background-color: transparent; -fx-border-color: transparent;">
+
+    <VBox alignment="TOP_CENTER" spacing="25"
+          style="-fx-background-color: linear-gradient(to bottom, #27ae60, #2ecc71); -fx-padding: 40;">
+
+        <padding>
+            <Insets top="20" right="20" bottom="20" left="20"/>
+        </padding>
+
+        <!-- Carte de profil principale -->
+        <VBox styleClass="profile-card" maxWidth="600">
+
+            <!-- En-tête avec bienvenue -->
+            <HBox alignment="CENTER_LEFT" spacing="20">
+
+                <!-- Avatar avec animation -->
+                <StackPane styleClass="avatar-container">
+                    <Circle radius="40" fill="#27ae60" stroke="white" strokeWidth="3"/>
+                    <FontAwesomeIconView glyphName="USER" size="40" fill="white"/>
+                </StackPane>
+
+                <VBox spacing="5">
+                    <Label fx:id="welcomeLabel" style="-fx-font-size: 24px; -fx-font-weight: bold; -fx-text-fill: #2c3e50;">
+                        Bienvenue !
+                    </Label>
+                    <Label fx:id="userRoleLabel" style="-fx-font-size: 14px; -fx-text-fill: #7f8c8d;"/>
+                </VBox>
+
+                <Region HBox.hgrow="ALWAYS"/>
+
+                <!-- Bouton de déconnexion -->
+                <Button fx:id="logoutButton" onAction="#handleLogout" styleClass="logout-button">
+                    <graphic>
+                        <HBox spacing="5" alignment="CENTER">
+                            <FontAwesomeIconView glyphName="SIGN_OUT" size="14" fill="white"/>
+                            <Text text="Déconnexion" fill="white"/>
+                        </HBox>
+                    </graphic>
+                </Button>
+            </HBox>
+
+            <!-- Badge de statut -->
+            <HBox styleClass="status-badge">
+                <Circle radius="5" fill="#27ae60"/>
+                <Label text="Compte actif" style="-fx-text-fill: #27ae60; -fx-font-size: 12px; -fx-font-weight: bold;"/>
+            </HBox>
+
+            <Separator/>
+
+            <!-- Section informations personnelles -->
+            <VBox spacing="15">
+                <HBox spacing="10" alignment="CENTER_LEFT">
+                    <FontAwesomeIconView glyphName="USER" size="20" fill="#27ae60" styleClass="icon"/>
+                    <Label text="Informations personnelles" styleClass="section-title"/>
+                </HBox>
+
+                <VBox spacing="10" styleClass="info-grid">
+
+                    <!-- Ligne Nom -->
+                    <HBox spacing="20" alignment="CENTER_LEFT" styleClass="info-row">
+                        <HBox spacing="10" prefWidth="100">
+                            <FontAwesomeIconView glyphName="USER" size="14" fill="#27ae60"/>
+                            <Label text="Nom:" styleClass="info-label"/>
+                        </HBox>
+                        <Label fx:id="nomLabel" text="-" styleClass="info-value"/>
+                    </HBox>
+
+                    <!-- Ligne Prénom -->
+                    <HBox spacing="20" alignment="CENTER_LEFT" styleClass="info-row">
+                        <HBox spacing="10" prefWidth="100">
+                            <FontAwesomeIconView glyphName="USER" size="14" fill="#27ae60"/>
+                            <Label text="Prénom:" styleClass="info-label"/>
+                        </HBox>
+                        <Label fx:id="prenomLabel" text="-" styleClass="info-value"/>
+                    </HBox>
+
+                    <!-- Ligne Email -->
+                    <HBox spacing="20" alignment="CENTER_LEFT" styleClass="info-row">
+                        <HBox spacing="10" prefWidth="100">
+                            <FontAwesomeIconView glyphName="ENVELOPE" size="14" fill="#27ae60"/>
+                            <Label text="Email:" styleClass="info-label"/>
+                        </HBox>
+                        <Label fx:id="emailLabel" text="-" styleClass="info-value"/>
+                    </HBox>
+
+                    <!-- Ligne Téléphone -->
+                    <HBox spacing="20" alignment="CENTER_LEFT" styleClass="info-row">
+                        <HBox spacing="10" prefWidth="100">
+                            <FontAwesomeIconView glyphName="PHONE" size="14" fill="#27ae60"/>
+                            <Label text="Téléphone:" styleClass="info-label"/>
+                        </HBox>
+                        <Label fx:id="telephoneLabel" text="-" styleClass="info-value"/>
+                    </HBox>
+
+                    <!-- Ligne Adresse -->
+                    <HBox spacing="20" alignment="CENTER_LEFT" styleClass="info-row">
+                        <HBox spacing="10" prefWidth="100">
+                            <FontAwesomeIconView glyphName="HOME" size="14" fill="#27ae60"/>
+                            <Label text="Adresse:" styleClass="info-label"/>
+                        </HBox>
+                        <Label fx:id="adresseLabel" text="-" styleClass="info-value"/>
+                    </HBox>
+
+                    <!-- Ligne Ville -->
+                    <HBox spacing="20" alignment="CENTER_LEFT" styleClass="info-row">
+                        <HBox spacing="10" prefWidth="100">
+                            <FontAwesomeIconView glyphName="MAP_MARKER" size="14" fill="#27ae60"/>
+                            <Label text="Ville:" styleClass="info-label"/>
+                        </HBox>
+                        <Label fx:id="villeLabel" text="-" styleClass="info-value"/>
+                    </HBox>
+
+                </VBox>
+            </VBox>
+
+            <!-- BOUTON MODIFIER LE PROFIL -->
+            <Button onAction="#handleEditProfile" styleClass="edit-button" maxWidth="Infinity">
+                <graphic>
+                    <HBox spacing="10" alignment="CENTER">
+                        <FontAwesomeIconView glyphName="EDIT" size="16" fill="white"/>
+                        <Text text="MODIFIER MON PROFIL" fill="white"/>
+                    </HBox>
+                </graphic>
+            </Button>
+
+            <!-- Date d'inscription -->
+            <HBox styleClass="member-since">
+                <FontAwesomeIconView glyphName="CALENDAR" size="14" fill="#27ae60"/>
+                <Text text="Membre depuis: " style="-fx-fill: #95a5a6; -fx-font-size: 12px;"/>
+                <Text fx:id="memberSinceText" text="-" style="-fx-fill: #27ae60; -fx-font-size: 12px; -fx-font-weight: bold;"/>
+            </HBox>
+
+        </VBox>
+    </VBox>
+</ScrollPane>

@@ -1,0 +1,116 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.geometry.Insets?>
+<?import de.jensd.fx.glyphs.fontawesome.FontAwesomeIconView?>
+<?import javafx.scene.shape.Circle?>
+<?import javafx.scene.effect.DropShadow?>
+<?import javafx.scene.effect.Glow?>
+
+<BorderPane xmlns="http://javafx.com/javafx/17"
+            xmlns:fx="http://javafx.com/fxml/1"
+            fx:controller="controllers.Admin.ListUser"
+            stylesheets="@/css/list-user.css"
+            prefHeight="800.0" prefWidth="1300.0"
+            style="-fx-background-color: linear-gradient(to bottom right, #f8fafc, #f1f5f9);">
+
+    <!-- Header -->
+    <top>
+        <VBox spacing="0">
+            <!-- Barre de titre -->
+            <HBox alignment="CENTER_LEFT" spacing="25"
+                  style="-fx-background-color: rgba(255,255,255,0.95); -fx-background-radius: 0 0 20 20; -fx-padding: 25 40;">
+
+                <!-- Icône animée -->
+                <StackPane styleClass="logo-animated">
+                    <Circle radius="30" style="-fx-fill: linear-gradient(135deg, #27ae60, #2ecc71);"/>
+                    <FontAwesomeIconView glyphName="USERS" size="30" fill="white"/>
+                </StackPane>
+
+                <VBox spacing="5">
+                    <Label text="Gestion des utilisateurs"
+                           style="-fx-font-size: 28px; -fx-font-weight: bold; -fx-text-fill: #0f172a;"/>
+                    <HBox spacing="10" alignment="CENTER_LEFT">
+                        <Label fx:id="statsText" text="Total: 0 utilisateurs"
+                               style="-fx-font-size: 14px; -fx-text-fill: #64748b;"/>
+                        <Circle radius="3" fill="#27ae60"/>
+                        <Label text="Mis à jour en temps réel" style="-fx-text-fill: #94a3b8; -fx-font-size: 12px;"/>
+                    </HBox>
+                </VBox>
+
+                <Region HBox.hgrow="ALWAYS"/>
+
+                <!-- Badge admin -->
+                <HBox spacing="10" alignment="CENTER" styleClass="admin-badge">
+                    <Circle radius="6" fill="#27ae60"/>
+                    <Label fx:id="adminBadge" text="Administrateur"
+                           style="-fx-font-weight: bold; -fx-text-fill: #1e293b;"/>
+                </HBox>
+            </HBox>
+
+            <!-- Barre d'outils -->
+            <VBox spacing="20" style="-fx-background-color: white; -fx-padding: 25 40; -fx-background-radius: 20;">
+
+                <!-- Actions principales -->
+                <HBox spacing="15" alignment="CENTER_RIGHT">
+                    <Button fx:id="btnRefresh" onAction="#handleRefresh" styleClass="action-button-refresh" text="Rafraîchir"/>
+                    <Button fx:id="btnAddUser" onAction="#handleAddUser" styleClass="action-button-add" text="Nouveau"/>
+                </HBox>
+
+                <!-- Barre de recherche -->
+                <HBox spacing="15" alignment="CENTER_LEFT">
+                    <HBox spacing="10" styleClass="search-box" HBox.hgrow="ALWAYS">
+                        <FontAwesomeIconView glyphName="SEARCH" size="16" fill="#94a3b8"/>
+                        <TextField fx:id="searchField" promptText="Rechercher par nom, email, téléphone..."
+                                   styleClass="search-field"/>
+                        <Button fx:id="btnSearch" onAction="#handleSearch" styleClass="search-button" text="Go"/>
+                    </HBox>
+
+                    <HBox spacing="10" alignment="CENTER" styleClass="filter-container">
+                        <FontAwesomeIconView glyphName="FILTER" size="14" fill="#64748b"/>
+                        <ComboBox fx:id="filterComboBox" styleClass="filter-combo" prefWidth="200"/>
+                        <Button fx:id="btnClearFilter" onAction="#handleClearFilter" styleClass="clear-button" text="✕"/>
+                    </HBox>
+                </HBox>
+            </VBox>
+        </VBox>
+    </top>
+
+    <!-- Tableau -->
+    <center>
+        <VBox spacing="20" style="-fx-padding: 30 40;">
+            <TableView fx:id="userTable" styleClass="premium-table" VBox.vgrow="ALWAYS">
+                <columns>
+                    <TableColumn fx:id="idColumn" text="#" prefWidth="60"/>
+                    <TableColumn fx:id="photoColumn" text="Photo" prefWidth="80"/>
+                    <TableColumn fx:id="nomColumn" text="Nom" prefWidth="120"/>
+                    <TableColumn fx:id="prenomColumn" text="Prénom" prefWidth="120"/>
+                    <TableColumn fx:id="emailColumn" text="Email" prefWidth="220"/>
+                    <TableColumn fx:id="roleColumn" text="Rôle" prefWidth="120"/>
+                    <TableColumn fx:id="telephoneColumn" text="Téléphone" prefWidth="120"/>
+                    <TableColumn fx:id="villeColumn" text="Ville" prefWidth="120"/>
+                    <TableColumn fx:id="actifColumn" text="Statut" prefWidth="90"/>
+                    <TableColumn fx:id="actionColumn" text="Actions" prefWidth="280"/>
+                </columns>
+                <columnResizePolicy>
+                    <TableView fx:constant="CONSTRAINED_RESIZE_POLICY"/>
+                </columnResizePolicy>
+            </TableView>
+
+            <!-- Pagination -->
+            <HBox alignment="CENTER_RIGHT" spacing="25" styleClass="pagination-container">
+                <Label fx:id="paginationLabel" styleClass="pagination-label"/>
+                <HBox spacing="10">
+                    <Button fx:id="btnPrevPage" onAction="#handlePrevPage" styleClass="page-button" text="←"/>
+                    <HBox spacing="5" alignment="CENTER" styleClass="page-indicator">
+                        <Label fx:id="currentPageLabel" text="1" style="-fx-font-weight: bold; -fx-text-fill: #27ae60;"/>
+                        <Label text="/" style="-fx-text-fill: #94a3b8;"/>
+                        <Label fx:id="totalPagesLabel" text="1" style="-fx-text-fill: #64748b;"/>
+                    </HBox>
+                    <Button fx:id="btnNextPage" onAction="#handleNextPage" styleClass="page-button" text="→"/>
+                </HBox>
+            </HBox>
+        </VBox>
+    </center>
+</BorderPane>

@@ -1,0 +1,211 @@
+/* client-home.css - Thème Vert */
+
+/* Styles de navigation */
+.nav-link {
+    -fx-background-color: transparent;
+    -fx-text-fill: #1e293b;
+    -fx-font-size: 14px;
+    -fx-padding: 8 12;
+    -fx-cursor: hand;
+}
+
+.nav-link:hover {
+    -fx-text-fill: #27ae60;
+    -fx-background-color: #e8f5e9;
+    -fx-background-radius: 20;
+}
+
+.search-button {
+    -fx-background-color: #27ae60;
+    -fx-text-fill: white;
+    -fx-font-size: 14px;
+    -fx-padding: 8 25;
+    -fx-background-radius: 25;
+    -fx-cursor: hand;
+}
+
+.search-button:hover {
+    -fx-background-color: #2ecc71;
+    -fx-effect: dropshadow(three-pass-box, rgba(39,174,96,0.3), 10, 0, 0, 0);
+}
+
+/* Section Hero - Thème vert */
+.hero-section {
+    -fx-background-color: linear-gradient(to bottom right, #27ae60, #2ecc71);
+    -fx-background-radius: 30;
+    -fx-padding: 80 20;
+}
+
+.hero-button-primary {
+    -fx-background-color: white;
+    -fx-text-fill: #27ae60;
+    -fx-font-size: 16px;
+    -fx-font-weight: bold;
+    -fx-padding: 12 30;
+    -fx-background-radius: 30;
+    -fx-cursor: hand;
+}
+
+.hero-button-primary:hover {
+    -fx-background-color: #f8fafc;
+    -fx-scale-x: 1.05;
+    -fx-scale-y: 1.05;
+    -fx-effect: dropshadow(three-pass-box, rgba(46,204,113,0.3), 15, 0, 0, 0);
+}
+
+.hero-button-secondary {
+    -fx-background-color: transparent;
+    -fx-text-fill: white;
+    -fx-font-size: 16px;
+    -fx-padding: 12 30;
+    -fx-border-color: white;
+    -fx-border-radius: 30;
+    -fx-background-radius: 30;
+    -fx-cursor: hand;
+}
+
+.hero-button-secondary:hover {
+    -fx-background-color: rgba(255,255,255,0.1);
+    -fx-scale-x: 1.05;
+    -fx-scale-y: 1.05;
+}
+
+/* Cartes de fonctionnalités */
+.feature-card {
+    -fx-background-color: white;
+    -fx-background-radius: 20;
+    -fx-padding: 30 20;
+    -fx-alignment: CENTER;
+    -fx-spacing: 15;
+    -fx-effect: dropshadow(three-pass-box, rgba(0,0,0,0.1), 10, 0, 0, 0);
+    -fx-cursor: hand;
+}
+
+.feature-card:hover {
+    -fx-effect: dropshadow(three-pass-box, rgba(39,174,96,0.2), 20, 0, 0, 0);
+    -fx-translate-y: -5;
+}
+
+.feature-icon-large {
+    -fx-background-color: #e8f5e9;
+    -fx-background-radius: 60;
+    -fx-padding: 20;
+}
+
+.feature-title-large {
+    -fx-font-size: 22px;
+    -fx-font-weight: bold;
+    -fx-fill: #1e293b;
+}
+
+.feature-desc {
+    -fx-font-size: 14px;
+    -fx-fill: #64748b;
+    -fx-text-alignment: center;
+}
+
+.feature-stats {
+    -fx-background-color: #f8fafc;
+    -fx-background-radius: 20;
+    -fx-padding: 8 15;
+}
+
+/* Cartes produit */
+.product-card {
+    -fx-background-color: white;
+    -fx-background-radius: 15;
+    -fx-effect: dropshadow(three-pass-box, rgba(0,0,0,0.08), 10, 0, 0, 0);
+    -fx-cursor: hand;
+}
+
+.product-card:hover {
+    -fx-effect: dropshadow(three-pass-box, rgba(39,174,96,0.15), 15, 0, 0, 0);
+    -fx-translate-y: -3;
+}
+
+.add-to-cart-btn {
+    -fx-background-color: #27ae60;
+    -fx-text-fill: white;
+    -fx-font-size: 13px;
+    -fx-padding: 8 0;
+    -fx-background-radius: 8;
+    -fx-cursor: hand;
+}
+
+.add-to-cart-btn:hover {
+    -fx-background-color: #2ecc71;
+}
+
+.view-all-link {
+    -fx-background-color: transparent;
+    -fx-text-fill: #27ae60;
+    -fx-font-size: 14px;
+    -fx-font-weight: bold;
+    -fx-cursor: hand;
+}
+
+.view-all-link:hover {
+    -fx-text-fill: #2ecc71;
+    -fx-underline: true;
+}
+
+/* Forum threads */
+.forum-thread {
+    -fx-background-color: white;
+    -fx-background-radius: 12;
+    -fx-padding: 15;
+    -fx-effect: dropshadow(three-pass-box, rgba(0,0,0,0.05), 5, 0, 0, 0);
+    -fx-cursor: hand;
+}
+
+.forum-thread:hover {
+    -fx-background-color: #f8fafc;
+    -fx-effect: dropshadow(three-pass-box, rgba(39,174,96,0.1), 10, 0, 0, 0);
+    -fx-translate-x: 5;
+}
+
+.forum-icon {
+    -fx-background-color: #e8f5e9;
+    -fx-background-radius: 20;
+    -fx-padding: 8;
+}
+
+/* Icônes vertes */
+.green-icon {
+    -fx-fill: #27ae60;
+}
+
+.green-icon:hover {
+    -fx-fill: #2ecc71;
+}
+
+/* Boutons verts */
+.green-button {
+    -fx-background-color: #27ae60;
+    -fx-text-fill: white;
+    -fx-font-size: 14px;
+    -fx-padding: 10 20;
+    -fx-background-radius: 8;
+    -fx-cursor: hand;
+}
+
+.green-button:hover {
+    -fx-background-color: #2ecc71;
+    -fx-effect: dropshadow(three-pass-box, rgba(39,174,96,0.3), 10, 0, 0, 0);
+}
+
+/* Badges */
+.badge-green {
+    -fx-background-color: #e8f5e9;
+    -fx-text-fill: #27ae60;
+    -fx-font-size: 12px;
+    -fx-font-weight: bold;
+    -fx-padding: 4 8;
+    -fx-background-radius: 20;
+}
+
+/* Séparateurs */
+.separator-green {
+    -fx-background-color: #27ae60;
+    -fx-pref-height: 2;
+}

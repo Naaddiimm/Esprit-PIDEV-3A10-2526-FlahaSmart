@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Sélectionnez votre adresse - OpenStreetMap</title>
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css" />
+    <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"></script>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: 'Segoe UI', Arial, sans-serif;
+        }
+        #map {
+            height: 100vh;
+            width: 100vw;
+        }
+        .instructions {
+            position: fixed;
+            top: 20px;
+            left: 50%;
+            transform: translateX(-50%);
+            background: white;
+            padding: 12px 24px;
+            border-radius: 50px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+            z-index: 1000;
+            font-size: 16px;
+            font-weight: 500;
+            color: #2c3e50;
+            border: 2px solid #27ae60;
+            pointer-events: none;
+        }
+        .instructions span {
+            color: #27ae60;
+            font-size: 20px;
+            margin-right: 8px;
+        }
+    </style>
+</head>
+<body>
+<div class="instructions">
+    <span>📍</span> Cliquez sur la carte pour sélectionner votre adresse
+</div>
+<div id="map"></div>
+
+<script>
+    console.log("Chargement de la carte...");
+
+    // Initialiser la carte centrée sur la Tunisie
+    var map = L.map('map').setView([36.8625, 10.1956], 12);
+    console.log("Carte Leaflet initialisée avec succès.");
+
+    // Ajouter une couche de tuiles OpenStreetMap
+    L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+        attribution: '© Contributeurs OpenStreetMap'
+    }).addTo(map);
+
+    // Ajouter un marqueur par défaut (Tunis)
+    var marker = L.marker([36.8065, 10.1815]).addTo(map);
+    marker.bindPopup("🇹🇳 Tunis, Tunisie").openPopup();
+
+    // Gestion du clic sur la carte
+    map.on('click', function(event) {
+        var latlng = event.latlng;
+        console.log("Coordonnées cliquées :", latlng.lat, latlng.lng);
+
+        // Envoyer les coordonnées à JavaFX
+        if (window.java) {
+            console.log("Envoi des coordonnées à l'application...");
+            window.java.setSelectedLocation(latlng.lat, latlng.lng);
+
+            // Petit message de confirmation avant de fermer
+            alert("Adresse sélectionnée ! La fenêtre va se fermer.");
+        } else {
+            console.error("L'interface Java n'est pas disponible !");
+            alert("Erreur de communication avec l'application.");
+        }
+
+        // Fermer la fenêtre après la sélection
+        window.close();
+    });
+
+    // Ajouter une échelle
+    L.control.scale({imperial: false, metric: true}).addTo(map);
+</script>
+</body>
+</html>

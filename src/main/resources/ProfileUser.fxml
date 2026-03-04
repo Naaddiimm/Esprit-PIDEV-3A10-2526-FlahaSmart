@@ -1,0 +1,116 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+<?import javafx.geometry.Insets?>
+<?import de.jensd.fx.glyphs.fontawesome.FontAwesomeIconView?>
+
+<BorderPane xmlns="http://javafx.com/javafx/17"
+            xmlns:fx="http://javafx.com/fxml/1"
+            fx:controller="controllers.Dashbord.ProfileUserController"
+            stylesheets="@/css/profile-user.css"
+            prefHeight="650" prefWidth="500"
+            style="-fx-background-color: linear-gradient(to bottom, #27ae60, #2ecc71);">
+
+    <center>
+        <VBox alignment="TOP_CENTER" spacing="0" maxWidth="450" maxHeight="600">
+
+            <!-- Carte blanche -->
+            <VBox styleClass="profile-card" prefWidth="450">
+
+                <!-- En-tête -->
+                <HBox spacing="15" alignment="CENTER_LEFT">
+                    <StackPane styleClass="header-icon">
+                        <FontAwesomeIconView glyphName="USER" size="30" fill="white"/>
+                    </StackPane>
+                    <VBox>
+                        <Text text="Modifier mon profil" styleClass="header-title"/>
+                        <Text text="Modifiez vos informations personnelles" styleClass="header-subtitle"/>
+                    </VBox>
+                </HBox>
+
+                <Separator styleClass="separator"/>
+
+                <!-- Formulaire avec ScrollPane -->
+                <ScrollPane fitToWidth="true" styleClass="form-scroll"
+                            prefHeight="350">
+
+                    <VBox spacing="15" style="-fx-padding: 5;">
+
+                        <!-- Nom -->
+                        <VBox spacing="5">
+                            <Label text="Nom" styleClass="field-label"/>
+                            <TextField fx:id="nomField" promptText="Entrez votre nom" styleClass="text-field"/>
+                        </VBox>
+
+                        <!-- Prénom -->
+                        <VBox spacing="5">
+                            <Label text="Prénom" styleClass="field-label"/>
+                            <TextField fx:id="prenomField" promptText="Entrez votre prénom" styleClass="text-field"/>
+                        </VBox>
+
+                        <!-- Email -->
+                        <VBox spacing="5">
+                            <Label text="Email" styleClass="field-label"/>
+                            <TextField fx:id="emailField" promptText="Entrez votre email" styleClass="text-field"/>
+                        </VBox>
+
+                        <!-- Téléphone -->
+                        <VBox spacing="5">
+                            <Label text="Téléphone" styleClass="field-label"/>
+                            <TextField fx:id="telephoneField" promptText="Entrez votre téléphone" styleClass="text-field"/>
+                        </VBox>
+
+                        <!-- Adresse -->
+                        <VBox spacing="5">
+                            <Label text="Adresse" styleClass="field-label"/>
+                            <TextField fx:id="adresseField" promptText="Entrez votre adresse" styleClass="text-field"/>
+                        </VBox>
+
+                        <!-- Ville -->
+                        <VBox spacing="5">
+                            <Label text="Ville" styleClass="field-label"/>
+                            <TextField fx:id="villeField" promptText="Entrez votre ville" styleClass="text-field"/>
+                        </VBox>
+
+                        <Separator styleClass="separator"/>
+
+                        <!-- Section mot de passe -->
+                        <VBox spacing="10" styleClass="password-section">
+                            <HBox spacing="10" alignment="CENTER_LEFT">
+                                <FontAwesomeIconView glyphName="LOCK" size="16" fill="#27ae60"/>
+                                <Label text="Changer le mot de passe (optionnel)" styleClass="password-title"/>
+                            </HBox>
+
+                            <VBox spacing="5">
+                                <Label text="Nouveau mot de passe" styleClass="field-label-small"/>
+                                <PasswordField fx:id="newPasswordField" promptText="Nouveau mot de passe" styleClass="text-field"/>
+                            </VBox>
+
+                            <VBox spacing="5">
+                                <Label text="Confirmer" styleClass="field-label-small"/>
+                                <PasswordField fx:id="confirmPasswordField" promptText="Confirmer le mot de passe" styleClass="text-field"/>
+                            </VBox>
+                        </VBox>
+
+                    </VBox>
+                </ScrollPane>
+
+                <Separator styleClass="separator"/>
+
+                <!-- Messages -->
+                <Text fx:id="errorMessage" styleClass="error-message" visible="false" wrappingWidth="400"/>
+                <Text fx:id="successMessage" styleClass="success-message" visible="false" wrappingWidth="400"/>
+
+                <!-- Boutons -->
+                <HBox spacing="15" alignment="CENTER">
+                    <Button text="Enregistrer" onAction="#handleSave" styleClass="save-button" prefWidth="150"/>
+                    <Button text="Annuler" onAction="#handleCancel" styleClass="cancel-button" prefWidth="150"/>
+                </HBox>
+
+            </VBox>
+        </VBox>
+    </center>
+
+</BorderPane>
