@@ -1,12 +1,10 @@
 package com.example.flahasmarty.controllers;
 
-
 import com.example.flahasmarty.entities.Article;
 import com.example.flahasmarty.entities.Order;
 import com.example.flahasmarty.services.ArticleDAO;
 import com.example.flahasmarty.services.OrderDAO;
 import com.example.flahasmarty.services.ConsultantBot;
-
 
 import javafx.scene.chart.*;
 import javafx.scene.control.*;
@@ -128,20 +126,41 @@ public class HelloController {
             return;
         }
 
-        // Create new stage for amount statistics
-        Stage montantStage = new Stage();
-        montantStage.setTitle("Statistiques des Montants");
-        montantStage.initModality(Modality.APPLICATION_MODAL);
+        try {
+            // Create new stage for amount statistics
+            Stage montantStage = new Stage();
+            montantStage.setTitle("Statistiques des Montants");
+            montantStage.initModality(Modality.APPLICATION_MODAL);
 
-        // Create content
-        VBox content = createMontantStatisticsView();
-        content.getStyleClass().add("form-container");
+            // Create content
+            VBox content = createMontantStatisticsView();
+            content.getStyleClass().add("form-container");
 
-        // Create scene and show
-        Scene scene = new Scene(content, 700, 650);
-        scene.getStylesheets().add(getClass().getResource("styles.css").toExternalForm());
-        montantStage.setScene(scene);
-        montantStage.show();
+            // Create scene and show - FIXED: Load CSS from correct path
+            Scene scene = new Scene(content, 700, 650);
+
+            // Try to load CSS from multiple possible locations
+            String cssPath = "/com/example/flahasmarty/styles.css";
+            java.net.URL cssUrl = getClass().getResource(cssPath);
+            if (cssUrl == null) {
+                // Try alternative path
+                cssPath = "/styles.css";
+                cssUrl = getClass().getResource(cssPath);
+            }
+
+            if (cssUrl != null) {
+                scene.getStylesheets().add(cssUrl.toExternalForm());
+                System.out.println("[DEBUG] CSS loaded from: " + cssUrl);
+            } else {
+                System.out.println("[WARNING] CSS file not found, using default styles");
+            }
+
+            montantStage.setScene(scene);
+            montantStage.show();
+        } catch (Exception e) {
+            showAlert("Erreur", "Erreur lors de l'affichage des statistiques: " + e.getMessage());
+            e.printStackTrace();
+        }
     }
 
     @FXML
@@ -151,20 +170,41 @@ public class HelloController {
             return;
         }
 
-        // Create new stage for fees statistics
-        Stage fraisStage = new Stage();
-        fraisStage.setTitle("Statistiques des Frais de Livraison");
-        fraisStage.initModality(Modality.APPLICATION_MODAL);
+        try {
+            // Create new stage for fees statistics
+            Stage fraisStage = new Stage();
+            fraisStage.setTitle("Statistiques des Frais de Livraison");
+            fraisStage.initModality(Modality.APPLICATION_MODAL);
 
-        // Create content
-        VBox content = createFraisStatisticsView();
-        content.getStyleClass().add("form-container");
+            // Create content
+            VBox content = createFraisStatisticsView();
+            content.getStyleClass().add("form-container");
 
-        // Create scene and show
-        Scene scene = new Scene(content, 750, 650);
-        scene.getStylesheets().add(getClass().getResource("styles.css").toExternalForm());
-        fraisStage.setScene(scene);
-        fraisStage.show();
+            // Create scene and show - FIXED: Load CSS from correct path
+            Scene scene = new Scene(content, 750, 650);
+
+            // Try to load CSS from multiple possible locations
+            String cssPath = "/com/example/flahasmarty/styles.css";
+            java.net.URL cssUrl = getClass().getResource(cssPath);
+            if (cssUrl == null) {
+                // Try alternative path
+                cssPath = "/styles.css";
+                cssUrl = getClass().getResource(cssPath);
+            }
+
+            if (cssUrl != null) {
+                scene.getStylesheets().add(cssUrl.toExternalForm());
+                System.out.println("[DEBUG] CSS loaded from: " + cssUrl);
+            } else {
+                System.out.println("[WARNING] CSS file not found, using default styles");
+            }
+
+            fraisStage.setScene(scene);
+            fraisStage.show();
+        } catch (Exception e) {
+            showAlert("Erreur", "Erreur lors de l'affichage des statistiques: " + e.getMessage());
+            e.printStackTrace();
+        }
     }
 
     private VBox createMontantStatisticsView() {
@@ -346,7 +386,9 @@ public class HelloController {
 
         // Style the line chart
         lineChart.setStyle("-fx-font-size: 12px;");
-        series.getNode().setStyle("-fx-stroke: #2e7d32; -fx-stroke-width: 2px;");
+        if (series.getNode() != null) {
+            series.getNode().setStyle("-fx-stroke: #2e7d32; -fx-stroke-width: 2px;");
+        }
 
         // Add statistics by range
         Label statsTitle = new Label("Statistiques détaillées");
@@ -358,17 +400,19 @@ public class HelloController {
 
         // Calculate quartiles
         int size = sortedOrders.size();
-        double q1 = sortedOrders.get(size / 4).getFraisLivraison();
-        double median = sortedOrders.get(size / 2).getFraisLivraison();
-        double q3 = sortedOrders.get(3 * size / 4).getFraisLivraison();
+        if (size > 0) {
+            double q1 = sortedOrders.get(size / 4).getFraisLivraison();
+            double median = sortedOrders.get(size / 2).getFraisLivraison();
+            double q3 = sortedOrders.get(3 * size / 4).getFraisLivraison();
 
-        Label quartileLabel = new Label(String.format("Quartiles des frais:"));
-        quartileLabel.setStyle("-fx-font-weight: bold; -fx-text-fill: #2e7d32;");
-        statsBox.getChildren().add(quartileLabel);
+            Label quartileLabel = new Label(String.format("Quartiles des frais:"));
+            quartileLabel.setStyle("-fx-font-weight: bold; -fx-text-fill: #2e7d32;");
+            statsBox.getChildren().add(quartileLabel);
 
-        statsBox.getChildren().add(new Label(String.format("• Q1 (25%% des commandes): %.2f €", q1)));
-        statsBox.getChildren().add(new Label(String.format("• Médiane (50%%): %.2f €", median)));
-        statsBox.getChildren().add(new Label(String.format("• Q3 (75%%): %.2f €", q3)));
+            statsBox.getChildren().add(new Label(String.format("• Q1 (25%% des commandes): %.2f €", q1)));
+            statsBox.getChildren().add(new Label(String.format("• Médiane (50%%): %.2f €", median)));
+            statsBox.getChildren().add(new Label(String.format("• Q3 (75%%): %.2f €", q3)));
+        }
 
         // Frais ranges
         Label rangeTitle = new Label("\nDistribution par tranche de frais:");
@@ -447,17 +491,39 @@ public class HelloController {
             return;
         }
 
-        Stage prixStage = new Stage();
-        prixStage.setTitle("Statistiques des Prix");
-        prixStage.initModality(Modality.APPLICATION_MODAL);
+        try {
+            Stage prixStage = new Stage();
+            prixStage.setTitle("Statistiques des Prix");
+            prixStage.initModality(Modality.APPLICATION_MODAL);
 
-        VBox content = createPriceStatisticsView();
-        content.getStyleClass().add("form-container");
+            VBox content = createPriceStatisticsView();
+            content.getStyleClass().add("form-container");
 
-        Scene scene = new Scene(content, 700, 600);
-        scene.getStylesheets().add(getClass().getResource("styles.css").toExternalForm());
-        prixStage.setScene(scene);
-        prixStage.show();
+            // Create scene and show - FIXED: Load CSS from correct path
+            Scene scene = new Scene(content, 700, 600);
+
+            // Try to load CSS from multiple possible locations
+            String cssPath = "/com/example/flahasmarty/styles.css";
+            java.net.URL cssUrl = getClass().getResource(cssPath);
+            if (cssUrl == null) {
+                // Try alternative path
+                cssPath = "/styles.css";
+                cssUrl = getClass().getResource(cssPath);
+            }
+
+            if (cssUrl != null) {
+                scene.getStylesheets().add(cssUrl.toExternalForm());
+                System.out.println("[DEBUG] CSS loaded from: " + cssUrl);
+            } else {
+                System.out.println("[WARNING] CSS file not found, using default styles");
+            }
+
+            prixStage.setScene(scene);
+            prixStage.show();
+        } catch (Exception e) {
+            showAlert("Erreur", "Erreur lors de l'affichage des statistiques: " + e.getMessage());
+            e.printStackTrace();
+        }
     }
 
     @FXML
@@ -467,17 +533,39 @@ public class HelloController {
             return;
         }
 
-        Stage poidsStage = new Stage();
-        poidsStage.setTitle("Statistiques des Poids");
-        poidsStage.initModality(Modality.APPLICATION_MODAL);
+        try {
+            Stage poidsStage = new Stage();
+            poidsStage.setTitle("Statistiques des Poids");
+            poidsStage.initModality(Modality.APPLICATION_MODAL);
 
-        VBox content = createWeightStatisticsView();
-        content.getStyleClass().add("form-container");
+            VBox content = createWeightStatisticsView();
+            content.getStyleClass().add("form-container");
 
-        Scene scene = new Scene(content, 700, 700);
-        scene.getStylesheets().add(getClass().getResource("styles.css").toExternalForm());
-        poidsStage.setScene(scene);
-        poidsStage.show();
+            // Create scene and show - FIXED: Load CSS from correct path
+            Scene scene = new Scene(content, 700, 700);
+
+            // Try to load CSS from multiple possible locations
+            String cssPath = "/com/example/flahasmarty/styles.css";
+            java.net.URL cssUrl = getClass().getResource(cssPath);
+            if (cssUrl == null) {
+                // Try alternative path
+                cssPath = "/styles.css";
+                cssUrl = getClass().getResource(cssPath);
+            }
+
+            if (cssUrl != null) {
+                scene.getStylesheets().add(cssUrl.toExternalForm());
+                System.out.println("[DEBUG] CSS loaded from: " + cssUrl);
+            } else {
+                System.out.println("[WARNING] CSS file not found, using default styles");
+            }
+
+            poidsStage.setScene(scene);
+            poidsStage.show();
+        } catch (Exception e) {
+            showAlert("Erreur", "Erreur lors de l'affichage des statistiques: " + e.getMessage());
+            e.printStackTrace();
+        }
     }
 
     private VBox createPriceStatisticsView() {
