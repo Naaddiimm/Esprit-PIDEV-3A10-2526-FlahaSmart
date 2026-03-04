@@ -1,5 +1,6 @@
 package controllers.Dashbord;
 
+import controllers.Auth.Session;
 import entities.User;
 import javafx.scene.control.Alert;
 import org.w3c.dom.Text;
@@ -21,17 +22,10 @@ import java.util.ResourceBundle;
 
 public class ClientHomeController implements Initializable {
 
-    @FXML
-    private Label userNameLabel;
-
-    @FXML
-    private Label userEmailLabel;
-
-    @FXML
-    private Button logoutButton;
-
-    @FXML
-    private Text welcomeText;
+    @FXML private Label userNameLabel;
+    @FXML private Label userEmailLabel;
+    @FXML private Button logoutButton;
+    @FXML private Text welcomeText;
 
     private User loggedInUser;
     private UserService userService = new UserService();
@@ -63,10 +57,22 @@ public class ClientHomeController implements Initializable {
         showNotification("Marketplace", "Cette fonctionnalité sera bientôt disponible");
     }
 
+    // =========================================================
+    //  FORUM — remplace l'ancienne notification "bientôt dispo"
+    // =========================================================
     @FXML
     private void handleForum(ActionEvent event) {
-        System.out.println("Navigation vers Forum");
-        showNotification("Forum", "Cette fonctionnalité sera bientôt disponible");
+        try {
+            // Démarrer l'API de modération
+            try { api.ModerationAPI.demarrer(); } catch (Exception ignored) {}
+
+            Stage forumStage = new Stage();
+            new controllers.forum.ThreadController().afficher(forumStage);
+
+        } catch (Exception e) {
+            e.printStackTrace();
+            showNotification("Erreur", "Impossible d'ouvrir le Forum : " + e.getMessage());
+        }
     }
 
     @FXML
@@ -92,16 +98,13 @@ public class ClientHomeController implements Initializable {
         try {
             FXMLLoader loader = new FXMLLoader(getClass().getResource("/DashboardUser.fxml"));
             Parent root = loader.load();
-
             DashboardUser controller = loader.getController();
             controller.setLoggedInUser(loggedInUser);
-
             Stage stage = (Stage) userNameLabel.getScene().getWindow();
             stage.setScene(new Scene(root));
             stage.setTitle("Mon Dashboard");
             stage.setMaximized(true);
             stage.show();
-
         } catch (IOException e) {
             e.printStackTrace();
         }
@@ -110,6 +113,7 @@ public class ClientHomeController implements Initializable {
     @FXML
     private void handleLogout(ActionEvent event) {
         try {
+            Session.logout(); // ← vider la session à la déconnexion
             Parent root = FXMLLoader.load(getClass().getResource("/Login.fxml"));
             Stage stage = (Stage) logoutButton.getScene().getWindow();
             stage.setScene(new Scene(root));

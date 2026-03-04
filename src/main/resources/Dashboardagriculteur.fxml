@@ -116,6 +116,14 @@
                     <text>Rotation Cultures</text>
                 </Button>
 
+                <!-- 👇 AJOUTER ICI -->
+                <Label text="COMMUNAUTÉ" styleClass="nav-section"/>
+
+                <Button styleClass="nav-item" maxWidth="Infinity" onAction="#handleForum">
+                    <graphic><FontAwesomeIconView glyphName="COMMENTS" size="16" styleClass="nav-icon"/></graphic>
+                    <text>Forum</text>
+                </Button>
+
                 <!-- Espace flexible -->
                 <Region VBox.vgrow="ALWAYS"/>
 

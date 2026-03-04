@@ -256,7 +256,7 @@ public class Login implements Initializable {
                 }
                 case AGRICULTEUR -> {
                     // ✅ CORRECTION : Passage de l'utilisateur au DashboardAgriculteur
-                    FXMLLoader loader = new FXMLLoader(getClass().getResource("/DashboardAgriculteur.fxml"));
+                    FXMLLoader loader = new FXMLLoader(getClass().getResource("/Dashboardagriculteur.fxml"));
                     Parent root = loader.load();
 
                     // Récupérer le contrôleur et passer l'utilisateur
@@ -286,7 +286,7 @@ public class Login implements Initializable {
     @FXML
     protected void handleRegisterButtonAction(ActionEvent event) {
         try {
-            Parent root = FXMLLoader.load(getClass().getResource("/Register.fxml"));
+            Parent root = FXMLLoader.load(getClass().getResource("/register.fxml"));
             Stage stage = (Stage) registerButton.getScene().getWindow();
             stage.setScene(new Scene(root));
             stage.setTitle("FlahaSmart - Inscription");

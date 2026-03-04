@@ -4,94 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="0dd62393-fca9-412a-8652-b090a5ec4918" name="Changes" comment="Finale 2.5">
-      <change afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/.gitignore" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.mvn/wrapper/maven-wrapper.jar" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.mvn/wrapper/maven-wrapper.properties" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/mvnw" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/mvnw.cmd" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/controllers/Admin/AddAdminController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/controllers/Admin/AfficherUser.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/controllers/Admin/ListUser.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/controllers/Admin/LoginAdmin.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/controllers/Admin/UpdateUser.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/controllers/Auth/ForgotPassword.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/controllers/Auth/Login.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/controllers/Auth/Register.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/controllers/Auth/Session.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/controllers/Dashbord/ClientHomeController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/controllers/Dashbord/DashboardAdmController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/controllers/Dashbord/DashboardAgriculteurController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/controllers/Dashbord/DashboardHomeController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/controllers/Dashbord/DashboardNut.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/controllers/Dashbord/DashboardUser.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/controllers/Dashbord/ProfileUserController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/controllers/Dashbord/StatistiquesController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/controllers/home.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/entities/Role.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/entities/User.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/interfaces/IService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/services/EmailService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/services/PasswordResetService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/services/UserService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/tools/myConnection.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/AddAdmin.fxml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/ClientHome.fxml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/DashboardAdm.fxml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/DashboardHome.fxml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/DashboardUser.fxml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/Dashboardagriculteur.fxml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/ForgotPassword.fxml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/ListUser.fxml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/Login.fxml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/LoginAdmin.fxml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/PasswordReset.fxml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/ProfileUser.fxml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/Statistiques.fxml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/css/agriculteur.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/css/auth.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/css/client-home.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/css/dashboard-admin.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/css/dashboard-user.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/css/dashboard.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/css/list-user.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/css/profile-user.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/map.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/register.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/services/OperationService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/services/OperationService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/services/advancedfeatures/WeatherService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/services/advancedfeatures/WeatherService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/testes/MainApp.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/views/advancedfeatures/ChatbotView.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/views/advancedfeatures/ChatbotView.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/views/advancedfeatures/Dashboard.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/views/advancedfeatures/Dashboard.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/views/advancedfeatures/IrrigationView.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/views/advancedfeatures/IrrigationView.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/views/advancedfeatures/PlantDiseaseView.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/views/advancedfeatures/PlantDiseaseView.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/views/advancedfeatures/RotationCultureView.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/views/advancedfeatures/RotationCultureView.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/views/advancedfeatures/WeatherView.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/views/advancedfeatures/WeatherView.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/views/equipement/AjouterEq.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/views/equipement/AjouterEq.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/views/equipement/ListeEq.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/views/equipement/ListeEq.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/views/operation/AjouterOp.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/views/operation/AjouterOp.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/views/operation/ListeOp.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/views/operation/ListeOp.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/services/OperationService.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/services/OperationService.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/services/advancedfeatures/WeatherService.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/services/advancedfeatures/WeatherService.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/views/advancedfeatures/ChatbotView.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/views/advancedfeatures/ChatbotView.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/views/advancedfeatures/Dashboard.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/views/advancedfeatures/Dashboard.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/views/advancedfeatures/IrrigationView.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/views/advancedfeatures/IrrigationView.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/views/advancedfeatures/PlantDiseaseView.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/views/advancedfeatures/PlantDiseaseView.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/views/advancedfeatures/RotationCultureView.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/views/advancedfeatures/RotationCultureView.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/views/advancedfeatures/WeatherView.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/views/advancedfeatures/WeatherView.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/views/equipement/AjouterEq.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/views/equipement/AjouterEq.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/views/equipement/ListeEq.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/views/equipement/ListeEq.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/views/operation/AjouterOp.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/views/operation/AjouterOp.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/views/operation/ListeOp.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/views/operation/ListeOp.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst" beforeDir="false" afterPath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" beforeDir="false" afterPath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" afterDir="false" />
-    </list>
+    <list default="true" id="0dd62393-fca9-412a-8652-b090a5ec4918" name="Changes" comment="Finale 2.5" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -111,8 +24,9 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="Interface" />
         <option value="FxmlFile" />
+        <option value="JavaFXApplication" />
+        <option value="Interface" />
         <option value="Class" />
       </list>
     </option>
@@ -132,6 +46,9 @@
     &quot;accountId&quot;: &quot;09672f29-5ae0-430e-92ad-d7285b122f27&quot;
   }
 }</component>
+  <component name="HighlightingSettingsPerFile">
+    <setting file="file://$PROJECT_DIR$/src/main/java/controllers/MainLayoutController.java" root0="FORCE_HIGHLIGHTING" />
+  </component>
   <component name="ProblemsViewState">
     <option name="selectedTabId" value="CurrentFile" />
   </component>
@@ -150,17 +67,19 @@
     "Application.TestDB.executor": "Run",
     "Maven.CRUD_Operation [javafx:run].executor": "Run",
     "Maven.CRUD_Operation [org.openjfx:javafx-maven-plugin:0.0.8:run].executor": "Run",
+    "Maven.FlahaSmart [org.openjfx:javafx-maven-plugin:0.0.8:run].executor": "Run",
     "ModuleVcsDetector.initialDetectionPerformed": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "RunOnceActivity.TerminalTabsStorage.copyFrom.TerminalArrangementManager.252": "true",
     "RunOnceActivity.git.unshallow": "true",
+    "RunOnceActivity.typescript.service.memoryLimit.init": "true",
     "SHARE_PROJECT_CONFIGURATION_FILES": "true",
     "com.intellij.ml.llm.matterhorn.ej.ui.settings.DefaultAutoModeForALLUsers.v1": "true",
     "com.intellij.ml.llm.matterhorn.ej.ui.settings.DefaultModelSelectionForGA.v1": "true",
     "git-widget-placeholder": "Merging devlop",
     "junie.onboarding.icon.badge.shown": "true",
     "kotlin-language-version-configured": "true",
-    "last_opened_file_path": "C:/monjava/CRUD_Operation",
+    "last_opened_file_path": "/home/fekher/Bureau/devlop (Copie)/Esprit-PIDEV-3A10-2526-FlahaSmart-devlop",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
@@ -233,15 +152,6 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration default="true" type="JetRunConfigurationType">
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration default="true" type="KotlinStandaloneScriptRunConfigurationType">
-      <option name="filePath" />
-      <method v="2" />
-    </configuration>
     <configuration name="CRUD_Operation [javafx:run]" type="MavenRunConfiguration" factoryName="Maven">
       <MavenSettings>
         <option name="myGeneralSettings" />
@@ -313,8 +223,8 @@
   <component name="SharedIndexes">
     <attachedChunks>
       <set>
-        <option value="bundled-jdk-9823dce3aa75-bf35d07a577b-intellij.indexing.shared.core-IU-252.25557.131" />
-        <option value="bundled-js-predefined-d6986cc7102b-b598e85cdad2-JavaScript-IU-252.25557.131" />
+        <option value="bundled-jdk-30f59d01ecdd-2fc7cc6b9a17-intellij.indexing.shared.core-IU-253.30387.90" />
+        <option value="bundled-js-predefined-d6986cc7102b-9b0f141eb926-JavaScript-IU-253.30387.90" />
       </set>
     </attachedChunks>
   </component>
@@ -360,6 +270,8 @@
       <workItem from="1772474447734" duration="7155000" />
       <workItem from="1772489178615" duration="1188000" />
       <workItem from="1772566513929" duration="15013000" />
+      <workItem from="1772636451740" duration="733000" />
+      <workItem from="1772655462391" duration="8655000" />
     </task>
     <task id="LOCAL-00001" summary="API 1">
       <option name="closed" value="true" />

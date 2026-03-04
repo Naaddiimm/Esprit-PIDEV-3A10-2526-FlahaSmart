@@ -1,56 +1,75 @@
-C:\monjava\CRUD_Operation\src\main\java\controllers\Admin\AddAdminController.java
-C:\monjava\CRUD_Operation\src\main\java\controllers\Admin\AfficherUser.java
-C:\monjava\CRUD_Operation\src\main\java\controllers\Admin\ListUser.java
-C:\monjava\CRUD_Operation\src\main\java\controllers\Admin\LoginAdmin.java
-C:\monjava\CRUD_Operation\src\main\java\controllers\Admin\UpdateUser.java
-C:\monjava\CRUD_Operation\src\main\java\controllers\advancedfeatures\ChatbotController.java
-C:\monjava\CRUD_Operation\src\main\java\controllers\advancedfeatures\DashboardController.java
-C:\monjava\CRUD_Operation\src\main\java\controllers\advancedfeatures\IrrigationController.java
-C:\monjava\CRUD_Operation\src\main\java\controllers\advancedfeatures\PlantDiseaseController.java
-C:\monjava\CRUD_Operation\src\main\java\controllers\advancedfeatures\RotationCultureController.java
-C:\monjava\CRUD_Operation\src\main\java\controllers\advancedfeatures\WeatherWidgetController.java
-C:\monjava\CRUD_Operation\src\main\java\controllers\Auth\ForgotPassword.java
-C:\monjava\CRUD_Operation\src\main\java\controllers\Auth\Login.java
-C:\monjava\CRUD_Operation\src\main\java\controllers\Auth\Register.java
-C:\monjava\CRUD_Operation\src\main\java\controllers\Auth\Session.java
-C:\monjava\CRUD_Operation\src\main\java\controllers\Dashbord\ClientHomeController.java
-C:\monjava\CRUD_Operation\src\main\java\controllers\Dashbord\DashboardAdmController.java
-C:\monjava\CRUD_Operation\src\main\java\controllers\Dashbord\DashboardAgriculteurController.java
-C:\monjava\CRUD_Operation\src\main\java\controllers\Dashbord\DashboardHomeController.java
-C:\monjava\CRUD_Operation\src\main\java\controllers\Dashbord\DashboardNut.java
-C:\monjava\CRUD_Operation\src\main\java\controllers\Dashbord\DashboardUser.java
-C:\monjava\CRUD_Operation\src\main\java\controllers\Dashbord\ProfileUserController.java
-C:\monjava\CRUD_Operation\src\main\java\controllers\Dashbord\StatistiquesController.java
-C:\monjava\CRUD_Operation\src\main\java\controllers\equipement\Ajout_Eq_Controller.java
-C:\monjava\CRUD_Operation\src\main\java\controllers\equipement\ListeEqController.java
-C:\monjava\CRUD_Operation\src\main\java\controllers\equipement\ModifierEqController.java
-C:\monjava\CRUD_Operation\src\main\java\controllers\home.java
-C:\monjava\CRUD_Operation\src\main\java\controllers\MainLayoutController.java
-C:\monjava\CRUD_Operation\src\main\java\controllers\operation\Ajout_Op_Controller.java
-C:\monjava\CRUD_Operation\src\main\java\controllers\operation\ListeOpController.java
-C:\monjava\CRUD_Operation\src\main\java\controllers\operation\ModifierOpController.java
-C:\monjava\CRUD_Operation\src\main\java\entities\advancedfeatures\ChatMessage.java
-C:\monjava\CRUD_Operation\src\main\java\entities\advancedfeatures\IrrigationPlan.java
-C:\monjava\CRUD_Operation\src\main\java\entities\advancedfeatures\Parcelle.java
-C:\monjava\CRUD_Operation\src\main\java\entities\advancedfeatures\RecommandationCulture.java
-C:\monjava\CRUD_Operation\src\main\java\entities\advancedfeatures\Weather.java
-C:\monjava\CRUD_Operation\src\main\java\entities\Equipement.java
-C:\monjava\CRUD_Operation\src\main\java\entities\Operation.java
-C:\monjava\CRUD_Operation\src\main\java\entities\Role.java
-C:\monjava\CRUD_Operation\src\main\java\entities\User.java
-C:\monjava\CRUD_Operation\src\main\java\interfaces\IService.java
-C:\monjava\CRUD_Operation\src\main\java\services\advancedfeatures\AgriChatbotService.java
-C:\monjava\CRUD_Operation\src\main\java\services\advancedfeatures\IrrigationService.java
-C:\monjava\CRUD_Operation\src\main\java\services\advancedfeatures\PlantDiseaseService.java
-C:\monjava\CRUD_Operation\src\main\java\services\advancedfeatures\RotationCultureService.java
-C:\monjava\CRUD_Operation\src\main\java\services\advancedfeatures\WeatherService.java
-C:\monjava\CRUD_Operation\src\main\java\services\EmailService.java
-C:\monjava\CRUD_Operation\src\main\java\services\EquipementService.java
-C:\monjava\CRUD_Operation\src\main\java\services\Iservice.java
-C:\monjava\CRUD_Operation\src\main\java\services\OperationService.java
-C:\monjava\CRUD_Operation\src\main\java\services\PasswordResetService.java
-C:\monjava\CRUD_Operation\src\main\java\services\UserService.java
-C:\monjava\CRUD_Operation\src\main\java\TestDB.java
-C:\monjava\CRUD_Operation\src\main\java\testes\Main.java
-C:\monjava\CRUD_Operation\src\main\java\tools\myConnection.java
-C:\monjava\CRUD_Operation\src\main\java\utilies\MyDataBase.java
+/home/fekher/Bureau/devlop (Copie)/Esprit-PIDEV-3A10-2526-FlahaSmart-devlop/src/main/java/TestDB.java
+/home/fekher/Bureau/devlop (Copie)/Esprit-PIDEV-3A10-2526-FlahaSmart-devlop/src/main/java/api/ApiClient.java
+/home/fekher/Bureau/devlop (Copie)/Esprit-PIDEV-3A10-2526-FlahaSmart-devlop/src/main/java/api/ModerationAPI.java
+/home/fekher/Bureau/devlop (Copie)/Esprit-PIDEV-3A10-2526-FlahaSmart-devlop/src/main/java/controllers/Admin/AddAdminController.java
+/home/fekher/Bureau/devlop (Copie)/Esprit-PIDEV-3A10-2526-FlahaSmart-devlop/src/main/java/controllers/Admin/AfficherUser.java
+/home/fekher/Bureau/devlop (Copie)/Esprit-PIDEV-3A10-2526-FlahaSmart-devlop/src/main/java/controllers/Admin/ListUser.java
+/home/fekher/Bureau/devlop (Copie)/Esprit-PIDEV-3A10-2526-FlahaSmart-devlop/src/main/java/controllers/Admin/LoginAdmin.java
+/home/fekher/Bureau/devlop (Copie)/Esprit-PIDEV-3A10-2526-FlahaSmart-devlop/src/main/java/controllers/Admin/UpdateUser.java
+/home/fekher/Bureau/devlop (Copie)/Esprit-PIDEV-3A10-2526-FlahaSmart-devlop/src/main/java/controllers/Auth/ForgotPassword.java
+/home/fekher/Bureau/devlop (Copie)/Esprit-PIDEV-3A10-2526-FlahaSmart-devlop/src/main/java/controllers/Auth/Login.java
+/home/fekher/Bureau/devlop (Copie)/Esprit-PIDEV-3A10-2526-FlahaSmart-devlop/src/main/java/controllers/Auth/Register.java
+/home/fekher/Bureau/devlop (Copie)/Esprit-PIDEV-3A10-2526-FlahaSmart-devlop/src/main/java/controllers/Auth/Session.java
+/home/fekher/Bureau/devlop (Copie)/Esprit-PIDEV-3A10-2526-FlahaSmart-devlop/src/main/java/controllers/Dashbord/ClientHomeController.java
+/home/fekher/Bureau/devlop (Copie)/Esprit-PIDEV-3A10-2526-FlahaSmart-devlop/src/main/java/controllers/Dashbord/DashboardAdmController.java
+/home/fekher/Bureau/devlop (Copie)/Esprit-PIDEV-3A10-2526-FlahaSmart-devlop/src/main/java/controllers/Dashbord/DashboardAgriculteurController.java
+/home/fekher/Bureau/devlop (Copie)/Esprit-PIDEV-3A10-2526-FlahaSmart-devlop/src/main/java/controllers/Dashbord/DashboardHomeController.java
+/home/fekher/Bureau/devlop (Copie)/Esprit-PIDEV-3A10-2526-FlahaSmart-devlop/src/main/java/controllers/Dashbord/DashboardNut.java
+/home/fekher/Bureau/devlop (Copie)/Esprit-PIDEV-3A10-2526-FlahaSmart-devlop/src/main/java/controllers/Dashbord/DashboardUser.java
+/home/fekher/Bureau/devlop (Copie)/Esprit-PIDEV-3A10-2526-FlahaSmart-devlop/src/main/java/controllers/Dashbord/ProfileUserController.java
+/home/fekher/Bureau/devlop (Copie)/Esprit-PIDEV-3A10-2526-FlahaSmart-devlop/src/main/java/controllers/Dashbord/StatistiquesController.java
+/home/fekher/Bureau/devlop (Copie)/Esprit-PIDEV-3A10-2526-FlahaSmart-devlop/src/main/java/controllers/MainLayoutController.java
+/home/fekher/Bureau/devlop (Copie)/Esprit-PIDEV-3A10-2526-FlahaSmart-devlop/src/main/java/controllers/advancedfeatures/ChatbotController.java
+/home/fekher/Bureau/devlop (Copie)/Esprit-PIDEV-3A10-2526-FlahaSmart-devlop/src/main/java/controllers/advancedfeatures/DashboardController.java
+/home/fekher/Bureau/devlop (Copie)/Esprit-PIDEV-3A10-2526-FlahaSmart-devlop/src/main/java/controllers/advancedfeatures/IrrigationController.java
+/home/fekher/Bureau/devlop (Copie)/Esprit-PIDEV-3A10-2526-FlahaSmart-devlop/src/main/java/controllers/advancedfeatures/PlantDiseaseController.java
+/home/fekher/Bureau/devlop (Copie)/Esprit-PIDEV-3A10-2526-FlahaSmart-devlop/src/main/java/controllers/advancedfeatures/RotationCultureController.java
+/home/fekher/Bureau/devlop (Copie)/Esprit-PIDEV-3A10-2526-FlahaSmart-devlop/src/main/java/controllers/advancedfeatures/WeatherWidgetController.java
+/home/fekher/Bureau/devlop (Copie)/Esprit-PIDEV-3A10-2526-FlahaSmart-devlop/src/main/java/controllers/equipement/Ajout_Eq_Controller.java
+/home/fekher/Bureau/devlop (Copie)/Esprit-PIDEV-3A10-2526-FlahaSmart-devlop/src/main/java/controllers/equipement/ListeEqController.java
+/home/fekher/Bureau/devlop (Copie)/Esprit-PIDEV-3A10-2526-FlahaSmart-devlop/src/main/java/controllers/equipement/ModifierEqController.java
+/home/fekher/Bureau/devlop (Copie)/Esprit-PIDEV-3A10-2526-FlahaSmart-devlop/src/main/java/controllers/forum/AjouterThreadController.java
+/home/fekher/Bureau/devlop (Copie)/Esprit-PIDEV-3A10-2526-FlahaSmart-devlop/src/main/java/controllers/forum/CommentaireController.java
+/home/fekher/Bureau/devlop (Copie)/Esprit-PIDEV-3A10-2526-FlahaSmart-devlop/src/main/java/controllers/forum/ModifierThreadController.java
+/home/fekher/Bureau/devlop (Copie)/Esprit-PIDEV-3A10-2526-FlahaSmart-devlop/src/main/java/controllers/forum/ThreadController.java
+/home/fekher/Bureau/devlop (Copie)/Esprit-PIDEV-3A10-2526-FlahaSmart-devlop/src/main/java/controllers/home.java
+/home/fekher/Bureau/devlop (Copie)/Esprit-PIDEV-3A10-2526-FlahaSmart-devlop/src/main/java/controllers/operation/Ajout_Op_Controller.java
+/home/fekher/Bureau/devlop (Copie)/Esprit-PIDEV-3A10-2526-FlahaSmart-devlop/src/main/java/controllers/operation/ListeOpController.java
+/home/fekher/Bureau/devlop (Copie)/Esprit-PIDEV-3A10-2526-FlahaSmart-devlop/src/main/java/controllers/operation/ModifierOpController.java
+/home/fekher/Bureau/devlop (Copie)/Esprit-PIDEV-3A10-2526-FlahaSmart-devlop/src/main/java/entities/Equipement.java
+/home/fekher/Bureau/devlop (Copie)/Esprit-PIDEV-3A10-2526-FlahaSmart-devlop/src/main/java/entities/Operation.java
+/home/fekher/Bureau/devlop (Copie)/Esprit-PIDEV-3A10-2526-FlahaSmart-devlop/src/main/java/entities/Role.java
+/home/fekher/Bureau/devlop (Copie)/Esprit-PIDEV-3A10-2526-FlahaSmart-devlop/src/main/java/entities/User.java
+/home/fekher/Bureau/devlop (Copie)/Esprit-PIDEV-3A10-2526-FlahaSmart-devlop/src/main/java/entities/advancedfeatures/ChatMessage.java
+/home/fekher/Bureau/devlop (Copie)/Esprit-PIDEV-3A10-2526-FlahaSmart-devlop/src/main/java/entities/advancedfeatures/IrrigationPlan.java
+/home/fekher/Bureau/devlop (Copie)/Esprit-PIDEV-3A10-2526-FlahaSmart-devlop/src/main/java/entities/advancedfeatures/Parcelle.java
+/home/fekher/Bureau/devlop (Copie)/Esprit-PIDEV-3A10-2526-FlahaSmart-devlop/src/main/java/entities/advancedfeatures/RecommandationCulture.java
+/home/fekher/Bureau/devlop (Copie)/Esprit-PIDEV-3A10-2526-FlahaSmart-devlop/src/main/java/entities/advancedfeatures/Weather.java
+/home/fekher/Bureau/devlop (Copie)/Esprit-PIDEV-3A10-2526-FlahaSmart-devlop/src/main/java/entities/forum/Commentaire.java
+/home/fekher/Bureau/devlop (Copie)/Esprit-PIDEV-3A10-2526-FlahaSmart-devlop/src/main/java/entities/forum/Jaime.java
+/home/fekher/Bureau/devlop (Copie)/Esprit-PIDEV-3A10-2526-FlahaSmart-devlop/src/main/java/entities/forum/Notification.java
+/home/fekher/Bureau/devlop (Copie)/Esprit-PIDEV-3A10-2526-FlahaSmart-devlop/src/main/java/entities/forum/Reputation.java
+/home/fekher/Bureau/devlop (Copie)/Esprit-PIDEV-3A10-2526-FlahaSmart-devlop/src/main/java/entities/forum/Vote.java
+/home/fekher/Bureau/devlop (Copie)/Esprit-PIDEV-3A10-2526-FlahaSmart-devlop/src/main/java/entities/forum/thread.java
+/home/fekher/Bureau/devlop (Copie)/Esprit-PIDEV-3A10-2526-FlahaSmart-devlop/src/main/java/interfaces/IService.java
+/home/fekher/Bureau/devlop (Copie)/Esprit-PIDEV-3A10-2526-FlahaSmart-devlop/src/main/java/services/EmailService.java
+/home/fekher/Bureau/devlop (Copie)/Esprit-PIDEV-3A10-2526-FlahaSmart-devlop/src/main/java/services/EquipementService.java
+/home/fekher/Bureau/devlop (Copie)/Esprit-PIDEV-3A10-2526-FlahaSmart-devlop/src/main/java/services/Iservice.java
+/home/fekher/Bureau/devlop (Copie)/Esprit-PIDEV-3A10-2526-FlahaSmart-devlop/src/main/java/services/OperationService.java
+/home/fekher/Bureau/devlop (Copie)/Esprit-PIDEV-3A10-2526-FlahaSmart-devlop/src/main/java/services/PasswordResetService.java
+/home/fekher/Bureau/devlop (Copie)/Esprit-PIDEV-3A10-2526-FlahaSmart-devlop/src/main/java/services/UserService.java
+/home/fekher/Bureau/devlop (Copie)/Esprit-PIDEV-3A10-2526-FlahaSmart-devlop/src/main/java/services/advancedfeatures/AgriChatbotService.java
+/home/fekher/Bureau/devlop (Copie)/Esprit-PIDEV-3A10-2526-FlahaSmart-devlop/src/main/java/services/advancedfeatures/IrrigationService.java
+/home/fekher/Bureau/devlop (Copie)/Esprit-PIDEV-3A10-2526-FlahaSmart-devlop/src/main/java/services/advancedfeatures/PlantDiseaseService.java
+/home/fekher/Bureau/devlop (Copie)/Esprit-PIDEV-3A10-2526-FlahaSmart-devlop/src/main/java/services/advancedfeatures/RotationCultureService.java
+/home/fekher/Bureau/devlop (Copie)/Esprit-PIDEV-3A10-2526-FlahaSmart-devlop/src/main/java/services/advancedfeatures/WeatherService.java
+/home/fekher/Bureau/devlop (Copie)/Esprit-PIDEV-3A10-2526-FlahaSmart-devlop/src/main/java/services/forum/IService.java
+/home/fekher/Bureau/devlop (Copie)/Esprit-PIDEV-3A10-2526-FlahaSmart-devlop/src/main/java/services/forum/ServiceCommentaire.java
+/home/fekher/Bureau/devlop (Copie)/Esprit-PIDEV-3A10-2526-FlahaSmart-devlop/src/main/java/services/forum/ServiceJaime.java
+/home/fekher/Bureau/devlop (Copie)/Esprit-PIDEV-3A10-2526-FlahaSmart-devlop/src/main/java/services/forum/ServiceNotification.java
+/home/fekher/Bureau/devlop (Copie)/Esprit-PIDEV-3A10-2526-FlahaSmart-devlop/src/main/java/services/forum/ServiceReputation.java
+/home/fekher/Bureau/devlop (Copie)/Esprit-PIDEV-3A10-2526-FlahaSmart-devlop/src/main/java/services/forum/ServiceThreads.java
+/home/fekher/Bureau/devlop (Copie)/Esprit-PIDEV-3A10-2526-FlahaSmart-devlop/src/main/java/services/forum/ServiceVote.java
+/home/fekher/Bureau/devlop (Copie)/Esprit-PIDEV-3A10-2526-FlahaSmart-devlop/src/main/java/testes/Main.java
+/home/fekher/Bureau/devlop (Copie)/Esprit-PIDEV-3A10-2526-FlahaSmart-devlop/src/main/java/tools/myConnection.java
+/home/fekher/Bureau/devlop (Copie)/Esprit-PIDEV-3A10-2526-FlahaSmart-devlop/src/main/java/utilies/MyDataBase.java

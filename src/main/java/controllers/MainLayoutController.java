@@ -1,10 +1,12 @@
 package controllers;
 
+import controllers.forum.ThreadController;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Node;
 import javafx.scene.layout.BorderPane;
+import javafx.stage.Stage;
 
 public class MainLayoutController {
 
@@ -24,54 +26,34 @@ public class MainLayoutController {
         goToDashboard(null);
     }
 
-    @FXML
-    public void goToAdd() {
-        loadPage("/views/operation/AjouterOp.fxml");
-    }
+    @FXML public void goToAdd()                       { loadPage("/views/operation/AjouterOp.fxml"); }
+    @FXML public void goToList()                      { loadPage("/views/operation/ListeOp.fxml"); }
+    @FXML public void goToAddEq(ActionEvent e)        { loadPage("/views/equipement/AjouterEq.fxml"); }
+    @FXML public void goToListEq(ActionEvent e)       { loadPage("/views/equipement/ListeEq.fxml"); }
+    @FXML public void goToDashboard(ActionEvent e)    { loadPage("/views/advancedfeatures/Dashboard.fxml"); }
+    @FXML public void goToWeather(ActionEvent e)      { loadPage("/views/advancedfeatures/WeatherView.fxml"); }
+    @FXML public void goToChatbot(ActionEvent e)      { loadPage("/views/advancedfeatures/ChatbotView.fxml"); }
+    @FXML public void goToPlantDisease(ActionEvent e) { loadPage("/views/advancedfeatures/PlantDiseaseView.fxml"); }
+    @FXML public void goToIrrigation(ActionEvent e)   { loadPage("/views/advancedfeatures/IrrigationView.fxml"); }
+    @FXML public void goToRotation(ActionEvent e)     { loadPage("/views/advancedfeatures/RotationCultureView.fxml"); }
 
+    // =========================================================
+    //  FORUM — ouvre le Forum dans une nouvelle fenêtre
+    //  Le Forum est en pure Java (pas FXML)
+    // =========================================================
     @FXML
-    public void goToList() {
-        loadPage("/views/operation/ListeOp.fxml");
-    }
+    public void goToForum(ActionEvent event) {
+        try {
+            // Démarrer l'API de modération
+            try {
+                Class<?> api = Class.forName("api.ModerationAPI");
+                api.getMethod("demarrer").invoke(null);
+            } catch (Exception ignored) {} // déjà démarrée ou absente
 
-    @FXML
-    public void goToAddEq(ActionEvent actionEvent) {
-        loadPage("/views/equipement/AjouterEq.fxml");
+            Stage forumStage = new Stage();
+            new ThreadController().afficher(forumStage);
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
     }
-
-    @FXML
-    public void goToListEq(ActionEvent actionEvent) {
-        loadPage("/views/equipement/ListeEq.fxml");
-    }
-
-    @FXML
-    public void goToDashboard(ActionEvent actionEvent) {
-        loadPage("/views/advancedfeatures/Dashboard.fxml");
-    }
-
-    @FXML
-    public void goToWeather(ActionEvent actionEvent) {
-        loadPage("/views/advancedfeatures/WeatherView.fxml");
-    }
-
-    @FXML
-    public void goToChatbot(ActionEvent actionEvent) {
-        loadPage("/views/advancedfeatures/ChatbotView.fxml");
-    }
-
-    @FXML
-    public void goToPlantDisease(ActionEvent actionEvent) {
-        loadPage("/views/advancedfeatures/PlantDiseaseView.fxml");
-    }
-
-    @FXML
-    public void goToIrrigation(ActionEvent actionEvent) {
-        loadPage("/views/advancedfeatures/IrrigationView.fxml");
-    }
-
-    @FXML
-    public void goToRotation(ActionEvent actionEvent) {
-        loadPage("/views/advancedfeatures/RotationCultureView.fxml");
-    }
-
 }
