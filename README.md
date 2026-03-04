@@ -12,7 +12,7 @@ FlahaSmart is a Smart Agriculture Desktop Application designed to help farmers m
 * JavaFX
 * MySQL
 
-## Academic Context
+## Academic Context;:
 
 Developed at **Esprit School of Engineering – Tunisiaa**
 PIDEV – 3A | 2025–2026
