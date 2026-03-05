@@ -1,0 +1,335 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.chart.*?>
+<?import services.commande.ConsultantBot?>
+
+<TabPane xmlns:fx="http://javafx.com/fxml" fx:controller="controllers.commande.HelloController"
+         stylesheets="@styles.css" tabClosingPolicy="UNAVAILABLE" styleClass="green-theme">
+
+    <!-- Articles Tab -->
+    <Tab text="Articles" style="-fx-font-size: 14; -fx-padding: 10;">
+        <ScrollPane fitToWidth="true" fitToHeight="true">
+            <VBox spacing="15" style="-fx-padding: 25;" styleClass="form-container">
+
+                <Label text="Gestion des Articles" styleClass="form-title">
+                    <graphic>
+                        <Label styleClass="title-icon" text="📦"/>
+                    </graphic>
+                </Label>
+
+                <GridPane hgap="15" vgap="15" styleClass="form-grid">
+                    <columnConstraints>
+                        <ColumnConstraints percentWidth="50"/>
+                        <ColumnConstraints percentWidth="50"/>
+                    </columnConstraints>
+
+                    <!-- Nom Article -->
+                    <VBox spacing="5" GridPane.columnIndex="0" GridPane.rowIndex="0">
+                        <Label text="Nom * (3-15 caractères, lettres uniquement)" styleClass="form-label"/>
+                        <TextField fx:id="articleName" styleClass="form-input" promptText="Nom de l'article"/>
+                        <Label fx:id="articleNameError" styleClass="validation-label" text=""/>
+                    </VBox>
+
+                    <!-- Catégorie -->
+                    <VBox spacing="5" GridPane.columnIndex="1" GridPane.rowIndex="0">
+                        <Label text="Catégorie * (5-20 caractères)" styleClass="form-label"/>
+                        <TextField fx:id="articleCategory" styleClass="form-input" promptText="Catégorie"/>
+                        <Label fx:id="articleCategoryError" styleClass="validation-label" text=""/>
+                    </VBox>
+
+                    <!-- Description -->
+                    <VBox spacing="5" GridPane.columnIndex="0" GridPane.rowIndex="1" GridPane.columnSpan="2">
+                        <Label text="Description * (min 6 caractères)" styleClass="form-label"/>
+                        <TextArea fx:id="articleDescription" styleClass="form-textarea"
+                                  promptText="Description du produit" wrapText="true" prefRowCount="4"/>
+                        <Label fx:id="articleDescriptionError" styleClass="validation-label" text=""/>
+                    </VBox>
+
+                    <!-- Prix -->
+                    <VBox spacing="5" GridPane.columnIndex="0" GridPane.rowIndex="2">
+                        <Label text="Prix (€) * (>0)" styleClass="form-label"/>
+                        <Spinner fx:id="articlePrice" styleClass="form-spinner" editable="true"/>
+                        <Label fx:id="articlePriceError" styleClass="validation-label" text=""/>
+                    </VBox>
+
+                    <!-- Stock -->
+                    <VBox spacing="5" GridPane.columnIndex="1" GridPane.rowIndex="2">
+                        <Label text="Stock * (>0)" styleClass="form-label"/>
+                        <Spinner fx:id="articleStock" styleClass="form-spinner" editable="true"/>
+                        <Label fx:id="articleStockError" styleClass="validation-label" text=""/>
+                    </VBox>
+
+                    <!-- Poids -->
+                    <VBox spacing="5" GridPane.columnIndex="0" GridPane.rowIndex="3">
+                        <Label text="Poids (kg) * (>0)" styleClass="form-label"/>
+                        <Spinner fx:id="articleWeight" styleClass="form-spinner" editable="true"/>
+                        <Label fx:id="articleWeightError" styleClass="validation-label" text=""/>
+                    </VBox>
+
+                    <!-- Unité -->
+                    <VBox spacing="5" GridPane.columnIndex="1" GridPane.rowIndex="3">
+                        <Label text="Unité" styleClass="form-label"/>
+                        <TextField fx:id="articleUnit" styleClass="form-input" promptText="ex: pièce, kg"/>
+                    </VBox>
+
+                    <!-- Image URL -->
+                    <VBox spacing="5" GridPane.columnIndex="0" GridPane.rowIndex="4" GridPane.columnSpan="2">
+                        <Label text="URL Image * (doit commencer par https://)" styleClass="form-label"/>
+                        <TextField fx:id="articleImageUrl" styleClass="form-input" promptText="https://..."/>
+                        <Label fx:id="articleImageUrlError" styleClass="validation-label" text=""/>
+                    </VBox>
+                </GridPane>
+
+                <!-- Buttons -->
+                <HBox spacing="10" style="-fx-alignment: center;">
+                    <Button fx:id="addArticleBtn" text="+ Ajouter" styleClass="btn-primary"/>
+                    <Button fx:id="updateArticleBtn" text="✎ Modifier" styleClass="btn-secondary"/>
+                    <Button fx:id="clearArticleBtn" text="Réinitialiser" styleClass="btn-light"/>
+                </HBox>
+
+                <!-- Article Statistics Buttons -->
+                <Separator styleClass="green-separator"/>
+                <HBox spacing="10" style="-fx-alignment: center; -fx-padding: 10 0 0 0;">
+                    <Button fx:id="consulterPrixBtn" text="📊 Consulter Prix" styleClass="btn-primary" prefWidth="200"/>
+                    <Button fx:id="consulterPoidsBtn" text="⚖️ Consulter Poids" styleClass="btn-primary" prefWidth="200"/>
+                </HBox>
+
+            </VBox>
+        </ScrollPane>
+    </Tab>
+
+    <!-- Commandes Tab -->
+    <Tab text="Commandes" style="-fx-font-size: 14; -fx-padding: 10;">
+        <ScrollPane fitToWidth="true" fitToHeight="true">
+            <VBox spacing="15" style="-fx-padding: 25;" styleClass="form-container">
+
+                <Label text="Gestion des Commandes" styleClass="form-title">
+                    <graphic>
+                        <Label styleClass="title-icon" text="📋"/>
+                    </graphic>
+                </Label>
+
+                <GridPane hgap="15" vgap="15" styleClass="form-grid">
+                    <columnConstraints>
+                        <ColumnConstraints percentWidth="50"/>
+                        <ColumnConstraints percentWidth="50"/>
+                    </columnConstraints>
+
+                    <!-- Référence -->
+                    <VBox spacing="5" GridPane.columnIndex="0" GridPane.rowIndex="0">
+                        <Label text="Référence * (3-15 caractères)" styleClass="form-label"/>
+                        <TextField fx:id="orderReference" styleClass="form-input" promptText="Référence unique"/>
+                        <Label fx:id="orderReferenceError" styleClass="validation-label" text=""/>
+                    </VBox>
+
+                    <!-- Date Commande -->
+                    <VBox spacing="5" GridPane.columnIndex="1" GridPane.rowIndex="0">
+                        <Label text="Date Commande" styleClass="form-label"/>
+                        <DatePicker fx:id="orderDate" styleClass="form-input"/>
+                    </VBox>
+
+                    <!-- Statut -->
+                    <VBox spacing="5" GridPane.columnIndex="0" GridPane.rowIndex="1">
+                        <Label text="Statut * (3-10 caractères)" styleClass="form-label"/>
+                        <TextField fx:id="orderStatus" styleClass="form-input" promptText="ex: En cours, Livrée"/>
+                        <Label fx:id="orderStatusError" styleClass="validation-label" text=""/>
+                    </VBox>
+
+                    <!-- Mode Paiement -->
+                    <VBox spacing="5" GridPane.columnIndex="1" GridPane.rowIndex="1">
+                        <Label text="Mode Paiement * (3-10 caractères)" styleClass="form-label"/>
+                        <TextField fx:id="orderPaymentMode" styleClass="form-input" promptText="ex: Carte, Virement"/>
+                        <Label fx:id="orderPaymentError" styleClass="validation-label" text=""/>
+                    </VBox>
+
+                    <!-- Adresse Livraison -->
+                    <VBox spacing="5" GridPane.columnIndex="0" GridPane.rowIndex="2" GridPane.columnSpan="2">
+                        <Label text="Adresse Livraison * (2-30 caractères)" styleClass="form-label"/>
+                        <TextField fx:id="orderAddress" styleClass="form-input" promptText="Adresse complète"/>
+                        <Label fx:id="orderAddressError" styleClass="validation-label" text=""/>
+                    </VBox>
+
+                    <!-- Montant Total -->
+                    <VBox spacing="5" GridPane.columnIndex="0" GridPane.rowIndex="3">
+                        <Label text="Montant Total (€) * (>0)" styleClass="form-label"/>
+                        <Spinner fx:id="orderTotal" styleClass="form-spinner" editable="true"/>
+                        <Label fx:id="orderTotalError" styleClass="validation-label" text=""/>
+                    </VBox>
+
+                    <!-- Frais Livraison -->
+                    <VBox spacing="5" GridPane.columnIndex="1" GridPane.rowIndex="3">
+                        <Label text="Frais Livraison (€) * (>0)" styleClass="form-label"/>
+                        <Spinner fx:id="orderFees" styleClass="form-spinner" editable="true"/>
+                        <Label fx:id="orderFeesError" styleClass="validation-label" text=""/>
+                    </VBox>
+                </GridPane>
+
+                <!-- Buttons -->
+                <HBox spacing="10" style="-fx-alignment: center;">
+                    <Button fx:id="addOrderBtn" text="+ Ajouter" styleClass="btn-primary"/>
+                    <Button fx:id="updateOrderBtn" text="✎ Modifier" styleClass="btn-secondary"/>
+                    <Button fx:id="deleteOrderBtn" text="✕ Supprimer" styleClass="btn-danger"/>
+                    <Button fx:id="clearOrderBtn" text="Réinitialiser" styleClass="btn-light"/>
+                </HBox>
+
+                <!-- Order Statistics Buttons -->
+                <Separator styleClass="green-separator"/>
+                <HBox spacing="10" style="-fx-alignment: center; -fx-padding: 10 0 0 0;">
+                    <Button fx:id="consulterMontantBtn" text="💰 Consulter Montants" styleClass="btn-primary" prefWidth="200"/>
+                    <Button fx:id="consulterFraisBtn" text="🚚 Consulter Frais" styleClass="btn-primary" prefWidth="200"/>
+                </HBox>
+
+            </VBox>
+        </ScrollPane>
+    </Tab>
+
+    <!-- Résultat Articles Tab -->
+    <Tab text="Résultat Articles" style="-fx-font-size: 14; -fx-padding: 10;">
+        <VBox spacing="15" style="-fx-padding: 25;" styleClass="form-container">
+
+            <!-- Search Section -->
+            <VBox spacing="10" styleClass="search-section">
+                <Label text="Rechercher un Article" styleClass="section-title"/>
+                <HBox spacing="10" style="-fx-alignment: center-left;">
+                    <TextField fx:id="searchArticleField" styleClass="form-input" promptText="Rechercher par nom..." prefWidth="300" HBox.hgrow="ALWAYS"/>
+                    <Button fx:id="searchArticleBtn" text="🔍 Rechercher" styleClass="btn-primary"/>
+                    <Button fx:id="clearArticleSearchBtn" text="✕ Effacer" styleClass="btn-light"/>
+                </HBox>
+            </VBox>
+
+            <Separator styleClass="green-separator"/>
+
+            <!-- Sort and Refresh Section -->
+            <HBox spacing="10" style="-fx-alignment: center-left;">
+                <Label text="Liste des Articles" styleClass="form-title">
+                    <graphic>
+                        <Label styleClass="title-icon" text="📊"/>
+                    </graphic>
+                </Label>
+                <Region HBox.hgrow="ALWAYS"/>
+
+                <!-- Sorting controls -->
+                <Label text="Trier par:" styleClass="form-label"/>
+                <ComboBox fx:id="sortArticleCombo" prefWidth="180" styleClass="form-combo"/>
+                <Button fx:id="applyArticleSortBtn" text="Appliquer le tri" styleClass="btn-secondary"/>
+                <Button fx:id="refreshArticlesBtn" text="🔄 Rafraîchir" styleClass="btn-primary"/>
+            </HBox>
+
+            <TableView fx:id="articlesTable" prefHeight="450" styleClass="green-table">
+                <columns>
+                    <TableColumn text="ID" prefWidth="50" fx:id="idColumn"/>
+                    <TableColumn text="Nom" prefWidth="120" fx:id="nomColumn"/>
+                    <TableColumn text="Catégorie" prefWidth="100" fx:id="categorieColumn"/>
+                    <TableColumn text="Description" prefWidth="150" fx:id="descriptionColumn"/>
+                    <TableColumn text="Prix (€)" prefWidth="80" fx:id="prixColumn"/>
+                    <TableColumn text="Stock" prefWidth="70" fx:id="stockColumn"/>
+                    <TableColumn text="Poids (kg)" prefWidth="80" fx:id="poidsColumn"/>
+                    <TableColumn text="Unité" prefWidth="70" fx:id="uniteColumn"/>
+                    <TableColumn text="Date Ajout" prefWidth="120" fx:id="dateAjoutColumn"/>
+                    <TableColumn text="Image URL" prefWidth="150" fx:id="imageUrlColumn"/>
+                </columns>
+            </TableView>
+
+            <HBox style="-fx-alignment: center;">
+                <Label fx:id="articleCountLabel" text="Total: 0 articles" styleClass="count-label"/>
+            </HBox>
+
+            <Separator styleClass="green-separator"/>
+
+            <VBox spacing="10" styleClass="delete-section">
+                <Label text="Supprimer un Article" styleClass="section-title"/>
+
+                <HBox spacing="10" style="-fx-alignment: center-left;">
+                    <TextField fx:id="deleteArticleIdField" styleClass="form-input" promptText="Donner ID pour supprimer" prefWidth="250"/>
+                    <Button fx:id="deleteArticleTableBtn" text="✕ Supprimer" styleClass="btn-danger"/>
+                </HBox>
+            </VBox>
+
+        </VBox>
+    </Tab>
+
+    <!-- Résultat Commandes Tab -->
+    <Tab text="Résultat Commandes" style="-fx-font-size: 14; -fx-padding: 10;">
+        <VBox spacing="15" style="-fx-padding: 25;" styleClass="form-container">
+
+            <!-- Search Section for Orders -->
+            <VBox spacing="10" styleClass="search-section">
+                <Label text="Rechercher une Commande" styleClass="section-title"/>
+                <HBox spacing="10" style="-fx-alignment: center-left;">
+                    <TextField fx:id="searchOrderField" styleClass="form-input" promptText="Rechercher par référence..." prefWidth="300" HBox.hgrow="ALWAYS"/>
+                    <Button fx:id="searchOrderBtn" text="🔍 Rechercher" styleClass="btn-primary"/>
+                    <Button fx:id="clearOrderSearchBtn" text="✕ Effacer" styleClass="btn-light"/>
+                </HBox>
+            </VBox>
+
+            <Separator styleClass="green-separator"/>
+
+            <!-- Sort and Refresh Section for Orders -->
+            <HBox spacing="10" style="-fx-alignment: center-left;">
+                <Label text="Liste des Commandes" styleClass="form-title">
+                    <graphic>
+                        <Label styleClass="title-icon" text="📈"/>
+                    </graphic>
+                </Label>
+                <Region HBox.hgrow="ALWAYS"/>
+
+                <!-- Sorting controls for Orders -->
+                <Label text="Trier par:" styleClass="form-label"/>
+                <ComboBox fx:id="sortOrderCombo" prefWidth="180" styleClass="form-combo"/>
+                <Button fx:id="applyOrderSortBtn" text="Appliquer le tri" styleClass="btn-secondary"/>
+                <Button fx:id="refreshOrdersBtn" text="🔄 Rafraîchir" styleClass="btn-primary"/>
+            </HBox>
+
+            <TableView fx:id="ordersTable" prefHeight="450" styleClass="green-table">
+                <columns>
+                    <TableColumn text="ID" prefWidth="50" fx:id="orderIdColumn"/>
+                    <TableColumn text="Référence" prefWidth="120" fx:id="orderRefColumn"/>
+                    <TableColumn text="Date" prefWidth="100" fx:id="orderDateColumn"/>
+                    <TableColumn text="Statut" prefWidth="100" fx:id="orderStatusColumn"/>
+                    <TableColumn text="Paiement" prefWidth="100" fx:id="orderPaymentColumn"/>
+                    <TableColumn text="Adresse" prefWidth="180" fx:id="orderAddressColumn"/>
+                    <TableColumn text="Montant (€)" prefWidth="100" fx:id="orderTotalColumn"/>
+                    <TableColumn text="Frais (€)" prefWidth="80" fx:id="orderFeesColumn"/>
+                </columns>
+            </TableView>
+
+            <HBox style="-fx-alignment: center;">
+                <Label fx:id="orderCountLabel" text="Total: 0 commandes" styleClass="count-label"/>
+            </HBox>
+
+            <Separator styleClass="green-separator"/>
+
+            <VBox spacing="10" styleClass="delete-section">
+                <Label text="Supprimer une Commande" styleClass="section-title"/>
+
+                <HBox spacing="10" style="-fx-alignment: center-left;">
+                    <TextField fx:id="deleteOrderIdField" styleClass="form-input" promptText="Donner ID pour supprimer" prefWidth="250"/>
+                    <Button fx:id="deleteOrderTableBtn" text="✕ Supprimer" styleClass="btn-danger"/>
+                </HBox>
+            </VBox>
+
+        </VBox>
+    </Tab>
+
+
+    <!-- TODO List Tab -->
+    <!-- TODO List Tab -->
+    <Tab text="TO DO LIST" style="-fx-font-size: 14; -fx-padding: 10;">
+        <ScrollPane fitToWidth="true" fitToHeight="true">
+            <fx:include source="TodoView.fxml"/>
+        </ScrollPane>
+    </Tab>
+
+    <!-- Consultant Bot Tab -->
+    <Tab text="Consultant IA" style="-fx-font-size: 14; -fx-padding: 10;">
+        <ScrollPane fitToWidth="true" fitToHeight="true">
+            <VBox spacing="15" style="-fx-padding: 25;" styleClass="form-container">
+                <ConsultantBot fx:id="consultantBot" VBox.vgrow="ALWAYS"/>
+            </VBox>
+        </ScrollPane>
+    </Tab>
+
+</TabPane>

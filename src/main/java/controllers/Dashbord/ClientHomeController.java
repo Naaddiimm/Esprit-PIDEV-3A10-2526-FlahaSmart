@@ -11,6 +11,7 @@ import javafx.fxml.Initializable;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
+import javafx.scene.layout.BorderPane;
 import javafx.scene.control.Label;
 import javafx.scene.input.MouseEvent;
 import javafx.stage.Stage;
@@ -22,6 +23,7 @@ import java.util.ResourceBundle;
 
 public class ClientHomeController implements Initializable {
 
+    @FXML private BorderPane rootPane;
     @FXML private Label userNameLabel;
     @FXML private Label userEmailLabel;
     @FXML private Button logoutButton;
@@ -63,12 +65,9 @@ public class ClientHomeController implements Initializable {
     @FXML
     private void handleForum(ActionEvent event) {
         try {
-            // Démarrer l'API de modération
             try { api.ModerationAPI.demarrer(); } catch (Exception ignored) {}
-
-            Stage forumStage = new Stage();
-            new controllers.forum.ThreadController().afficher(forumStage);
-
+            BorderPane forumView = new controllers.forum.ThreadController().buildView();
+            rootPane.setCenter(forumView);
         } catch (Exception e) {
             e.printStackTrace();
             showNotification("Erreur", "Impossible d'ouvrir le Forum : " + e.getMessage());

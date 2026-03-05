@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<VBox spacing="15" xmlns:fx="http://javafx.com/fxml"
+      fx:controller="controllers.commande.TodoController"
+      styleClass="form-container">
+    <padding>
+        <Insets top="25" right="25" bottom="25" left="25"/>
+    </padding>
+
+    <!-- Title -->
+    <Label text="📋 TO DO LIST" styleClass="form-title">
+        <graphic>
+            <Label styleClass="title-icon" text="✅"/>
+        </graphic>
+    </Label>
+
+    <!-- Input Section -->
+    <GridPane hgap="15" vgap="15" styleClass="form-grid">
+        <columnConstraints>
+            <ColumnConstraints percentWidth="33"/>
+            <ColumnConstraints percentWidth="33"/>
+            <ColumnConstraints percentWidth="34"/>
+        </columnConstraints>
+
+        <!-- Consultant -->
+        <VBox spacing="5" GridPane.columnIndex="0" GridPane.rowIndex="0">
+            <Label text="Consultant:" styleClass="form-label"/>
+            <TextField fx:id="consultantIdField" styleClass="form-input" promptText="Nom du consultant"/>
+        </VBox>
+
+        <!-- Tâche -->
+        <VBox spacing="5" GridPane.columnIndex="1" GridPane.rowIndex="0">
+            <Label text="Tâche:" styleClass="form-label"/>
+            <TextField fx:id="taskField" styleClass="form-input" promptText="Entrez la tâche à ajouter"/>
+        </VBox>
+
+        <!-- Statut -->
+        <VBox spacing="5" GridPane.columnIndex="2" GridPane.rowIndex="0">
+            <Label text="Statut:" styleClass="form-label"/>
+            <ComboBox fx:id="statusCombo" styleClass="form-combo" prefWidth="150"/>
+        </VBox>
+    </GridPane>
+
+    <!-- Buttons -->
+    <HBox spacing="10" style="-fx-alignment: center;">
+        <Button fx:id="addTodoBtn" text="➕ Ajouter Tâche" styleClass="btn-primary" prefWidth="200"/>
+        <Button fx:id="refreshTodoBtn" text="🔄 Rafraîchir" styleClass="btn-light" prefWidth="200"/>
+    </HBox>
+
+    <Separator styleClass="green-separator"/>
+
+    <!-- Table Title -->
+    <Label text="Liste des Tâches" styleClass="form-title">
+        <graphic>
+            <Label styleClass="title-icon" text="📊"/>
+        </graphic>
+    </Label>
+
+    <!-- Todo Table with Action Buttons -->
+    <TableView fx:id="todoTable" prefHeight="350" styleClass="green-table">
+        <columns>
+            <TableColumn text="Consultant" prefWidth="200" fx:id="todoConsultantColumn"/>
+            <TableColumn text="Tâche" prefWidth="400" fx:id="todoTaskColumn"/>
+            <TableColumn text="Statut" prefWidth="100" fx:id="todoStatusColumn"/>
+            <TableColumn text="Actions" prefWidth="120" fx:id="todoActionsColumn"/>
+        </columns>
+    </TableView>
+
+    <!-- Count Label -->
+    <HBox style="-fx-alignment: center;">
+        <Label fx:id="todoCountLabel" text="Total: 0 tâches" styleClass="count-label"/>
+    </HBox>
+</VBox>

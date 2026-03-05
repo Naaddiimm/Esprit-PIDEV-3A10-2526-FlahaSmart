@@ -79,13 +79,13 @@
     "git-widget-placeholder": "Merging devlop",
     "junie.onboarding.icon.badge.shown": "true",
     "kotlin-language-version-configured": "true",
-    "last_opened_file_path": "/home/fekher/Bureau/devlop (Copie)/Esprit-PIDEV-3A10-2526-FlahaSmart-devlop",
+    "last_opened_file_path": "C:/xampp/htdocs/Esprit-PIDEV-",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
     "node.js.selected.package.tslint": "(autodetect)",
     "nodejs_package_manager_path": "npm",
-    "project.structure.last.edited": "SDKs",
+    "project.structure.last.edited": "Project",
     "project.structure.proportion": "0.15",
     "project.structure.side.proportion": "0.2",
     "settings.editor.selected.configurable": "MTThemeTableConfigurable",
@@ -118,7 +118,7 @@
     </configuration>
     <configuration name="MainApp" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="testes.MainApp" />
-      <module name="CRUD_Operation" />
+      <module name="FlahaSmart" />
       <extension name="coverage">
         <pattern>
           <option name="PATTERN" value="testes.*" />
@@ -272,6 +272,8 @@
       <workItem from="1772566513929" duration="15013000" />
       <workItem from="1772636451740" duration="733000" />
       <workItem from="1772655462391" duration="8655000" />
+      <workItem from="1772667725453" duration="2638000" />
+      <workItem from="1772670831704" duration="8110000" />
     </task>
     <task id="LOCAL-00001" summary="API 1">
       <option name="closed" value="true" />

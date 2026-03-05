@@ -1,5 +1,9 @@
 package controllers.Dashbord;
 
+import javafx.scene.Node;
+import javafx.scene.control.Alert;
+import javafx.scene.layout.StackPane;
+import javafx.scene.control.TabPane;
 import controllers.Auth.Session;
 import controllers.forum.ThreadController;
 import entities.User;
@@ -23,71 +27,119 @@ import java.util.ResourceBundle;
 
 public class DashboardAgriculteurController implements Initializable {
 
-    @FXML private Label     welcomeLabel;
-    @FXML private Text      welcomeText;
-    @FXML private Text      dateText;
-    @FXML private Label     dateLabel;
-    @FXML private Label     statusLabel;
-    @FXML private StackPane contentArea;
+    @FXML private Label welcomeLabel;
+    @FXML private Text welcomeText;
+    @FXML private Text dateText;
+    @FXML private Label dateLabel;
+    @FXML private Label statusLabel;
+    @FXML private StackPane contentArea;   // une seule déclaration
 
     private User loggedInUser;
 
+    // ===== MÉTHODES UTILITAIRES =====
+    private void loadView(String fxmlPath) {
+        try {
+            FXMLLoader loader = new FXMLLoader(getClass().getResource(fxmlPath));
+            Node view = loader.load();
+            contentArea.getChildren().setAll(view);
+        } catch (IOException e) {
+            e.printStackTrace();
+            showAlert("Erreur", "Impossible de charger la vue : " + fxmlPath);
+        }
+    }
+
+    private void loadMainViewAndSelectTab(int tabIndex) {
+        String[] possiblePaths = {
+                "/main-view.fxml",
+                "/views/main-view.fxml",
+                "/fxml/main-view.fxml",
+                "/com/example/flahasmarty/main-view.fxml"
+        };
+
+        FXMLLoader loader = null;
+        Node view = null;
+
+        for (String path : possiblePaths) {
+            try {
+                loader = new FXMLLoader(getClass().getResource(path));
+                if (loader.getLocation() != null) {
+                    view = loader.load();
+                    System.out.println("✅ main-view.fxml chargé depuis : " + path);
+                    break;
+                }
+            } catch (IOException e) {
+                // Ignorer et passer au chemin suivant
+            }
+        }
+
+        if (view == null) {
+            showAlert("Erreur", "main-view.fxml introuvable. Chemins testés : " + String.join(", ", possiblePaths));
+            return;
+        }
+
+        TabPane tabPane = (TabPane) view;
+        tabPane.getSelectionModel().select(tabIndex);
+        contentArea.getChildren().setAll(view);
+    }
+
+    private void showAlert(String title, String message) {
+        Alert alert = new Alert(Alert.AlertType.ERROR);
+        alert.setTitle(title);
+        alert.setHeaderText(null);
+        alert.setContentText(message);
+        alert.showAndWait();
+    }
+
+    // ===== HANDLERS POUR LES NOUVEAUX BOUTONS =====
+    @FXML
+    private void handleGestionArticles(ActionEvent event) {
+        loadMainViewAndSelectTab(0); // onglet Articles
+    }
+
+    @FXML
+    private void handleGestionCommandes(ActionEvent event) {
+        loadMainViewAndSelectTab(1); // onglet Commandes
+    }
+
+    @FXML
+    private void handleResultatsArticles(ActionEvent event) {
+        loadMainViewAndSelectTab(2); // onglet Résultat Articles
+    }
+
+    @FXML
+    private void handleResultatsCommandes(ActionEvent event) {
+        loadMainViewAndSelectTab(3); // onglet Résultat Commandes
+    }
+
+    @FXML
+    private void handleConsultantIA(ActionEvent event) {
+        loadMainViewAndSelectTab(5); // onglet Consultant IA
+    }
+
+    @FXML
+    private void handleTodoList(ActionEvent event) {
+        loadMainViewAndSelectTab(4); // onglet TO DO LIST
+    }
+
+    // ===== AUTRES MÉTHODES EXISTANTES =====
     public void setLoggedInUser(User user) {
         this.loggedInUser = user;
-        System.out.println("✅ Utilisateur reçu : " + (user != null ? user.getEmail() : "NULL"));
         if (user != null) {
             if (welcomeLabel != null) welcomeLabel.setText(user.getPrenom() + " " + user.getNom());
             if (welcomeText  != null) welcomeText.setText("Bienvenue, " + user.getPrenom() + " !");
         }
     }
 
-    // =========================================================
-    //  CHARGER UNE VUE FXML DANS LE contentArea
-    // =========================================================
-    private void loadView(String fxmlPath) {
-        if (contentArea == null) { System.err.println("❌ contentArea est null"); return; }
-        try {
-            URL resourceUrl = getClass().getResource(fxmlPath);
-            if (resourceUrl == null) { showPlaceholder(fxmlPath); return; }
 
-            FXMLLoader loader = new FXMLLoader(resourceUrl);
-            Parent view = loader.load();
-
-            Object controller = loader.getController();
-            if (controller != null && loggedInUser != null) {
-                try {
-                    controller.getClass().getMethod("setLoggedInUser", User.class)
-                            .invoke(controller, loggedInUser);
-                } catch (Exception ignored) {}
-            }
-
-            contentArea.getChildren().clear();
-            contentArea.getChildren().add(view);
-
-        } catch (IOException e) {
-            e.printStackTrace();
-            showPlaceholder(fxmlPath);
-        }
-    }
-
-    // =========================================================
-    //  FORUM — affiché DANS le contentArea du dashboard
-    // =========================================================
     @FXML
     public void handleForum(ActionEvent event) {
         try {
-            // Démarrer l'API de modération
             try { api.ModerationAPI.demarrer(); } catch (Exception ignored) {}
-
-            // Créer le Forum en pure Java et récupérer son BorderPane
             ThreadController forumController = new ThreadController();
             BorderPane forumView = forumController.buildView();
-
-            // L'afficher dans le contentArea du dashboard
             contentArea.getChildren().clear();
             contentArea.getChildren().add(forumView);
             setStatus("Forum");
-
         } catch (Exception e) {
             e.printStackTrace();
         }
@@ -106,7 +158,6 @@ public class DashboardAgriculteurController implements Initializable {
         contentArea.getChildren().add(placeholder);
     }
 
-    // ── Navigation ─────────────────────────────────────────
     @FXML public void handleAccueil(ActionEvent e)          { loadView("/views/agriculteur/Accueil.fxml");                    setStatus("Accueil"); }
     @FXML public void handleStatistiques(ActionEvent e)     { loadView("/views/advancedfeatures/Dashboard.fxml");            setStatus("Statistiques"); }
     @FXML public void handleParametres(ActionEvent e)       { loadView("/views/agriculteur/Parametres.fxml");                setStatus("Paramètres"); }

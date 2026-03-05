@@ -6,7 +6,7 @@ import java.sql.SQLException;
 
 public class myConnection {
     // CORRECTION : Ajoutez useSSL=false et permettez la récupération de clé publique
-    private String url = "jdbc:mysql://localhost:3306/flahasmart?useSSL=false&allowPublicKeyRetrieval=true&serverTimezone=UTC";
+    private String url = "jdbc:mysql://localhost:3306/flahhasmart?useSSL=false&allowPublicKeyRetrieval=true&serverTimezone=UTC";
     private String login = "root";
     private String password = "";
     private Connection con;

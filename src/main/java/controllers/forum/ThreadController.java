@@ -219,11 +219,7 @@ public class ThreadController {
         sidebar.setPadding(new Insets(24, 16, 24, 16));
         sidebar.setStyle("-fx-background-color: white; -fx-border-color: #E5E7EB; -fx-border-width: 0 1 0 0;");
 
-        sidebar.getChildren().addAll(
-                mkSidebarItem("", false),
-                mkSidebarItem("My Threads", true),
-                mkSidebarItem("", false)
-        );
+
 
         Label courseTitle = new Label("CURRENT COURSE");
         courseTitle.setStyle("-fx-font-size: 11px; -fx-text-fill: #9CA3AF; -fx-font-weight: bold;");

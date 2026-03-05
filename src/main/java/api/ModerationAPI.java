@@ -1,7 +1,9 @@
 package api;
 
 import com.google.gson.*;
-import com.sun.net.httpserver.*;
+import com.sun.net.httpserver.HttpExchange;
+import com.sun.net.httpserver.HttpHandler;
+import com.sun.net.httpserver.HttpServer;
 import okhttp3.*;
 import services.forum.ServiceCommentaire;
 import services.forum.ServiceThreads;
@@ -311,7 +313,8 @@ public class ModerationAPI {
                         MediaType.get("application/json; charset=utf-8")
                 );
 
-                Request request = new Request.Builder()
+                // Use fully qualified name to avoid ambiguity
+                okhttp3.Request request = new okhttp3.Request.Builder()
                         .url("https://api.api-ninjas.com/v1/textsimilarity")
                         .addHeader("X-Api-Key", API_KEY)
                         .post(requestBody)
@@ -343,7 +346,7 @@ public class ModerationAPI {
         ResultatModeration resultat = new ResultatModeration();
         try {
             String encoded = URLEncoder.encode(texte, StandardCharsets.UTF_8);
-            Request request = new Request.Builder()
+            okhttp3.Request request = new okhttp3.Request.Builder()
                     .url(URL_PROFANITY + encoded)
                     .addHeader("X-Api-Key", API_KEY)
                     .get()
@@ -369,7 +372,7 @@ public class ModerationAPI {
     static String analyserSentiment(String texte) {
         try {
             String encoded = URLEncoder.encode(texte, StandardCharsets.UTF_8);
-            Request request = new Request.Builder()
+            okhttp3.Request request = new okhttp3.Request.Builder()
                     .url(URL_SENTIMENT + encoded)
                     .addHeader("X-Api-Key", API_KEY)
                     .get()

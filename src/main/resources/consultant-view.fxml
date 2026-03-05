@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<fx:root type="javafx.scene.layout.VBox" xmlns:fx="http://javafx.com/fxml"
+         spacing="15" styleClass="consultant-container">
+    <padding>
+        <Insets top="20" right="20" bottom="20" left="20"/>
+    </padding>
+
+    <!-- Title -->
+    <Label styleClass="form-title" text="Faire une Consultation"
+           style="-fx-font-size: 20px; -fx-text-fill: #2e7d32; -fx-font-weight: bold;"/>
+
+    <!-- Status section -->
+    <HBox spacing="10" alignment="CENTER_LEFT" style="-fx-padding: 0 0 10 0;">
+        <Label text="deepseek-r1:1.5b"
+               style="-fx-font-weight: bold; -fx-text-fill: #1b5e20; -fx-background-color: #e8f5e9; -fx-padding: 5 15; -fx-background-radius: 20; -fx-font-size: 13px;"/>
+        <Region HBox.hgrow="ALWAYS"/>
+        <Label fx:id="statusLabel" text="Prêt à vous aider"
+               style="-fx-text-fill: #2e7d32; -fx-font-style: italic; -fx-font-size: 13px;"/>
+        <ProgressIndicator fx:id="loadingIndicator" prefWidth="20" prefHeight="20" visible="false"/>
+    </HBox>
+
+    <!-- Chat history area -->
+    <Label text="💬 Consultation" styleClass="section-title"
+           style="-fx-font-size: 16px; -fx-text-fill: #2e7d32; -fx-font-weight: bold; -fx-padding: 10 0 5 0;"/>
+    <ListView fx:id="chatHistory" prefHeight="400"
+              style="-fx-background-color: #f9f9f9; -fx-border-color: #c8e6c9; -fx-border-width: 2; -fx-border-radius: 10; -fx-background-radius: 10;"/>
+
+    <!-- Message input area -->
+    <Label text="Votre Consultation:" styleClass="form-label"
+           style="-fx-font-weight: bold; -fx-text-fill: #2e7d32; -fx-font-size: 14px; -fx-padding: 10 0 0 0;"/>
+    <HBox spacing="10" alignment="CENTER_LEFT">
+        <TextField fx:id="messageInput" promptText="Consulter ici..."
+                   prefHeight="45" HBox.hgrow="ALWAYS"
+                   style="-fx-border-radius: 8; -fx-background-radius: 8; -fx-font-size: 14px; -fx-padding: 10;"/>
+        <Button fx:id="sendButton" text="Envoyer" prefWidth="120" prefHeight="45"
+                styleClass="btn-primary" style="-fx-font-size: 14px; -fx-font-weight: bold; -fx-background-radius: 8;"/>
+        <Button fx:id="clearButton" text="Effacer" prefWidth="120" prefHeight="45"
+                styleClass="btn-light" style="-fx-font-size: 14px; -fx-background-radius: 8; -fx-border-color: #cccccc; -fx-border-radius: 8;"/>
+    </HBox>
+</fx:root>

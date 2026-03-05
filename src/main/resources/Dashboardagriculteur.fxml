@@ -34,9 +34,7 @@
 
             <Separator styleClass="divider-gradient"/>
 
-            <!-- ==============================================
-                 PROFIL UTILISATEUR - AFFICHAGE NOM
-                 ============================================== -->
+            <!-- Profil utilisateur -->
             <HBox styleClass="user-profile" alignment="CENTER_LEFT" spacing="14">
                 <padding><Insets top="20" bottom="20" left="24" right="24"/></padding>
                 <StackPane>
@@ -45,7 +43,6 @@
                     <FontAwesomeIconView glyphName="USER" size="20" styleClass="avatar-icon"/>
                 </StackPane>
                 <VBox spacing="4">
-                    <!-- Label pour afficher le nom de l'utilisateur connecté -->
                     <Label fx:id="welcomeLabel" text="Chargement..." styleClass="user-name"/>
                     <HBox spacing="6" alignment="CENTER_LEFT">
                         <FontAwesomeIconView glyphName="STAR" size="10" styleClass="premium-star"/>
@@ -56,97 +53,103 @@
 
             <Separator styleClass="divider-gradient"/>
 
-            <!-- Menu principal avec animations -->
-            <VBox styleClass="nav-menu" spacing="4" VBox.vgrow="ALWAYS">
-                <padding><Insets top="20" bottom="100" left="20" right="20"/></padding>
+            <!-- ===== ZONE SCROLLABLE DU MENU ===== -->
+            <ScrollPane fitToWidth="true" styleClass="sidebar-scroll" VBox.vgrow="ALWAYS">
+                <VBox styleClass="nav-menu" spacing="4">
+                    <padding><Insets top="20" bottom="20" left="20" right="20"/></padding>
 
-                <Label text="TABLEAU DE BORD" styleClass="nav-section"/>
+                    <Label text="TABLEAU DE BORD" styleClass="nav-section"/>
+                    <Button styleClass="nav-item" maxWidth="Infinity" onAction="#handleStatistiques">
+                        <graphic><FontAwesomeIconView glyphName="BAR_CHART" size="16" styleClass="nav-icon"/></graphic>
+                        <text>Statistiques</text>
+                    </Button>
 
-                <Button styleClass="nav-item" maxWidth="Infinity" onAction="#handleStatistiques">
-                    <graphic><FontAwesomeIconView glyphName="BAR_CHART" size="16" styleClass="nav-icon"/></graphic>
-                    <text>Statistiques</text>
-                </Button>
+                    <Label text="GESTION DES OPÉRATIONS" styleClass="nav-section"/>
+                    <Button styleClass="nav-item" maxWidth="Infinity" onAction="#handleAjouterOperation">
+                        <graphic><FontAwesomeIconView glyphName="PLUS_CIRCLE" size="16" styleClass="nav-icon"/></graphic>
+                        <text>Ajouter opération</text>
+                    </Button>
+                    <Button styleClass="nav-item" maxWidth="Infinity" onAction="#handleListeOperations">
+                        <graphic><FontAwesomeIconView glyphName="LIST_ALT" size="16" styleClass="nav-icon"/></graphic>
+                        <text>Liste opérations</text>
+                    </Button>
+                    <Button styleClass="nav-item" maxWidth="Infinity" onAction="#handleAjouterEquipement">
+                        <graphic><FontAwesomeIconView glyphName="PLUS_SQUARE_ALT" size="16" styleClass="nav-icon"/></graphic>
+                        <text>Ajouter équipement</text>
+                    </Button>
+                    <Button styleClass="nav-item" maxWidth="Infinity" onAction="#handleListeEquipements">
+                        <graphic><FontAwesomeIconView glyphName="CUBES" size="16" styleClass="nav-icon"/></graphic>
+                        <text>Liste équipements</text>
+                    </Button>
 
-                <Label text="GESTION DES OPÉRATIONS" styleClass="nav-section"/>
+                    <Label text="OUTILS AGRICOLES" styleClass="nav-section"/>
+                    <Button styleClass="nav-item" maxWidth="Infinity" onAction="#handleMeteo">
+                        <graphic><FontAwesomeIconView glyphName="CLOUD" size="16" styleClass="nav-icon"/></graphic>
+                        <text>Météo</text>
+                    </Button>
+                    <Button styleClass="nav-item" maxWidth="Infinity" onAction="#handleAgriBot">
+                        <graphic><FontAwesomeIconView glyphName="COMMENT" size="16" styleClass="nav-icon"/></graphic>
+                        <text>AgriBot</text>
+                    </Button>
+                    <Button styleClass="nav-item" maxWidth="Infinity" onAction="#handleAnalyseMaladie">
+                        <graphic><FontAwesomeIconView glyphName="MEDKIT" size="16" styleClass="nav-icon"/></graphic>
+                        <text>Analyse Maladie</text>
+                    </Button>
+                    <Button styleClass="nav-item" maxWidth="Infinity" onAction="#handleIrrigation">
+                        <graphic><FontAwesomeIconView glyphName="TINT" size="16" styleClass="nav-icon"/></graphic>
+                        <text>Irrigation</text>
+                    </Button>
+                    <Button styleClass="nav-item" maxWidth="Infinity" onAction="#handleRotationCultures">
+                        <graphic><FontAwesomeIconView glyphName="REFRESH" size="16" styleClass="nav-icon"/></graphic>
+                        <text>Rotation Cultures</text>
+                    </Button>
 
-                <Button styleClass="nav-item" maxWidth="Infinity" onAction="#handleAjouterOperation">
-                    <graphic><FontAwesomeIconView glyphName="PLUS_CIRCLE" size="16" styleClass="nav-icon"/></graphic>
-                    <text>Ajouter opération</text>
-                </Button>
+                    <!-- NOUVELLE SECTION : GESTION DES ARTICLES ET COMMANDES -->
+                    <Label text="GESTION DES ARTICLES ET COMMANDES" styleClass="nav-section"/>
+                    <Button styleClass="nav-item" maxWidth="Infinity" onAction="#handleGestionArticles">
+                        <graphic><FontAwesomeIconView glyphName="SHOPPING_CART" size="16" styleClass="nav-icon"/></graphic>
+                        <text>Gestion des Articles</text>
+                    </Button>
+                    <Button styleClass="nav-item" maxWidth="Infinity" onAction="#handleGestionCommandes">
+                        <graphic><FontAwesomeIconView glyphName="LIST_ALT" size="16" styleClass="nav-icon"/></graphic>
+                        <text>Gestion des Commandes</text>
+                    </Button>
+                    <Button styleClass="nav-item" maxWidth="Infinity" onAction="#handleResultatsArticles">
+                        <graphic><FontAwesomeIconView glyphName="TABLE" size="16" styleClass="nav-icon"/></graphic>
+                        <text>Résultats Articles</text>
+                    </Button>
+                    <Button styleClass="nav-item" maxWidth="Infinity" onAction="#handleResultatsCommandes">
+                        <graphic><FontAwesomeIconView glyphName="TABLE" size="16" styleClass="nav-icon"/></graphic>
+                        <text>Résultats Commandes</text>
+                    </Button>
+                    <Button styleClass="nav-item" maxWidth="Infinity" onAction="#handleConsultantIA">
+                        <graphic><FontAwesomeIconView glyphName="COMMENT" size="16" styleClass="nav-icon"/></graphic>
+                        <text>Consultant IA</text>
+                    </Button>
+                    <Button styleClass="nav-item" maxWidth="Infinity" onAction="#handleTodoList">
+                        <graphic><FontAwesomeIconView glyphName="CHECK_SQUARE" size="16" styleClass="nav-icon"/></graphic>
+                        <text>Todo List</text>
+                    </Button>
 
-                <Button styleClass="nav-item" maxWidth="Infinity" onAction="#handleListeOperations">
-                    <graphic><FontAwesomeIconView glyphName="LIST_ALT" size="16" styleClass="nav-icon"/></graphic>
-                    <text>Liste opérations</text>
-                </Button>
+                    <Label text="COMMUNAUTÉ" styleClass="nav-section"/>
+                    <Button styleClass="nav-item" maxWidth="Infinity" onAction="#handleForum">
+                        <graphic><FontAwesomeIconView glyphName="COMMENTS" size="16" styleClass="nav-icon"/></graphic>
+                        <text>Forum</text>
+                    </Button>
+                </VBox>
+            </ScrollPane>
 
-                <Button styleClass="nav-item" maxWidth="Infinity" onAction="#handleAjouterEquipement">
-                    <graphic><FontAwesomeIconView glyphName="PLUS_SQUARE_ALT" size="16" styleClass="nav-icon"/></graphic>
-                    <text>Ajouter équipement</text>
-                </Button>
+            <Separator styleClass="divider-gradient"/>
 
-                <Button styleClass="nav-item" maxWidth="Infinity" onAction="#handleListeEquipements">
-                    <graphic><FontAwesomeIconView glyphName="CUBES" size="16" styleClass="nav-icon"/></graphic>
-                    <text>Liste équipements</text>
-                </Button>
-
-                <Label text="OUTILS AGRICOLES" styleClass="nav-section"/>
-
-                <Button styleClass="nav-item" maxWidth="Infinity" onAction="#handleMeteo">
-                    <graphic><FontAwesomeIconView glyphName="CLOUD" size="16" styleClass="nav-icon"/></graphic>
-                    <text>Météo</text>
-                </Button>
-
-                <Button styleClass="nav-item" maxWidth="Infinity" onAction="#handleAgriBot">
-                    <graphic><FontAwesomeIconView glyphName="COMMENT" size="16" styleClass="nav-icon"/></graphic>
-                    <text>AgriBot</text>
-                </Button>
-
-                <Button styleClass="nav-item" maxWidth="Infinity" onAction="#handleAnalyseMaladie">
-                    <graphic><FontAwesomeIconView glyphName="MEDKIT" size="16" styleClass="nav-icon"/></graphic>
-                    <text>Analyse Maladie</text>
-                </Button>
-
-                <Button styleClass="nav-item" maxWidth="Infinity" onAction="#handleIrrigation">
-                    <graphic><FontAwesomeIconView glyphName="TINT" size="16" styleClass="nav-icon"/></graphic>
-                    <text>Irrigation</text>
-                </Button>
-
-                <Button styleClass="nav-item" maxWidth="Infinity" onAction="#handleRotationCultures">
-                    <graphic><FontAwesomeIconView glyphName="REFRESH" size="16" styleClass="nav-icon"/></graphic>
-                    <text>Rotation Cultures</text>
-                </Button>
-
-                <!-- 👇 AJOUTER ICI -->
-                <Label text="COMMUNAUTÉ" styleClass="nav-section"/>
-
-                <Button styleClass="nav-item" maxWidth="Infinity" onAction="#handleForum">
-                    <graphic><FontAwesomeIconView glyphName="COMMENTS" size="16" styleClass="nav-icon"/></graphic>
-                    <text>Forum</text>
-                </Button>
-
-                <!-- Espace flexible -->
-                <Region VBox.vgrow="ALWAYS"/>
-
-                <Separator styleClass="divider-gradient"/>
-
-                <!-- ==============================================
-                     MENU PROFIL ET PARAMÈTRES - AJOUTÉ
-                     ============================================== -->
-                <Button styleClass="nav-item" maxWidth="Infinity" onAction="#handleProfil">
-                    <graphic>
-                        <FontAwesomeIconView glyphName="USER_CIRCLE" size="16" styleClass="nav-icon"/>
-                    </graphic>
-                    <text>Mon Profil</text>
-                </Button>
-                
-                <!-- Bouton de déconnexion -->
-                <Button styleClass="nav-item, logout" maxWidth="Infinity" onAction="#handleDeconnexion">
-                    <graphic>
-                        <FontAwesomeIconView glyphName="SIGN_OUT" size="16" styleClass="nav-icon"/>
-                    </graphic>
-                    <text>Déconnexion</text>
-                </Button>
-            </VBox>
+            <!-- Boutons fixes en bas -->
+            <Button styleClass="nav-item" maxWidth="Infinity" onAction="#handleProfil">
+                <graphic><FontAwesomeIconView glyphName="USER_CIRCLE" size="16" styleClass="nav-icon"/></graphic>
+                <text>Mon Profil</text>
+            </Button>
+            <Button styleClass="nav-item, logout" maxWidth="Infinity" onAction="#handleDeconnexion">
+                <graphic><FontAwesomeIconView glyphName="SIGN_OUT" size="16" styleClass="nav-icon"/></graphic>
+                <text>Déconnexion</text>
+            </Button>
         </VBox>
     </left>
 
@@ -162,11 +165,9 @@
 
                 <VBox spacing="4" HBox.hgrow="ALWAYS">
                     <Text text="Dashboard Agriculteur" styleClass="page-title"/>
-                    <!-- Texte de bienvenue dynamique -->
                     <Text fx:id="welcomeText" text="Bienvenue sur votre espace" styleClass="page-subtitle"/>
                 </VBox>
 
-                <!-- Menu avatar avec profil et déconnexion -->
                 <MenuButton styleClass="avatar-menu">
                     <graphic>
                         <StackPane>
@@ -190,10 +191,7 @@
                 </MenuButton>
             </HBox>
 
-            <!-- Zone de contenu dynamique -->
-            <StackPane fx:id="contentArea" styleClass="content-scroll-modern" VBox.vgrow="ALWAYS">
-                <!-- Le contenu FXML sera chargé ici dynamiquement -->
-            </StackPane>
+            <StackPane fx:id="contentArea" styleClass="content-scroll-modern" VBox.vgrow="ALWAYS" />
         </VBox>
     </center>
 </BorderPane>
