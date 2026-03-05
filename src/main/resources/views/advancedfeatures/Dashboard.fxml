@@ -53,7 +53,6 @@
 
                     <!-- Opérations urgentes / les plus proches -->
                     <VBox spacing="15" styleClass="card" HBox.hgrow="ALWAYS">
-                        <Label text="🚨 Opérations Urgentes" styleClass="card-title"/>
                         <VBox fx:id="urgentOperationsContainer" spacing="10"/>
                     </VBox>
 

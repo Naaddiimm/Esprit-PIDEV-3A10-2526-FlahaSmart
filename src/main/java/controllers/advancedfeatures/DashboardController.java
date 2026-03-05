@@ -246,8 +246,8 @@ public class DashboardController {
             HBox miniStats = new HBox(15);
             miniStats.setAlignment(Pos.CENTER);
             miniStats.getChildren().addAll(
-                    createMiniStat("🟢 Disponibles", String.valueOf(disponibles), "#22c55e"),
-                    createMiniStat("🔴 En utilisation", String.valueOf(enUtilisation), "#ef4444")
+                    createMiniStat(" Disponibles", String.valueOf(disponibles), "#22c55e"),
+                    createMiniStat(" En utilisation", String.valueOf(enUtilisation), "#ef4444")
             );
             equipementUsageContainer.getChildren().add(miniStats);
 
@@ -290,7 +290,7 @@ public class DashboardController {
             }
 
             // Titre de la section
-            Label titleSection = new Label("⚡ Opérations les plus proches");
+            Label titleSection = new Label("Opérations les plus proches");
             titleSection.setStyle("-fx-font-size: 16px; -fx-font-weight: bold; -fx-text-fill: #1f2937; -fx-padding: 0 0 10 0;");
             urgentOperationsContainer.getChildren().add(titleSection);
 
@@ -324,7 +324,7 @@ public class DashboardController {
             // Attention - Orange
             bgColor = "#fffbeb";
             borderColor = "#f59e0b";
-            urgenceIcon = "⚠️";
+            urgenceIcon = "⚠";
             urgenceText = "Attention";
         } else {
             // Normal - Vert

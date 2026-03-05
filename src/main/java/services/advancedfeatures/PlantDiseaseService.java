@@ -17,7 +17,7 @@ import java.util.List;
  */
 public class PlantDiseaseService {
 
-    private static final String API_KEY = "";
+    private static final String API_KEY = "2b10m96CfdIir4kW0Mq6l2Xru";
     private static final String API_URL = "https://my-api.plantnet.org/v2/identify/all";
 
     /**

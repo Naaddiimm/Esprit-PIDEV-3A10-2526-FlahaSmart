@@ -14,7 +14,7 @@ import java.util.List;
 
 public class AgriChatbotService {
 
-    private static final String API_KEY = "";
+    private static final String API_KEY = "AIzaSyDp_fl7eXH7J8rZ54w2pPJosczEDdYNc2A";
     private static final String GEMINI_API_URL = "https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:generateContent?key=" + API_KEY;
 
     private final HttpClient httpClient;

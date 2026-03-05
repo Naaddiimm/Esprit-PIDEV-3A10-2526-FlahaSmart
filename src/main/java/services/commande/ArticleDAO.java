@@ -1,7 +1,8 @@
 package services.commande;
 
+import controllers.Auth.Session;
 import entities.commande.Article;
-import tools.myConnection;
+import utilies.MyDataBase;
 
 import java.sql.*;
 import java.util.ArrayList;
@@ -9,12 +10,25 @@ import java.util.List;
 
 public class ArticleDAO {
 
+    private Connection conn;
+
+    public ArticleDAO() {
+        this.conn = MyDataBase.getInstance().getConnection();
+    }
+
     public void insertArticle(Article article) {
+        int userId = Session.isLoggedIn() ? Session.getCurrentUser().getId_user() : -1;
         String sql = "INSERT INTO articles (nom, description, categorie, prix, stock, poids, unite, image_url, id_user) " +
                 "VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)";
 
-        try (Connection conn = myConnection.getInstance().getCnx();
-             PreparedStatement ps = conn.prepareStatement(sql)) {
+        if (conn == null) {
+            System.out.println("❌ Connection NULL");
+        }
+        if (conn != null) {
+            System.out.println(" Connection OK");
+        }
+
+        try (PreparedStatement ps = conn.prepareStatement(sql)) {
 
             ps.setString(1, article.getNom());
             ps.setString(2, article.getDescription());
@@ -24,7 +38,7 @@ public class ArticleDAO {
             ps.setDouble(6, article.getPoids());
             ps.setString(7, article.getUnite());
             ps.setString(8, article.getImageUrl());
-            ps.setInt(9, article.getIdUser());
+            ps.setInt(9, userId);
 
             int result = ps.executeUpdate();
             if (result > 0) {
@@ -39,8 +53,7 @@ public class ArticleDAO {
     public void updateArticle(Article article) {
         String sql = "UPDATE articles SET nom=?, description=?, categorie=?, prix=?, stock=?, poids=?, unite=?, image_url=? WHERE id_article=?";
 
-        try (Connection conn = myConnection.getInstance().getCnx();
-             PreparedStatement ps = conn.prepareStatement(sql)) {
+        try (PreparedStatement ps = conn.prepareStatement(sql)) {
 
             ps.setString(1, article.getNom());
             ps.setString(2, article.getDescription());
@@ -67,8 +80,7 @@ public class ArticleDAO {
     public void deleteArticle(int id) {
         String sql = "DELETE FROM articles WHERE id_article=?";
 
-        try (Connection conn = myConnection.getInstance().getCnx();
-             PreparedStatement ps = conn.prepareStatement(sql)) {
+        try (PreparedStatement ps = conn.prepareStatement(sql)) {
 
             ps.setInt(1, id);
             int rowsAffected = ps.executeUpdate();
@@ -87,8 +99,7 @@ public class ArticleDAO {
         String sql = "SELECT id_article, nom, description, categorie, prix, stock, poids, unite, image_url, id_user, date_ajout FROM articles ORDER BY id_article DESC";
         List<Article> articles = new ArrayList<>();
 
-        try (Connection conn = myConnection.getInstance().getCnx();
-             PreparedStatement ps = conn.prepareStatement(sql);
+        try (PreparedStatement ps = conn.prepareStatement(sql);
              ResultSet rs = ps.executeQuery()) {
 
             while (rs.next()) {
@@ -121,8 +132,7 @@ public class ArticleDAO {
                 "FROM articles WHERE LOWER(nom) LIKE LOWER(?) ORDER BY id_article DESC";
         List<Article> articles = new ArrayList<>();
 
-        try (Connection conn = myConnection.getInstance().getCnx();
-             PreparedStatement ps = conn.prepareStatement(sql)) {
+        try (PreparedStatement ps = conn.prepareStatement(sql)) {
 
             ps.setString(1, "%" + searchTerm + "%");
             try (ResultSet rs = ps.executeQuery()) {
@@ -156,8 +166,7 @@ public class ArticleDAO {
         String sql = "SELECT id_article, nom, description, categorie, prix, stock, poids, unite, image_url, id_user, date_ajout FROM articles WHERE id_article = ?";
         Article article = null;
 
-        try (Connection conn = myConnection.getInstance().getCnx();
-             PreparedStatement ps = conn.prepareStatement(sql)) {
+        try (PreparedStatement ps = conn.prepareStatement(sql)) {
 
             ps.setInt(1, id);
             try (ResultSet rs = ps.executeQuery()) {

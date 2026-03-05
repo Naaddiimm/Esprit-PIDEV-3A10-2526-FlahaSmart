@@ -4,7 +4,34 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="0dd62393-fca9-412a-8652-b090a5ec4918" name="Changes" comment="Finale 2.5" />
+    <list default="true" id="0dd62393-fca9-412a-8652-b090a5ec4918" name="Changes" comment="Finale 2.5">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/controllers/advancedfeatures/DashboardController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/controllers/advancedfeatures/DashboardController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/services/advancedfeatures/AgriChatbotService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/services/advancedfeatures/AgriChatbotService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/services/advancedfeatures/PlantDiseaseService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/services/advancedfeatures/PlantDiseaseService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/services/commande/ArticleDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/services/commande/ArticleDAO.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/services/commande/OrderDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/services/commande/OrderDAO.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/utilies/MyDataBase.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/utilies/MyDataBase.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/views/advancedfeatures/Dashboard.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/views/advancedfeatures/Dashboard.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/controllers/advancedfeatures/ChatbotController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/controllers/advancedfeatures/ChatbotController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/controllers/advancedfeatures/DashboardController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/controllers/advancedfeatures/DashboardController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/controllers/advancedfeatures/IrrigationController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/controllers/advancedfeatures/IrrigationController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/controllers/advancedfeatures/PlantDiseaseController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/controllers/advancedfeatures/PlantDiseaseController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/controllers/advancedfeatures/RotationCultureController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/controllers/advancedfeatures/RotationCultureController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/controllers/advancedfeatures/WeatherWidgetController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/controllers/advancedfeatures/WeatherWidgetController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/controllers/equipement/ListeEqController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/controllers/equipement/ListeEqController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/controllers/operation/ListeOpController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/controllers/operation/ListeOpController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/services/EquipementService.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/services/EquipementService.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/services/OperationService.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/services/OperationService.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/services/advancedfeatures/AgriChatbotService.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/services/advancedfeatures/AgriChatbotService.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/services/advancedfeatures/IrrigationService.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/services/advancedfeatures/IrrigationService.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/services/advancedfeatures/PlantDiseaseService.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/services/advancedfeatures/PlantDiseaseService.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/services/advancedfeatures/RotationCultureService.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/services/advancedfeatures/RotationCultureService.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/services/advancedfeatures/WeatherService.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/services/advancedfeatures/WeatherService.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/utilies/MyDataBase.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/utilies/MyDataBase.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst" beforeDir="false" afterPath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" beforeDir="false" afterPath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -76,7 +103,7 @@
     "SHARE_PROJECT_CONFIGURATION_FILES": "true",
     "com.intellij.ml.llm.matterhorn.ej.ui.settings.DefaultAutoModeForALLUsers.v1": "true",
     "com.intellij.ml.llm.matterhorn.ej.ui.settings.DefaultModelSelectionForGA.v1": "true",
-    "git-widget-placeholder": "Merging devlop",
+    "git-widget-placeholder": "devlop",
     "junie.onboarding.icon.badge.shown": "true",
     "kotlin-language-version-configured": "true",
     "last_opened_file_path": "C:/xampp/htdocs/Esprit-PIDEV-",
