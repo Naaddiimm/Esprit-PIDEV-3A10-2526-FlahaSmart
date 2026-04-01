@@ -1,0 +1,201 @@
+/* profile-user.css - Style pour la modification de profil FlahaSmart */
+
+/* ===== VARIABLES ===== */
+.root {
+    -fx-primary: #27ae60;
+    -fx-primary-dark: #219a52;
+    -fx-primary-light: #2ecc71;
+    -fx-primary-very-light: #e8f5e9;
+    -fx-danger: #e74c3c;
+    -fx-danger-dark: #c0392b;
+    -fx-text-primary: #2c3e50;
+    -fx-text-secondary: #7f8c8d;
+    -fx-text-light: #95a5a6;
+    -fx-border-light: #e2e8f0;
+    -fx-background-light: #f8fafc;
+}
+
+/* ===== ANIMATIONS ===== */
+@keyframes fadeIn {
+    from { -fx-opacity: 0; -fx-translate-y: 10px; }
+    to { -fx-opacity: 1; -fx-translate-y: 0; }
+}
+
+@keyframes pulse {
+    0% { -fx-scale: 1; }
+    50% { -fx-scale: 1.05; }
+    100% { -fx-scale: 1; }
+}
+
+/* ===== CARTE PRINCIPALE ===== */
+.profile-card {
+    -fx-background-color: white;
+    -fx-background-radius: 20;
+    -fx-effect: dropshadow(three-pass-box, rgba(0,0,0,0.15), 20, 0, 0, 0);
+    -fx-padding: 30;
+    -fx-animation: fadeIn 0.5s ease-out;
+}
+
+/* ===== EN-TÊTE ===== */
+.header-icon {
+    -fx-background-color: linear-gradient(135deg, #27ae60, #2ecc71);
+    -fx-background-radius: 15;
+    -fx-padding: 12;
+    -fx-effect: dropshadow(three-pass-box, rgba(39,174,96,0.3), 10, 0, 0, 0);
+}
+
+.header-title {
+    -fx-font-size: 24px;
+    -fx-font-weight: bold;
+    -fx-fill: #2c3e50;
+}
+
+.header-subtitle {
+    -fx-font-size: 12px;
+    -fx-fill: #7f8c8d;
+}
+
+/* ===== SÉPARATEUR ===== */
+.separator {
+    -fx-background-color: #ecf0f1;
+    -fx-pref-height: 1;
+}
+
+/* ===== SCROLLPANE ===== */
+.form-scroll {
+    -fx-background-color: transparent;
+    -fx-border-color: transparent;
+}
+
+.form-scroll .viewport {
+    -fx-background-color: transparent;
+}
+
+/* ===== CHAMPS DE FORMULAIRE ===== */
+.field-label {
+    -fx-font-weight: bold;
+    -fx-text-fill: #34495e;
+    -fx-font-size: 14px;
+}
+
+.field-label-small {
+    -fx-text-fill: #7f8c8d;
+    -fx-font-size: 12px;
+}
+
+.text-field, .password-field {
+    -fx-padding: 12;
+    -fx-background-radius: 8;
+    -fx-border-radius: 8;
+    -fx-border-color: #e2e8f0;
+    -fx-background-color: white;
+    -fx-font-size: 14px;
+    -fx-transition: all 0.3s ease;
+}
+
+.text-field:focused, .password-field:focused {
+    -fx-border-color: #27ae60;
+    -fx-border-width: 2;
+    -fx-effect: dropshadow(three-pass-box, rgba(39,174,96,0.2), 10, 0, 0, 0);
+}
+
+.text-field:hover, .password-field:hover {
+    -fx-border-color: #2ecc71;
+}
+
+/* ===== SECTION MOT DE PASSE ===== */
+.password-section {
+    -fx-background-color: #f8fafc;
+    -fx-background-radius: 10;
+    -fx-padding: 15;
+    -fx-border-color: #e2e8f0;
+    -fx-border-radius: 10;
+}
+
+.password-title {
+    -fx-font-weight: bold;
+    -fx-text-fill: #34495e;
+    -fx-font-size: 14px;
+}
+
+/* ===== MESSAGES ===== */
+.error-message {
+    -fx-fill: #e74c3c;
+    -fx-font-size: 13px;
+    -fx-text-alignment: center;
+}
+
+.success-message {
+    -fx-fill: #27ae60;
+    -fx-font-size: 13px;
+    -fx-text-alignment: center;
+    -fx-font-weight: bold;
+}
+
+/* ===== BOUTONS ===== */
+.save-button {
+    -fx-background-color: linear-gradient(to right, #27ae60, #2ecc71);
+    -fx-text-fill: white;
+    -fx-padding: 12 30;
+    -fx-background-radius: 25;
+    -fx-font-size: 14px;
+    -fx-font-weight: bold;
+    -fx-cursor: hand;
+    -fx-effect: dropshadow(three-pass-box, rgba(39,174,96,0.3), 10, 0, 0, 0);
+    -fx-transition: all 0.3s ease;
+}
+
+.save-button:hover {
+    -fx-background-color: linear-gradient(to right, #219a52, #27ae60);
+    -fx-scale-x: 1.05;
+    -fx-scale-y: 1.05;
+    -fx-effect: dropshadow(three-pass-box, rgba(39,174,96,0.4), 15, 0, 0, 0);
+}
+
+.save-button:pressed {
+    -fx-scale-x: 0.95;
+    -fx-scale-y: 0.95;
+}
+
+.cancel-button {
+    -fx-background-color: linear-gradient(to right, #e74c3c, #c0392b);
+    -fx-text-fill: white;
+    -fx-padding: 12 30;
+    -fx-background-radius: 25;
+    -fx-font-size: 14px;
+    -fx-font-weight: bold;
+    -fx-cursor: hand;
+    -fx-effect: dropshadow(three-pass-box, rgba(231,76,60,0.3), 10, 0, 0, 0);
+    -fx-transition: all 0.3s ease;
+}
+
+.cancel-button:hover {
+    -fx-background-color: linear-gradient(to right, #c0392b, #e74c3c);
+    -fx-scale-x: 1.05;
+    -fx-scale-y: 1.05;
+    -fx-effect: dropshadow(three-pass-box, rgba(231,76,60,0.4), 15, 0, 0, 0);
+}
+
+.cancel-button:pressed {
+    -fx-scale-x: 0.95;
+    -fx-scale-y: 0.95;
+}
+
+/* ===== SCROLLBAR ===== */
+.scroll-bar:vertical {
+    -fx-background-color: transparent;
+    -fx-pref-width: 10;
+}
+
+.scroll-bar:vertical .thumb {
+    -fx-background-color: #cbd5e0;
+    -fx-background-radius: 5;
+}
+
+.scroll-bar:vertical .thumb:hover {
+    -fx-background-color: #27ae60;
+}
+
+.scroll-bar:vertical .track {
+    -fx-background-color: transparent;
+}

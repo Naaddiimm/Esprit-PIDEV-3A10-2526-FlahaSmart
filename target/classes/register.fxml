@@ -1,0 +1,141 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import de.jensd.fx.glyphs.fontawesome.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<?import javafx.scene.shape.Circle?>
+<BorderPane prefHeight="720" prefWidth="1200" styleClass="register-page" stylesheets="@/css/auth.css" xmlns="http://javafx.com/javafx/17.0.12" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controllers.Auth.Register">
+
+    <!-- Panneau gauche avec branding -->
+    <left>
+        <AnchorPane prefWidth="500" styleClass="left-panel">
+            <VBox layoutX="50" layoutY="120" prefWidth="400" spacing="25" styleClass="brand-container">
+
+                <!-- Icône animée -->
+                <StackPane styleClass="brand-icon">
+                    <FontAwesomeIconView fill="white" glyphName="USER_PLUS" size="80" />
+                </StackPane>
+
+                <!-- Titre -->
+                <Text styleClass="brand-title" text="FlahaSmart" />
+                <Text styleClass="brand-subtitle" text="Rejoignez notre communauté" />
+
+                <!-- Texte descriptif -->
+                <Text styleClass="brand-text" text="Créez votre compte en quelques clics" wrappingWidth="350" />
+
+                <!-- Cercles décoratifs -->
+                <HBox alignment="CENTER" spacing="15" styleClass="decorative-circles">
+                    <Circle radius="8" styleClass="decorative-circle" />
+                    <Circle radius="12" styleClass="decorative-circle" />
+                    <Circle radius="8" styleClass="decorative-circle" />
+                </HBox>
+
+                <!-- Avantages -->
+                <VBox alignment="CENTER" spacing="10" styleClass="brand-features">
+                    <Text styleClass="brand-feature-item" text="🌱 Accès au marketplace" />
+                    <Text styleClass="brand-feature-item" text="🤝 Participation au forum" />
+                    <Text styleClass="brand-feature-item" text="📊 Suivi de vos activités" />
+                    <Text styleClass="brand-feature-item" text="🚀 Support prioritaire" />
+                </VBox>
+            </VBox>
+        </AnchorPane>
+    </left>
+
+    <!-- Panneau droit avec formulaire -->
+    <center>
+        <AnchorPane style="-fx-background-color: white;">
+            <ScrollPane fitToHeight="true" fitToWidth="true" style="-fx-background-color: transparent; -fx-border-color: transparent;" AnchorPane.bottomAnchor="20" AnchorPane.leftAnchor="20" AnchorPane.rightAnchor="20" AnchorPane.topAnchor="20">
+
+                <VBox alignment="CENTER" maxWidth="550" spacing="20" style="-fx-padding: 30;">
+
+                    <!-- En-tête du formulaire -->
+                    <VBox alignment="CENTER" spacing="10">
+                        <Text styleClass="logo-text" text="Inscription" />
+                        <Text styleClass="subtitle" text="Créez votre compte" />
+                    </VBox>
+
+                    <!-- Formulaire -->
+                    <GridPane alignment="CENTER" hgap="15" maxWidth="500" vgap="12">
+
+                        <!-- Ligne 1: Nom -->
+                        <Label styleClass="field-label" text="Nom *" GridPane.columnIndex="0" GridPane.rowIndex="0" />
+                        <TextField fx:id="nom" prefWidth="300" promptText="Votre nom" styleClass="input-field" GridPane.columnIndex="1" GridPane.rowIndex="0" />
+
+                        <!-- Ligne 2: Prénom -->
+                        <Label styleClass="field-label" text="Prénom *" GridPane.columnIndex="0" GridPane.rowIndex="1" />
+                        <TextField fx:id="prenom" promptText="Votre prénom" styleClass="input-field" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+
+                        <!-- Ligne 3: Email -->
+                        <Label styleClass="field-label" text="Email *" GridPane.columnIndex="0" GridPane.rowIndex="2" />
+                        <TextField fx:id="email" promptText="exemple@email.com" styleClass="input-field" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+
+                        <!-- Ligne 4: Téléphone -->
+                        <Label styleClass="field-label" text="Téléphone" GridPane.columnIndex="0" GridPane.rowIndex="3" />
+                        <TextField fx:id="telephone" promptText="8 chiffres" styleClass="input-field" GridPane.columnIndex="1" GridPane.rowIndex="3" />
+
+                        <!-- Ligne 5: Mot de passe -->
+                        <Label styleClass="field-label" text="Mot de passe *" GridPane.columnIndex="0" GridPane.rowIndex="4" />
+                        <PasswordField fx:id="passwordField" promptText="Minimum 6 caractères" styleClass="input-field" GridPane.columnIndex="1" GridPane.rowIndex="4" />
+
+                        <!-- Ligne 6: Confirmation -->
+                        <Label styleClass="field-label" text="Confirmer *" GridPane.columnIndex="0" GridPane.rowIndex="5" />
+                        <PasswordField fx:id="confirmPasswordField" promptText="Confirmez" styleClass="input-field" GridPane.columnIndex="1" GridPane.rowIndex="5" />
+
+                        <!-- Ligne 7: Message erreur mot de passe -->
+                        <Text fx:id="passwordError" styleClass="error-message" visible="false" GridPane.columnSpan="2" GridPane.rowIndex="6" />
+
+                        <!-- Ligne 8: Adresse avec bouton carte -->
+                        <Label styleClass="field-label" text="Adresse" GridPane.columnIndex="0" GridPane.rowIndex="7" />
+                        <HBox spacing="5" GridPane.columnIndex="1" GridPane.rowIndex="7">
+                            <TextField fx:id="adresse" editable="false" promptText="Cliquez sur la carte" style="-fx-background-color: #f0f0f0;" HBox.hgrow="ALWAYS" />
+                            <Button fx:id="mapButton" onAction="#handleOpenMap" prefHeight="37.0" prefWidth="59.0" style="-fx-background-color: #3498db; -fx-text-fill: white; -fx-font-size: 16px; -fx-cursor: hand;" text="🗺" textFill="WHITE" />
+                        </HBox>
+
+                        <!-- Ligne 9: Ville -->
+                        <Label styleClass="field-label" text="Ville *" GridPane.columnIndex="0" GridPane.rowIndex="8" />
+                        <TextField fx:id="ville" promptText="Votre ville" styleClass="input-field" GridPane.columnIndex="1" GridPane.rowIndex="8" />
+
+                        <!-- Ligne 10: Rôle -->
+                        <Label styleClass="field-label" text="Je suis *" GridPane.columnIndex="0" GridPane.rowIndex="9" />
+                        <ComboBox fx:id="roleComboBox" prefWidth="300" promptText="Sélectionnez votre rôle" styleClass="input-field" GridPane.columnIndex="1" GridPane.rowIndex="9" />
+                  <columnConstraints>
+                     <ColumnConstraints />
+                     <ColumnConstraints />
+                  </columnConstraints>
+                  <rowConstraints>
+                     <RowConstraints />
+                     <RowConstraints />
+                     <RowConstraints />
+                     <RowConstraints />
+                     <RowConstraints />
+                     <RowConstraints />
+                     <RowConstraints />
+                     <RowConstraints />
+                     <RowConstraints />
+                     <RowConstraints />
+                  </rowConstraints>
+
+                    </GridPane>
+
+                    <!-- Conditions d'utilisation -->
+                    <CheckBox fx:id="termsCheckBox" styleClass="checkbox" text="J'accepte les conditions d'utilisation" />
+
+                    <!-- Message d'erreur général -->
+                    <Text fx:id="errorMessage" styleClass="error-message" visible="false" wrappingWidth="400" />
+
+                    <!-- Bouton d'inscription -->
+                    <Button fx:id="registerButton" maxWidth="400" onAction="#handleRegister" prefHeight="45" styleClass="register-button" text="S'INSCRIRE" />
+
+                    <!-- Lien vers connexion -->
+                    <HBox alignment="CENTER" spacing="10">
+                        <Text style="-fx-fill: #64748b; -fx-font-size: 14px;" text="Déjà un compte ?" />
+                        <Button fx:id="loginButton" onAction="#handleLoginButtonAction" styleClass="link-button" text="Se connecter" />
+                    </HBox>
+
+                </VBox>
+            </ScrollPane>
+        </AnchorPane>
+    </center>
+</BorderPane>

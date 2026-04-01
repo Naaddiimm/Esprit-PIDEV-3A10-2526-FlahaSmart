@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+<?import javafx.geometry.Insets?>
+<?import de.jensd.fx.glyphs.fontawesome.FontAwesomeIconView?>
+
+<BorderPane xmlns="http://javafx.com/javafx/17"
+            xmlns:fx="http://javafx.com/fxml/1"
+            fx:controller="controllers.Admin.AddAdminController"
+            prefHeight="500" prefWidth="500"
+            style="-fx-background-color: linear-gradient(to bottom, #1e293b, #0f172a);">
+
+    <center>
+        <ScrollPane fitToWidth="true" style="-fx-background-color: transparent; -fx-border-color: transparent;">
+            <VBox spacing="25" alignment="CENTER" style="-fx-padding: 20;">
+
+                <!-- Carte principale -->
+                <VBox spacing="15" style="-fx-background-color: white; -fx-background-radius: 20; -fx-padding: 25; -fx-effect: dropshadow(three-pass-box, rgba(0,0,0,0.2), 20, 0, 0, 0);"
+                      maxWidth="450">
+
+                    <!-- En-tête -->
+                    <HBox spacing="15" alignment="CENTER_LEFT">
+                        <StackPane style="-fx-background-color: #27ae60; -fx-background-radius: 15; -fx-padding: 10;">
+                            <FontAwesomeIconView glyphName="USER_PLUS" size="24" fill="white"/>
+                        </StackPane>
+                        <VBox>
+                            <Text text="Ajouter un administrateur" style="-fx-font-size: 20px; -fx-font-weight: bold; -fx-fill: #1e293b;"/>
+                            <Text text="Créez un nouveau compte" style="-fx-font-size: 11px; -fx-fill: #64748b;"/>
+                        </VBox>
+                    </HBox>
+
+                    <Separator/>
+
+                    <!-- Formulaire (2 colonnes) -->
+                    <GridPane hgap="10" vgap="10">
+
+                        <!-- Nom -->
+                        <Label text="Nom" style="-fx-font-weight: bold; -fx-text-fill: #334155;" GridPane.rowIndex="0" GridPane.columnIndex="0"/>
+                        <TextField fx:id="nomField" promptText="Nom" GridPane.rowIndex="0" GridPane.columnIndex="1"/>
+
+                        <!-- Prénom -->
+                        <Label text="Prénom" style="-fx-font-weight: bold; -fx-text-fill: #334155;" GridPane.rowIndex="1" GridPane.columnIndex="0"/>
+                        <TextField fx:id="prenomField" promptText="Prénom" GridPane.rowIndex="1" GridPane.columnIndex="1"/>
+
+                        <!-- Email -->
+                        <Label text="Email" style="-fx-font-weight: bold; -fx-text-fill: #334155;" GridPane.rowIndex="2" GridPane.columnIndex="0"/>
+                        <TextField fx:id="emailField" promptText="Email" GridPane.rowIndex="2" GridPane.columnIndex="1"/>
+
+                        <!-- Téléphone -->
+                        <Label text="Téléphone" style="-fx-font-weight: bold; -fx-text-fill: #334155;" GridPane.rowIndex="3" GridPane.columnIndex="0"/>
+                        <TextField fx:id="telephoneField" promptText="Téléphone" GridPane.rowIndex="3" GridPane.columnIndex="1"/>
+
+                        <!-- Mot de passe -->
+                        <Label text="Mot de passe" style="-fx-font-weight: bold; -fx-text-fill: #334155;" GridPane.rowIndex="4" GridPane.columnIndex="0"/>
+                        <PasswordField fx:id="passwordField" promptText="Mot de passe" GridPane.rowIndex="4" GridPane.columnIndex="1"/>
+
+                        <!-- Confirmation -->
+                        <Label text="Confirmer" style="-fx-font-weight: bold; -fx-text-fill: #334155;" GridPane.rowIndex="5" GridPane.columnIndex="0"/>
+                        <PasswordField fx:id="confirmPasswordField" promptText="Confirmer" GridPane.rowIndex="5" GridPane.columnIndex="1"/>
+
+                        <!-- Ville -->
+                        <Label text="Ville" style="-fx-font-weight: bold; -fx-text-fill: #334155;" GridPane.rowIndex="6" GridPane.columnIndex="0"/>
+                        <TextField fx:id="villeField" promptText="Ville" GridPane.rowIndex="6" GridPane.columnIndex="1"/>
+
+                        <!-- Adresse -->
+                        <Label text="Adresse" style="-fx-font-weight: bold; -fx-text-fill: #334155;" GridPane.rowIndex="7" GridPane.columnIndex="0"/>
+                        <TextField fx:id="adresseField" promptText="Adresse (opt.)" GridPane.rowIndex="7" GridPane.columnIndex="1"/>
+
+                    </GridPane>
+
+                    <Separator/>
+
+                    <!-- Messages -->
+                    <Text fx:id="errorMessage" fill="#ef4444" visible="false" wrappingWidth="400"/>
+                    <Text fx:id="successMessage" fill="#27ae60" visible="false" wrappingWidth="400"/>
+
+                    <!-- Boutons -->
+                    <HBox spacing="15" alignment="CENTER">
+                        <Button text="Ajouter" onAction="#handleAddAdmin"
+                                style="-fx-background-color: #27ae60; -fx-text-fill: white; -fx-padding: 10 25; -fx-background-radius: 25; -fx-font-size: 13px; -fx-font-weight: bold; -fx-cursor: hand;"
+                                prefWidth="130"/>
+                        <Button text="Annuler" onAction="#handleCancel"
+                                style="-fx-background-color: #ef4444; -fx-text-fill: white; -fx-padding: 10 25; -fx-background-radius: 25; -fx-font-size: 13px; -fx-font-weight: bold; -fx-cursor: hand;"
+                                prefWidth="130"/>
+                    </HBox>
+
+                </VBox>
+            </VBox>
+        </ScrollPane>
+    </center>
+</BorderPane>

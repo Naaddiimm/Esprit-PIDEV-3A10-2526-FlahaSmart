@@ -1,0 +1,114 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.chart.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+<?import javafx.geometry.Insets?>
+<?import de.jensd.fx.glyphs.fontawesome.FontAwesomeIconView?>
+
+<VBox xmlns="http://javafx.com/javafx/17"
+      xmlns:fx="http://javafx.com/fxml/1"
+      fx:controller="controllers.Dashbord.StatistiquesController"
+      spacing="20" style="-fx-background-color: transparent; -fx-padding: 0;">
+
+    <!-- Cartes de statistiques -->
+    <HBox spacing="20" HBox.hgrow="ALWAYS">
+
+        <!-- Total utilisateurs -->
+        <VBox styleClass="stat-card" HBox.hgrow="ALWAYS">
+            <HBox alignment="CENTER_LEFT" spacing="15">
+                <StackPane style="-fx-background-color: #e8f5e9; -fx-background-radius: 12; -fx-padding: 15;">
+                    <FontAwesomeIconView glyphName="USERS" size="30" fill="#27ae60"/>
+                </StackPane>
+                <VBox>
+                    <Label text="Total utilisateurs" style="-fx-text-fill: #64748b; -fx-font-size: 14px;"/>
+                    <Label fx:id="totalUsersStat" text="0" style="-fx-font-size: 32px; -fx-font-weight: bold; -fx-text-fill: #1e293b;"/>
+                </VBox>
+            </HBox>
+        </VBox>
+
+        <!-- Administrateurs -->
+        <VBox styleClass="stat-card" HBox.hgrow="ALWAYS">
+            <HBox alignment="CENTER_LEFT" spacing="15">
+                <StackPane style="-fx-background-color: #fee2e2; -fx-background-radius: 12; -fx-padding: 15;">
+                    <FontAwesomeIconView glyphName="USER_SECRET" size="30" fill="#ef4444"/>
+                </StackPane>
+                <VBox>
+                    <Label text="Administrateurs" style="-fx-text-fill: #64748b; -fx-font-size: 14px;"/>
+                    <Label fx:id="totalAdminsStat" text="0" style="-fx-font-size: 32px; -fx-font-weight: bold; -fx-text-fill: #1e293b;"/>
+                </VBox>
+            </HBox>
+        </VBox>
+
+        <!-- Clients -->
+        <VBox styleClass="stat-card" HBox.hgrow="ALWAYS">
+            <HBox alignment="CENTER_LEFT" spacing="15">
+                <StackPane style="-fx-background-color: #fff3e0; -fx-background-radius: 12; -fx-padding: 15;">
+                    <FontAwesomeIconView glyphName="USER" size="30" fill="#f59e0b"/>
+                </StackPane>
+                <VBox>
+                    <Label text="Clients" style="-fx-text-fill: #64748b; -fx-font-size: 14px;"/>
+                    <Label fx:id="totalClientsStat" text="0" style="-fx-font-size: 32px; -fx-font-weight: bold; -fx-text-fill: #1e293b;"/>
+                </VBox>
+            </HBox>
+        </VBox>
+    </HBox>
+
+    <HBox spacing="20" HBox.hgrow="ALWAYS">
+        <!-- Graphique circulaire -->
+        <VBox styleClass="chart-card" HBox.hgrow="ALWAYS">
+            <HBox alignment="CENTER_LEFT" spacing="10" style="-fx-padding: 0 0 15 0;">
+                <FontAwesomeIconView glyphName="PIE_CHART" size="20" fill="#27ae60"/>
+                <Label text="Répartition par rôle" style="-fx-font-size: 18px; -fx-font-weight: bold; -fx-text-fill: #1e293b;"/>
+            </HBox>
+            <PieChart fx:id="rolePieChart" prefHeight="300" legendVisible="true"/>
+        </VBox>
+
+        <!-- Graphique en barres -->
+        <VBox styleClass="chart-card" HBox.hgrow="ALWAYS">
+            <HBox alignment="CENTER_LEFT" spacing="10" style="-fx-padding: 0 0 15 0;">
+                <FontAwesomeIconView glyphName="BAR_CHART" size="20" fill="#27ae60"/>
+                <Label text="Inscriptions par mois" style="-fx-font-size: 18px; -fx-font-weight: bold; -fx-text-fill: #1e293b;"/>
+            </HBox>
+            <BarChart fx:id="usersBarChart" prefHeight="300">
+                <xAxis>
+                    <CategoryAxis label="Mois"/>
+                </xAxis>
+                <yAxis>
+                    <NumberAxis label="Nombre"/>
+                </yAxis>
+            </BarChart>
+        </VBox>
+    </HBox>
+
+    <!-- Activité récente -->
+    <VBox styleClass="stat-card">
+        <HBox alignment="CENTER_LEFT" spacing="10" style="-fx-padding: 0 0 15 0;">
+            <FontAwesomeIconView glyphName="CLOCK_ALT" size="20" fill="#27ae60"/>
+            <Label text="Activité récente" style="-fx-font-size: 18px; -fx-font-weight: bold; -fx-text-fill: #1e293b;"/>
+        </HBox>
+
+        <TableView fx:id="recentActivityTable" prefHeight="200">
+            <columns>
+                <TableColumn fx:id="colDate" text="Date" prefWidth="150"/>
+                <TableColumn fx:id="colAction" text="Action" prefWidth="200"/>
+                <TableColumn fx:id="colUser" text="Utilisateur" prefWidth="150"/>
+                <TableColumn fx:id="colDetails" text="Détails" prefWidth="200"/>
+            </columns>
+        </TableView>
+    </VBox>
+
+    <!-- Bouton rafraîchir -->
+    <HBox alignment="CENTER_RIGHT">
+        <Button text="Rafraîchir les statistiques" onAction="#handleRefresh" styleClass="refresh-button">
+            <graphic>
+                <HBox spacing="10" alignment="CENTER">
+                    <FontAwesomeIconView glyphName="REFRESH" size="16" fill="white"/>
+                    <Text text="Rafraîchir" fill="white"/>
+                </HBox>
+            </graphic>
+        </Button>
+    </HBox>
+
+</VBox>

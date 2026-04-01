@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+<?import javafx.geometry.Insets?>
+
+<?import javafx.scene.shape.Circle?>
+<BorderPane xmlns="http://javafx.com/javafx/17"
+            xmlns:fx="http://javafx.com/fxml/1"
+            fx:controller="controllers.Admin.LoginAdmin"
+            stylesheets="@/css/auth.css"
+            prefHeight="600.0" prefWidth="1000.0"
+            styleClass="admin-login">
+
+    <center>
+        <VBox alignment="CENTER" spacing="25" prefWidth="500" BorderPane.alignment="CENTER">
+            <VBox styleClass="auth-card" prefWidth="450">
+                <Text text="🔐 ADMINISTRATION" styleClass="logo-text"/>
+                <Text text="Espace réservé aux administrateurs" styleClass="subtitle"/>
+
+                <!-- Champ Email -->
+                <TextField fx:id="username" promptText="Email admin" styleClass="input-field, admin-input"/>
+
+                <!-- Champ Mot de passe avec toggle de visibilité -->
+                <StackPane>
+                    <PasswordField fx:id="passwordField" promptText="Mot de passe" styleClass="input-field, admin-input"/>
+                    <TextField fx:id="passwordTextField" promptText="Mot de passe" visible="false" styleClass="input-field, admin-input"/>
+                </StackPane>
+
+                <!-- Bouton toggle visibilité -->
+                <Button fx:id="togglePasswordButton" text="Afficher" onAction="#handleTogglePasswordVisibility"
+                        style="-fx-background-color: transparent; -fx-text-fill: #f44336; -fx-cursor: hand; -fx-underline: true;"/>
+
+                <!-- Message d'erreur -->
+                <Text fx:id="errorMessage" styleClass="error-message" visible="false"/>
+
+                <!-- Bouton de connexion -->
+                <Button fx:id="loginButton" text="SE CONNECTER" onAction="#handleLogin" styleClass="admin-login-button"/>
+            </VBox>
+        </VBox>
+    </center>
+
+    <!-- Panneau gauche avec branding -->
+    <left>
+        <AnchorPane prefHeight="600.0" prefWidth="500.0"
+                    >
+            <VBox alignment="CENTER" spacing="20" layoutX="50" layoutY="200" prefWidth="400">
+                <Text fill="WHITE" text="🌾 FLAHASMART" style="-fx-font-size: 56px; -fx-font-weight: bold; -fx-effect: dropshadow(three-pass-box, rgba(0,0,0,0.3), 10, 0, 0, 0);"/>
+                <Text fill="WHITE" text="Administration" style="-fx-font-size: 28px; -fx-font-weight: bold;"/>
+                <Text fill="#FFCCCC" text="Gestion des utilisateurs, statistiques et plus" style="-fx-font-size: 16px; -fx-text-alignment: center;" wrappingWidth="350"/>
+
+                <!-- Éléments décoratifs -->
+                <HBox spacing="20" alignment="CENTER" style="-fx-padding: 20 0 0 0;">
+                    <Circle radius="6" fill="#FFCCCC" opacity="0.6"/>
+                    <Circle radius="8" fill="#FFCCCC" opacity="0.8"/>
+                    <Circle radius="10" fill="#FFCCCC" opacity="1"/>
+                    <Circle radius="8" fill="#FFCCCC" opacity="0.8"/>
+                    <Circle radius="6" fill="#FFCCCC" opacity="0.6"/>
+                </HBox>
+            </VBox>
+        </AnchorPane>
+    </left>
+</BorderPane>

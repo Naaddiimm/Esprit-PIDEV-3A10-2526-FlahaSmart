@@ -1,0 +1,183 @@
+/* dashboard-admin.css */
+
+.menu-button {
+    -fx-background-color: transparent;
+    -fx-padding: 12 15;
+    -fx-background-radius: 8;
+    -fx-cursor: hand;
+    -fx-alignment: CENTER_LEFT;
+    -fx-max-width: Infinity;
+    -fx-transition: all 0.3s ease;
+}
+
+.menu-button:hover {
+    -fx-background-color: #334155;
+    -fx-scale-x: 1.02;
+    -fx-scale-y: 1.02;
+    -fx-translate-x: 5;
+}
+
+.menu-button:pressed {
+    -fx-scale-x: 0.98;
+    -fx-scale-y: 0.98;
+}
+
+.menu-button:selected {
+    -fx-background-color: #27ae60;
+}
+
+.menu-button:selected FontAwesomeIconView {
+    -fx-fill: white;
+}
+
+.menu-button:selected Text {
+    -fx-fill: white;
+    -fx-font-weight: bold;
+}
+
+.icon-button {
+    -fx-background-color: transparent;
+    -fx-padding: 8;
+    -fx-background-radius: 8;
+    -fx-cursor: hand;
+}
+
+.icon-button:hover {
+    -fx-background-color: #f1f5f9;
+}
+
+.logout-button {
+    -fx-background-color: transparent;
+    -fx-padding: 8 15;
+    -fx-background-radius: 20;
+    -fx-cursor: hand;
+    -fx-border-color: #fee2e2;
+    -fx-border-radius: 20;
+}
+
+.logout-button:hover {
+    -fx-background-color: #fee2e2;
+}
+/* À ajouter dans dashboard-admin.css */
+
+.stat-card {
+    -fx-background-color: white;
+    -fx-background-radius: 16;
+    -fx-padding: 20;
+    -fx-effect: dropshadow(three-pass-box, rgba(0,0,0,0.05), 10, 0, 0, 0);
+    -fx-transition: all 0.3s ease;
+}
+
+.stat-card:hover {
+    -fx-effect: dropshadow(three-pass-box, rgba(39,174,96,0.1), 15, 0, 0, 0);
+    -fx-translate-y: -2;
+}
+
+.chart-card {
+    -fx-background-color: white;
+    -fx-background-radius: 16;
+    -fx-padding: 20;
+    -fx-effect: dropshadow(three-pass-box, rgba(0,0,0,0.05), 10, 0, 0, 0);
+}
+
+.refresh-button {
+    -fx-background-color: #27ae60;
+    -fx-text-fill: white;
+    -fx-padding: 10 25;
+    -fx-background-radius: 25;
+    -fx-cursor: hand;
+    -fx-font-size: 14px;
+    -fx-font-weight: bold;
+}
+/* dashboard-admin.css */
+
+.menu-button {
+    -fx-background-color: transparent;
+    -fx-padding: 12 15;
+    -fx-background-radius: 8;
+    -fx-cursor: hand;
+    -fx-alignment: CENTER_LEFT;
+    -fx-max-width: Infinity;
+    -fx-transition: all 0.2s ease;
+}
+
+.menu-button:hover {
+    -fx-background-color: #334155;
+    -fx-scale-x: 1.02;
+    -fx-scale-y: 1.02;
+    -fx-translate-x: 3;
+}
+
+.menu-button:pressed {
+    -fx-scale-x: 0.98;
+    -fx-scale-y: 0.98;
+}
+
+.menu-button:selected {
+    -fx-background-color: #27ae60;
+}
+
+.menu-button:selected FontAwesomeIconView {
+    -fx-fill: white;
+}
+
+.menu-button:selected Text {
+    -fx-fill: white;
+    -fx-font-weight: bold;
+}
+
+.logout-menu-button {
+    -fx-background-color: transparent;
+    -fx-padding: 12 15;
+    -fx-background-radius: 8;
+    -fx-cursor: hand;
+    -fx-alignment: CENTER_LEFT;
+    -fx-max-width: Infinity;
+    -fx-border-color: #334155;
+    -fx-border-radius: 8;
+}
+
+.logout-menu-button:hover {
+    -fx-background-color: #2d1a1a;
+}
+
+.icon-button {
+    -fx-background-color: transparent;
+    -fx-padding: 8;
+    -fx-background-radius: 8;
+    -fx-cursor: hand;
+}
+
+.icon-button:hover {
+    -fx-background-color: #f1f5f9;
+}
+
+/* Style pour la scrollpane */
+.scroll-pane {
+    -fx-background-color: transparent;
+    -fx-border-color: transparent;
+}
+
+.scroll-pane .viewport {
+    -fx-background-color: transparent;
+}
+
+/* Style pour la barre de défilement */
+.scroll-bar:vertical {
+    -fx-background-color: transparent;
+    -fx-pref-width: 12;
+}
+
+.scroll-bar:vertical .thumb {
+    -fx-background-color: #cbd5e1;
+    -fx-background-radius: 6;
+}
+
+.scroll-bar:vertical .thumb:hover {
+    -fx-background-color: #94a3b8;
+}
+
+.refresh-button:hover {
+    -fx-background-color: #2ecc71;
+    -fx-effect: dropshadow(three-pass-box, rgba(39,174,96,0.3), 10, 0, 0, 0);
+}

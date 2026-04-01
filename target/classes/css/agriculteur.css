@@ -1,0 +1,1124 @@
+/* ==============================================
+   Fichier : agriculteur.css
+   Dashboard Agriculteur - FlahaSmart
+   Design Premium - Mars 2026
+   ============================================== */
+
+/* ----------------------------------------------
+   IMPORTS & VARIABLES
+   ---------------------------------------------- */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
+
+.root-pane {
+    -fx-font-family: 'Inter', 'Segoe UI', sans-serif;
+    -fx-background-color: #f5f7fb;
+}
+
+/* ----------------------------------------------
+   SIDEBAR - Design premium
+   ---------------------------------------------- */
+.sidebar {
+    -fx-background-color: white;
+    -fx-effect: dropshadow(gaussian, rgba(0, 0, 0, 0.05), 20, 0, 0, 0);
+    -fx-border-color: transparent #eef2f6 transparent transparent;
+    -fx-border-width: 0 1px 0 0;
+}
+
+.sidebar-header {
+    -fx-background-color: linear-gradient(to right, #f9fbfd, white);
+}
+
+.logo-glow {
+    -fx-effect: dropshadow(gaussian, rgba(46, 125, 50, 0.3), 15, 0, 0, 0);
+}
+
+.logo-circle {
+    -fx-fill: linear-gradient(to bottom right, #2e7d32, #1b5e20);
+    -fx-stroke: #81c784;
+    -fx-stroke-width: 2;
+}
+
+.logo-icon {
+    -fx-fill: white;
+}
+
+.logo-text {
+    -fx-font-size: 22px;
+    -fx-font-weight: 700;
+    -fx-fill: #1e293b;
+}
+
+.logo-badge {
+    -fx-font-size: 12px;
+    -fx-fill: #64748b;
+    -fx-font-weight: 400;
+}
+
+.divider-gradient {
+    -fx-background-color: linear-gradient(to right, transparent, #e2e8f0, transparent);
+    -fx-pref-height: 1px;
+    -fx-max-height: 1px;
+    -fx-min-height: 1px;
+}
+
+/* Profil utilisateur */
+.user-profile {
+    -fx-background-color: #f8fafc;
+    -fx-cursor: hand;
+}
+
+.user-profile:hover {
+    -fx-background-color: #f1f5f9;
+}
+
+.avatar-glow {
+    -fx-fill: transparent;
+    -fx-stroke: #2e7d32;
+    -fx-stroke-width: 2;
+    -fx-stroke-type: inside;
+}
+
+.avatar-bg {
+    -fx-fill: linear-gradient(to bottom, #e8f5e9, #c8e6c9);
+}
+
+.avatar-icon {
+    -fx-fill: #2e7d32;
+}
+
+.user-name {
+    -fx-font-size: 16px;
+    -fx-font-weight: 600;
+    -fx-text-fill: #1e293b;
+}
+
+.premium-star {
+    -fx-fill: #fbbf24;
+}
+
+.user-plan {
+    -fx-font-size: 12px;
+    -fx-text-fill: #64748b;
+}
+
+/* Menu de navigation */
+.nav-menu {
+    -fx-background-color: white;
+}
+
+.nav-section {
+    -fx-font-size: 11px;
+    -fx-font-weight: 600;
+    -fx-text-fill: #94a3b8;
+    -fx-padding: 16 0 4 8;
+    -fx-letter-spacing: 0.5px;
+}
+
+.nav-item {
+    -fx-background-color: transparent;
+    -fx-background-radius: 10px;
+    -fx-padding: 12 14;
+    -fx-font-size: 14px;
+    -fx-font-weight: 500;
+    -fx-text-fill: #475569;
+    -fx-alignment: center-left;
+    -fx-cursor: hand;
+    -fx-graphic-text-gap: 14;
+}
+
+.nav-item:hover {
+    -fx-background-color: #f1f5f9;
+    -fx-text-fill: #2e7d32;
+    -fx-scale-x: 1.02;
+    -fx-scale-y: 1.02;
+    -fx-transition: all 0.2s ease;
+}
+
+.nav-item.active {
+    -fx-background-color: #e8f5e9;
+    -fx-text-fill: #2e7d32;
+    -fx-border-color: #2e7d32;
+    -fx-border-width: 0 0 0 3px;
+    -fx-border-radius: 0 10px 10px 0;
+    -fx-background-insets: 0;
+}
+
+.nav-icon {
+    -fx-fill: #64748b;
+}
+
+.nav-item:hover .nav-icon,
+.nav-item.active .nav-icon {
+    -fx-fill: #2e7d32;
+}
+
+.nav-badge {
+    -fx-background-color: #e2e8f0;
+    -fx-text-fill: #475569;
+    -fx-font-size: 11px;
+    -fx-font-weight: 600;
+    -fx-padding: 2 6;
+    -fx-background-radius: 20;
+}
+
+.nav-badge-success {
+    -fx-background-color: #2e7d32;
+    -fx-text-fill: white;
+    -fx-font-size: 11px;
+    -fx-font-weight: 600;
+    -fx-padding: 2 8;
+    -fx-background-radius: 20;
+}
+
+.premium-item {
+    -fx-background-color: #fff7ed;
+}
+
+.logout {
+    -fx-text-fill: #ef4444;
+}
+
+.logout:hover {
+    -fx-background-color: #fee2e2;
+}
+
+.logout:hover .nav-icon {
+    -fx-fill: #ef4444;
+}
+
+/* ----------------------------------------------
+   TOPBAR - Effet verre (glassmorphism)
+   ---------------------------------------------- */
+.topbar-glass {
+    -fx-background-color: rgba(255, 255, 255, 0.8);
+    -fx-background-radius: 0;
+    -fx-effect: dropshadow(gaussian, rgba(0, 0, 0, 0.03), 10, 0, 0, 2);
+    -fx-border-color: transparent transparent #eef2f6 transparent;
+    -fx-border-width: 0 0 1px 0;
+}
+
+.page-title {
+    -fx-font-size: 24px;
+    -fx-font-weight: 700;
+    -fx-fill: #1e293b;
+}
+
+.page-subtitle {
+    -fx-font-size: 14px;
+    -fx-fill: #64748b;
+}
+
+/* Recherche avec effet verre */
+.search-glass {
+    -fx-background-color: rgba(241, 245, 249, 0.7);
+    -fx-background-radius: 30px;
+    -fx-padding: 4 4 4 16;
+    -fx-border-color: #e2e8f0;
+    -fx-border-width: 1px;
+    -fx-border-radius: 30px;
+    -fx-backdrop-filter: blur(10px);
+}
+
+.search-glass:focused-within {
+    -fx-border-color: #2e7d32;
+    -fx-effect: dropshadow(gaussian, rgba(46, 125, 50, 0.2), 8, 0, 0, 0);
+}
+
+.search-icon {
+    -fx-fill: #94a3b8;
+}
+
+.search-input {
+    -fx-background-color: transparent;
+    -fx-padding: 8 0;
+    -fx-font-size: 14px;
+    -fx-prompt-text-fill: #94a3b8;
+}
+
+.search-input:focused {
+    -fx-background-color: transparent;
+}
+
+.search-shortcut {
+    -fx-background-color: #e2e8f0;
+    -fx-padding: 4 8;
+    -fx-background-radius: 6px;
+}
+
+.search-shortcut .label {
+    -fx-font-size: 12px;
+    -fx-text-fill: #475569;
+    -fx-font-weight: 500;
+}
+
+/* Notifications avec animation pulse */
+.notification-pulse {
+    -fx-cursor: hand;
+}
+
+.notification-pulse:hover .icon-btn {
+    -fx-fill: #2e7d32;
+}
+
+.icon-btn {
+    -fx-fill: #64748b;
+}
+
+.notification-badge {
+    -fx-background-color: #ef4444;
+    -fx-text-fill: white;
+    -fx-font-size: 10px;
+    -fx-font-weight: 600;
+    -fx-padding: 1 5;
+    -fx-background-radius: 20;
+    -fx-translate-x: 8;
+    -fx-translate-y: -8;
+    -fx-effect: dropshadow(gaussian, rgba(239, 68, 68, 0.3), 6, 0, 0, 0);
+    -fx-animation: pulse 2s infinite;
+}
+
+@keyframes pulse {
+    0% { -fx-scale: 1; }
+    50% { -fx-scale: 1.1; }
+    100% { -fx-scale: 1; }
+}
+
+/* Avatar moderne */
+.avatar-modern {
+    -fx-cursor: hand;
+}
+
+.avatar-ring {
+    -fx-fill: transparent;
+    -fx-stroke: #2e7d32;
+    -fx-stroke-width: 2;
+    -fx-stroke-type: inside;
+}
+
+.avatar-fill {
+    -fx-fill: linear-gradient(to bottom, #e8f5e9, #c8e6c9);
+}
+
+.avatar-icon-modern {
+    -fx-fill: #2e7d32;
+}
+
+/* ----------------------------------------------
+   CONTENU PRINCIPAL
+   ---------------------------------------------- */
+.main-container {
+    -fx-background-color: #f5f7fb;
+}
+
+.content-scroll-modern {
+    -fx-background-color: transparent;
+    -fx-border-color: transparent;
+}
+
+.content-scroll-modern > .viewport {
+    -fx-background-color: transparent;
+}
+
+.content-wrapper-modern {
+    -fx-background-color: transparent;
+}
+
+/* ----------------------------------------------
+   CARTES KPI MODERNES
+   ---------------------------------------------- */
+.kpi-card-modern {
+    -fx-background-color: white;
+    -fx-background-radius: 20px;
+    -fx-padding: 20;
+    -fx-effect: dropshadow(gaussian, rgba(0, 0, 0, 0.03), 12, 0, 0, 4);
+    -fx-border-color: #eef2f6;
+    -fx-border-width: 1px;
+    -fx-border-radius: 20px;
+}
+
+.gradient-green {
+    -fx-background-color: linear-gradient(to bottom right, white, #f1f8e9);
+    -fx-border-color: #c8e6c9;
+}
+
+.gradient-blue {
+    -fx-background-color: linear-gradient(to bottom right, white, #e3f2fd);
+    -fx-border-color: #bbdefb;
+}
+
+.gradient-orange {
+    -fx-background-color: linear-gradient(to bottom right, white, #fff3e0);
+    -fx-border-color: #ffe0b2;
+}
+
+.gradient-purple {
+    -fx-background-color: linear-gradient(to bottom right, white, #f3e5f5);
+    -fx-border-color: #e1bee7;
+}
+
+.kpi-icon-container {
+    -fx-effect: dropshadow(gaussian, rgba(0, 0, 0, 0.1), 8, 0, 0, 2);
+}
+
+.kpi-icon-bg {
+    -fx-fill: linear-gradient(to bottom, #2e7d32, #1b5e20);
+}
+
+.gradient-green .kpi-icon-bg {
+    -fx-fill: linear-gradient(to bottom, #2e7d32, #1b5e20);
+}
+
+.gradient-blue .kpi-icon-bg {
+    -fx-fill: linear-gradient(to bottom, #1976d2, #0d47a1);
+}
+
+.gradient-orange .kpi-icon-bg {
+    -fx-fill: linear-gradient(to bottom, #f57c00, #e65100);
+}
+
+.gradient-purple .kpi-icon-bg {
+    -fx-fill: linear-gradient(to bottom, #7b1fa2, #4a0072);
+}
+
+.kpi-icon-white {
+    -fx-fill: white;
+}
+
+.kpi-label-modern {
+    -fx-font-size: 13px;
+    -fx-text-fill: #64748b;
+    -fx-font-weight: 500;
+}
+
+.kpi-value-modern {
+    -fx-font-size: 28px;
+    -fx-font-weight: 700;
+    -fx-text-fill: #1e293b;
+}
+
+.trend-up-modern {
+    -fx-fill: #2e7d32;
+}
+
+.trend-warning-modern {
+    -fx-fill: #f57c00;
+}
+
+.trend-neutral-modern {
+    -fx-fill: #64748b;
+}
+
+.kpi-trend-modern {
+    -fx-font-size: 12px;
+    -fx-text-fill: #64748b;
+}
+
+.kpi-trend-modern.warning {
+    -fx-text-fill: #f57c00;
+}
+
+/* ----------------------------------------------
+   BOUTONS D'ACTION
+   ---------------------------------------------- */
+.action-btn {
+    -fx-background-radius: 16px;
+    -fx-padding: 14 20;
+    -fx-font-size: 14px;
+    -fx-font-weight: 600;
+    -fx-cursor: hand;
+    -fx-alignment: center;
+    -fx-graphic-text-gap: 10;
+    -fx-effect: dropshadow(gaussian, rgba(0, 0, 0, 0.05), 8, 0, 0, 2);
+}
+
+.action-btn.primary {
+    -fx-background-color: linear-gradient(to right, #2e7d32, #1b5e20);
+    -fx-text-fill: white;
+}
+
+.action-btn.primary:hover {
+    -fx-background-color: linear-gradient(to right, #1b5e20, #0a3f0e);
+    -fx-effect: dropshadow(gaussian, rgba(46, 125, 50, 0.3), 12, 0, 0, 4);
+    -fx-scale-x: 1.02;
+    -fx-scale-y: 1.02;
+}
+
+.action-btn.secondary {
+    -fx-background-color: white;
+    -fx-text-fill: #2e7d32;
+    -fx-border-color: #2e7d32;
+    -fx-border-width: 1.5px;
+    -fx-border-radius: 16px;
+}
+
+.action-btn.secondary:hover {
+    -fx-background-color: #e8f5e9;
+}
+
+.action-btn.accent {
+    -fx-background-color: linear-gradient(to right, #f57c00, #e65100);
+    -fx-text-fill: white;
+}
+
+.action-btn.accent:hover {
+    -fx-background-color: linear-gradient(to right, #e65100, #bf360c);
+}
+
+/* ----------------------------------------------
+   CARTES MODERNES
+   ---------------------------------------------- */
+.card-modern {
+    -fx-background-color: white;
+    -fx-background-radius: 24px;
+    -fx-padding: 24;
+    -fx-effect: dropshadow(gaussian, rgba(0, 0, 0, 0.03), 16, 0, 0, 6);
+    -fx-border-color: #eef2f6;
+    -fx-border-width: 1px;
+    -fx-border-radius: 24px;
+}
+
+.card-title-modern {
+    -fx-font-size: 18px;
+    -fx-font-weight: 700;
+    -fx-text-fill: #1e293b;
+}
+
+.card-subtitle-modern {
+    -fx-font-size: 14px;
+    -fx-text-fill: #64748b;
+}
+
+.btn-link-modern {
+    -fx-background-color: transparent;
+    -fx-text-fill: #2e7d32;
+    -fx-font-size: 14px;
+    -fx-font-weight: 600;
+    -fx-cursor: hand;
+    -fx-padding: 6 12;
+    -fx-background-radius: 30px;
+}
+
+.btn-link-modern:hover {
+    -fx-background-color: #e8f5e9;
+    -fx-underline: true;
+}
+
+/* Opérations */
+.operation-item {
+    -fx-background-color: #f8fafc;
+    -fx-background-radius: 18px;
+    -fx-padding: 16;
+    -fx-cursor: hand;
+}
+
+.operation-item:hover {
+    -fx-background-color: #f1f5f9;
+    -fx-effect: dropshadow(gaussian, rgba(0, 0, 0, 0.05), 8, 0, 0, 2);
+    -fx-scale-x: 1.01;
+    -fx-scale-y: 1.01;
+}
+
+.operation-icon {
+    -fx-min-width: 40px;
+    -fx-min-height: 40px;
+    -fx-max-width: 40px;
+    -fx-max-height: 40px;
+    -fx-background-radius: 16px;
+    -fx-alignment: center;
+}
+
+.operation-icon.planting {
+    -fx-background-color: #e8f5e9;
+}
+
+.operation-icon.planting .glyph-icon {
+    -fx-fill: #2e7d32;
+}
+
+.operation-icon.irrigation {
+    -fx-background-color: #e3f2fd;
+}
+
+.operation-icon.irrigation .glyph-icon {
+    -fx-fill: #1976d2;
+}
+
+.operation-icon.harvest {
+    -fx-background-color: #fff3e0;
+}
+
+.operation-icon.harvest .glyph-icon {
+    -fx-fill: #f57c00;
+}
+
+.operation-title {
+    -fx-font-size: 15px;
+    -fx-font-weight: 600;
+    -fx-text-fill: #1e293b;
+}
+
+.operation-meta {
+    -fx-font-size: 12px;
+    -fx-text-fill: #64748b;
+}
+
+.status-badge-modern {
+    -fx-background-radius: 30px;
+    -fx-padding: 4 12;
+    -fx-font-size: 12px;
+    -fx-font-weight: 600;
+}
+
+.status-badge-modern.success {
+    -fx-background-color: #e8f5e9;
+    -fx-text-fill: #2e7d32;
+}
+
+.status-badge-modern.info {
+    -fx-background-color: #e3f2fd;
+    -fx-text-fill: #1976d2;
+}
+
+.status-badge-modern.warning {
+    -fx-background-color: #fff3e0;
+    -fx-text-fill: #f57c00;
+}
+
+/* Équipements */
+.equipment-modern {
+    -fx-padding: 12;
+    -fx-background-radius: 16px;
+    -fx-cursor: hand;
+}
+
+.equipment-modern:hover {
+    -fx-background-color: #f8fafc;
+}
+
+.equipment-icon-modern {
+    -fx-min-width: 36px;
+    -fx-min-height: 36px;
+    -fx-max-width: 36px;
+    -fx-max-height: 36px;
+    -fx-background-radius: 12px;
+    -fx-alignment: center;
+}
+
+.equipment-icon-modern.green {
+    -fx-background-color: #e8f5e9;
+}
+
+.equipment-icon-modern.green .glyph-icon {
+    -fx-fill: #2e7d32;
+}
+
+.equipment-icon-modern.blue {
+    -fx-background-color: #e3f2fd;
+}
+
+.equipment-icon-modern.blue .glyph-icon {
+    -fx-fill: #1976d2;
+}
+
+.equipment-icon-modern.orange {
+    -fx-background-color: #fff3e0;
+}
+
+.equipment-icon-modern.orange .glyph-icon {
+    -fx-fill: #f57c00;
+}
+
+.equipment-name-modern {
+    -fx-font-size: 14px;
+    -fx-font-weight: 600;
+    -fx-text-fill: #1e293b;
+}
+
+.equipment-status-modern {
+    -fx-font-size: 12px;
+    -fx-text-fill: #64748b;
+}
+
+.status-online {
+    -fx-fill: #2e7d32;
+}
+
+.status-maintenance {
+    -fx-fill: #f57c00;
+}
+
+/* Carte météo */
+.weather-card-modern {
+    -fx-background-color: linear-gradient(to bottom, #1e293b, #0f172a);
+    -fx-background-radius: 24px;
+    -fx-padding: 24;
+    -fx-effect: dropshadow(gaussian, rgba(0, 0, 0, 0.1), 16, 0, 0, 6);
+}
+
+.weather-card-modern .card-title-modern {
+    -fx-text-fill: white;
+}
+
+.weather-title-icon {
+    -fx-fill: #fbbf24;
+}
+
+.weather-refresh {
+    -fx-fill: #94a3b8;
+    -fx-cursor: hand;
+}
+
+.weather-refresh:hover {
+    -fx-fill: white;
+}
+
+.weather-icon-main {
+    -fx-fill: #fbbf24;
+}
+
+.weather-temp-modern {
+    -fx-font-size: 42px;
+    -fx-font-weight: 700;
+    -fx-text-fill: white;
+}
+
+.weather-feels {
+    -fx-font-size: 14px;
+    -fx-text-fill: #94a3b8;
+}
+
+.weather-detail-icon-modern {
+    -fx-fill: #64748b;
+}
+
+.weather-detail-value-modern {
+    -fx-font-size: 14px;
+    -fx-font-weight: 600;
+    -fx-text-fill: white;
+}
+
+/* Analyses maladie */
+.analysis-ring {
+    -fx-alignment: center;
+}
+
+.ring-bg {
+    -fx-fill: transparent;
+    -fx-stroke-width: 3;
+    -fx-stroke-type: inside;
+}
+
+.analysis-ring.warning .ring-bg {
+    -fx-stroke: #f57c20;
+    -fx-stroke-dash-array: 2 2;
+}
+
+.analysis-ring.success .ring-bg {
+    -fx-stroke: #2e7d32;
+    -fx-stroke-dash-array: 2 2;
+}
+
+.ring-number {
+    -fx-font-size: 24px;
+    -fx-font-weight: 700;
+}
+
+.analysis-ring.warning .ring-number {
+    -fx-text-fill: #f57c00;
+}
+
+.analysis-ring.success .ring-number {
+    -fx-text-fill: #2e7d32;
+}
+
+.analysis-label {
+    -fx-font-size: 13px;
+    -fx-font-weight: 600;
+}
+
+.analysis-label.warning {
+    -fx-text-fill: #f57c00;
+}
+
+.analysis-label.success {
+    -fx-text-fill: #2e7d32;
+}
+
+.analysis-parcels {
+    -fx-font-size: 12px;
+    -fx-text-fill: #64748b;
+}
+
+/* Rotation cultures */
+.parcel-tag {
+    -fx-background-color: #f1f5f9;
+    -fx-background-radius: 20px;
+    -fx-padding: 4 12;
+    -fx-font-size: 12px;
+    -fx-font-weight: 600;
+    -fx-text-fill: #475569;
+}
+
+.rotation-progress-modern {
+    -fx-background-color: #e2e8f0;
+    -fx-background-radius: 10px;
+    -fx-accent: #2e7d32;
+    -fx-pref-height: 8px;
+}
+
+.rotation-crops-modern {
+    -fx-font-size: 13px;
+    -fx-text-fill: #475569;
+    -fx-font-weight: 500;
+}
+
+/* ----------------------------------------------
+   CHATBOT ULTRA-MODERNE
+   ---------------------------------------------- */
+.chatbot-panel-modern {
+    -fx-background-color: white;
+    -fx-background-radius: 28px 0 0 28px;
+    -fx-effect: dropshadow(gaussian, rgba(0, 0, 0, 0.08), 20, 0, -4, 0);
+    -fx-border-color: #eef2f6;
+    -fx-border-width: 1px 0 1px 1px;
+    -fx-border-radius: 28px 0 0 28px;
+}
+
+.chatbot-header-modern {
+    -fx-background-color: linear-gradient(to right, #1e293b, #0f172a);
+    -fx-background-radius: 28px 0 0 0;
+}
+
+.chatbot-avatar-modern {
+    -fx-effect: dropshadow(gaussian, rgba(255, 255, 255, 0.2), 10, 0, 0, 0);
+}
+
+.avatar-pulse {
+    -fx-fill: linear-gradient(to bottom, #2e7d32, #1b5e20);
+    -fx-effect: dropshadow(gaussian, rgba(46, 125, 50, 0.4), 12, 0, 0, 0);
+}
+
+.chatbot-avatar-icon {
+    -fx-fill: white;
+}
+
+.chatbot-title-modern {
+    -fx-font-size: 18px;
+    -fx-font-weight: 700;
+    -fx-text-fill: white;
+}
+
+.chatbot-status {
+    -fx-font-size: 12px;
+    -fx-text-fill: #94a3b8;
+}
+
+.chatbot-action-modern {
+    -fx-fill: #94a3b8;
+    -fx-cursor: hand;
+}
+
+.chatbot-action-modern:hover {
+    -fx-fill: white;
+}
+
+.ai-status {
+    -fx-background-color: rgba(255, 255, 255, 0.1);
+    -fx-background-radius: 30px;
+    -fx-padding: 6 12;
+}
+
+.status-dot {
+    -fx-fill: #4ade80;
+    -fx-effect: dropshadow(gaussian, #4ade80, 6, 0, 0, 0);
+}
+
+.status-text {
+    -fx-font-size: 12px;
+    -fx-text-fill: #cbd5e1;
+}
+
+/* Messages */
+.chatbot-messages-modern {
+    -fx-background-color: #f8fafc;
+    -fx-border-color: transparent;
+}
+
+.chatbot-messages-modern > .viewport {
+    -fx-background-color: #f8fafc;
+}
+
+.msg-avatar-bot {
+    -fx-min-width: 28px;
+    -fx-min-height: 28px;
+    -fx-max-width: 28px;
+    -fx-max-height: 28px;
+    -fx-background-color: #2e7d32;
+    -fx-background-radius: 10px;
+    -fx-alignment: center;
+}
+
+.msg-avatar-bot .glyph-icon {
+    -fx-fill: white;
+}
+
+.msg-avatar-user {
+    -fx-min-width: 28px;
+    -fx-min-height: 28px;
+    -fx-max-width: 28px;
+    -fx-max-height: 28px;
+    -fx-background-color: #1e293b;
+    -fx-background-radius: 10px;
+    -fx-alignment: center;
+}
+
+.msg-avatar-user .glyph-icon {
+    -fx-fill: white;
+}
+
+.msg-bubble-modern {
+    -fx-background-radius: 20px;
+    -fx-padding: 14;
+}
+
+.msg-bubble-modern.bot {
+    -fx-background-color: white;
+    -fx-effect: dropshadow(gaussian, rgba(0, 0, 0, 0.03), 6, 0, 0, 2);
+}
+
+.msg-bubble-modern.user {
+    -fx-background-color: #2e7d32;
+}
+
+.msg-text {
+    -fx-font-size: 13px;
+    -fx-wrap-text: true;
+}
+
+.msg-text.bold {
+    -fx-font-weight: 700;
+}
+
+.msg-bubble-modern.bot .msg-text {
+    -fx-text-fill: #1e293b;
+}
+
+.msg-bubble-modern.user .msg-text {
+    -fx-text-fill: white;
+}
+
+.msg-time {
+    -fx-font-size: 10px;
+    -fx-text-fill: #94a3b8;
+}
+
+.msg-bubble-modern.user .msg-time {
+    -fx-text-fill: rgba(255, 255, 255, 0.7);
+}
+
+/* Boutons chatbot */
+.chatbot-btn-modern {
+    -fx-background-radius: 30px;
+    -fx-padding: 8 16;
+    -fx-font-size: 12px;
+    -fx-font-weight: 600;
+    -fx-cursor: hand;
+}
+
+.chatbot-btn-modern.primary {
+    -fx-background-color: #2e7d32;
+    -fx-text-fill: white;
+}
+
+.chatbot-btn-modern.primary:hover {
+    -fx-background-color: #1b5e20;
+}
+
+.chatbot-btn-modern.secondary {
+    -fx-background-color: #e2e8f0;
+    -fx-text-fill: #475569;
+}
+
+.chatbot-btn-modern.secondary:hover {
+    -fx-background-color: #cbd5e1;
+}
+
+/* Footer chatbot */
+.chatbot-footer {
+    -fx-background-color: white;
+    -fx-background-radius: 0 0 0 28px;
+    -fx-border-color: #eef2f6;
+    -fx-border-width: 1px 0 0 0;
+}
+
+.input-container-modern {
+    -fx-background-color: #f1f5f9;
+    -fx-background-radius: 30px;
+    -fx-padding: 4 4 4 16;
+}
+
+.chatbot-input-modern {
+    -fx-background-color: transparent;
+    -fx-padding: 10 0;
+    -fx-font-size: 13px;
+    -fx-prompt-text-fill: #94a3b8;
+}
+
+.send-btn-modern {
+    -fx-min-width: 38px;
+    -fx-min-height: 38px;
+    -fx-max-width: 38px;
+    -fx-max-height: 38px;
+    -fx-background-color: #2e7d32;
+    -fx-background-radius: 30px;
+    -fx-alignment: center;
+    -fx-cursor: hand;
+}
+
+.send-btn-modern .glyph-icon {
+    -fx-fill: white;
+}
+
+.send-btn-modern:hover {
+    -fx-background-color: #1b5e20;
+    -fx-scale-x: 1.05;
+    -fx-scale-y: 1.05;
+}
+
+.mic-btn-modern {
+    -fx-min-width: 38px;
+    -fx-min-height: 38px;
+    -fx-max-width: 38px;
+    -fx-max-height: 38px;
+    -fx-background-color: #e2e8f0;
+    -fx-background-radius: 30px;
+    -fx-alignment: center;
+    -fx-cursor: hand;
+}
+
+.mic-btn-modern .glyph-icon {
+    -fx-fill: #475569;
+}
+
+.mic-btn-modern:hover {
+    -fx-background-color: #cbd5e1;
+}
+
+/* Suggestions */
+.suggestion-modern {
+    -fx-background-color: #f1f5f9;
+    -fx-background-radius: 30px;
+    -fx-padding: 8 14;
+    -fx-font-size: 12px;
+    -fx-text-fill: #475569;
+    -fx-cursor: hand;
+}
+
+.suggestion-modern:hover {
+    -fx-background-color: #2e7d32;
+    -fx-text-fill: white;
+}
+
+/* ----------------------------------------------
+   SCROLLBAR PERSONNALISÉE
+   ---------------------------------------------- */
+.scroll-bar:vertical {
+    -fx-background-color: transparent;
+    -fx-pref-width: 8px;
+}
+
+.scroll-bar:vertical .track {
+    -fx-background-color: transparent;
+    -fx-border-color: transparent;
+    -fx-background-radius: 8px;
+}
+
+.scroll-bar:vertical .thumb {
+    -fx-background-color: #cbd5e1;
+    -fx-background-radius: 8px;
+}
+
+.scroll-bar:vertical .thumb:hover {
+    -fx-background-color: #94a3b8;
+}
+
+.scroll-bar:vertical .increment-button,
+.scroll-bar:vertical .decrement-button {
+    -fx-background-color: transparent;
+    -fx-padding: 0;
+}
+
+/* ----------------------------------------------
+   ANIMATIONS
+   ---------------------------------------------- */
+@keyframes slideIn {
+    from { -fx-translate-x: 20px; -fx-opacity: 0; }
+    to { -fx-translate-x: 0; -fx-opacity: 1; }
+}
+
+.kpi-card-modern {
+    -fx-animation: slideIn 0.3s ease;
+}
+
+.operation-item {
+    -fx-animation: slideIn 0.3s ease;
+}
+
+/* ----------------------------------------------
+   RESPONSIVE
+   ---------------------------------------------- */
+@media (max-width: 1280px) {
+    .sidebar {
+        -fx-pref-width: 240px;
+    }
+
+    .chatbot-panel-modern {
+        -fx-pref-width: 300px;
+    }
+}
+
+@media (max-width: 1024px) {
+    .chatbot-panel-modern {
+        -fx-pref-width: 280px;
+    }
+
+    .search-glass {
+        -fx-pref-width: 200px;
+    }
+}/* ----------------------------------------------
+   SCROLLPANE DU MENU LATÉRAL
+   ---------------------------------------------- */
+.sidebar-scroll {
+    -fx-background-color: transparent;
+    -fx-border-color: transparent;
+    -fx-padding: 0;
+}
+
+.sidebar-scroll > .viewport {
+    -fx-background-color: transparent;
+}
+
+/* Personnalisation de la scrollbar verticale */
+.sidebar-scroll .scroll-bar:vertical {
+    -fx-background-color: transparent;
+    -fx-pref-width: 6px;
+}
+
+.sidebar-scroll .scroll-bar:vertical .thumb {
+    -fx-background-color: #cbd5e1;
+    -fx-background-radius: 6px;
+}
+
+.sidebar-scroll .scroll-bar:vertical .thumb:hover {
+    -fx-background-color: #94a3b8;
+}
+
+.sidebar-scroll .scroll-bar:vertical .track {
+    -fx-background-color: transparent;
+}
+
+.sidebar-scroll .scroll-bar:vertical .increment-button,
+.sidebar-scroll .scroll-bar:vertical .decrement-button {
+    -fx-background-color: transparent;
+    -fx-padding: 0;
+}
