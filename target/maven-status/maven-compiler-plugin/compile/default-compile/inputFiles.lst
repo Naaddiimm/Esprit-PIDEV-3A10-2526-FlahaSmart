@@ -1,87 +1,105 @@
-C:\xampp\htdocs\Esprit-PIDEV-\src\main\java\api\ApiClient.java
-C:\xampp\htdocs\Esprit-PIDEV-\src\main\java\api\ModerationAPI.java
-C:\xampp\htdocs\Esprit-PIDEV-\src\main\java\controllers\Admin\AddAdminController.java
-C:\xampp\htdocs\Esprit-PIDEV-\src\main\java\controllers\Admin\AfficherUser.java
-C:\xampp\htdocs\Esprit-PIDEV-\src\main\java\controllers\Admin\ListUser.java
-C:\xampp\htdocs\Esprit-PIDEV-\src\main\java\controllers\Admin\LoginAdmin.java
-C:\xampp\htdocs\Esprit-PIDEV-\src\main\java\controllers\Admin\UpdateUser.java
-C:\xampp\htdocs\Esprit-PIDEV-\src\main\java\controllers\advancedfeatures\ChatbotController.java
-C:\xampp\htdocs\Esprit-PIDEV-\src\main\java\controllers\advancedfeatures\DashboardController.java
-C:\xampp\htdocs\Esprit-PIDEV-\src\main\java\controllers\advancedfeatures\IrrigationController.java
-C:\xampp\htdocs\Esprit-PIDEV-\src\main\java\controllers\advancedfeatures\PlantDiseaseController.java
-C:\xampp\htdocs\Esprit-PIDEV-\src\main\java\controllers\advancedfeatures\RotationCultureController.java
-C:\xampp\htdocs\Esprit-PIDEV-\src\main\java\controllers\advancedfeatures\WeatherWidgetController.java
-C:\xampp\htdocs\Esprit-PIDEV-\src\main\java\controllers\Auth\ForgotPassword.java
-C:\xampp\htdocs\Esprit-PIDEV-\src\main\java\controllers\Auth\Login.java
-C:\xampp\htdocs\Esprit-PIDEV-\src\main\java\controllers\Auth\Register.java
-C:\xampp\htdocs\Esprit-PIDEV-\src\main\java\controllers\Auth\Session.java
-C:\xampp\htdocs\Esprit-PIDEV-\src\main\java\controllers\commande\ArticleUpdateDialogSimple.java
-C:\xampp\htdocs\Esprit-PIDEV-\src\main\java\controllers\commande\HelloController.java
-C:\xampp\htdocs\Esprit-PIDEV-\src\main\java\controllers\commande\OrderUpdateDialog.java
-C:\xampp\htdocs\Esprit-PIDEV-\src\main\java\controllers\commande\TodoController.java
-C:\xampp\htdocs\Esprit-PIDEV-\src\main\java\controllers\commande\TodoUpdateDialog.java
-C:\xampp\htdocs\Esprit-PIDEV-\src\main\java\controllers\Dashbord\ClientHomeController.java
-C:\xampp\htdocs\Esprit-PIDEV-\src\main\java\controllers\Dashbord\DashboardAdmController.java
-C:\xampp\htdocs\Esprit-PIDEV-\src\main\java\controllers\Dashbord\DashboardAgriculteurController.java
-C:\xampp\htdocs\Esprit-PIDEV-\src\main\java\controllers\Dashbord\DashboardHomeController.java
-C:\xampp\htdocs\Esprit-PIDEV-\src\main\java\controllers\Dashbord\DashboardNut.java
-C:\xampp\htdocs\Esprit-PIDEV-\src\main\java\controllers\Dashbord\DashboardUser.java
-C:\xampp\htdocs\Esprit-PIDEV-\src\main\java\controllers\Dashbord\ProfileUserController.java
-C:\xampp\htdocs\Esprit-PIDEV-\src\main\java\controllers\Dashbord\StatistiquesController.java
-C:\xampp\htdocs\Esprit-PIDEV-\src\main\java\controllers\equipement\Ajout_Eq_Controller.java
-C:\xampp\htdocs\Esprit-PIDEV-\src\main\java\controllers\equipement\ListeEqController.java
-C:\xampp\htdocs\Esprit-PIDEV-\src\main\java\controllers\equipement\ModifierEqController.java
-C:\xampp\htdocs\Esprit-PIDEV-\src\main\java\controllers\forum\AjouterThreadController.java
-C:\xampp\htdocs\Esprit-PIDEV-\src\main\java\controllers\forum\CommentaireController.java
-C:\xampp\htdocs\Esprit-PIDEV-\src\main\java\controllers\forum\ModifierThreadController.java
-C:\xampp\htdocs\Esprit-PIDEV-\src\main\java\controllers\forum\ThreadController.java
-C:\xampp\htdocs\Esprit-PIDEV-\src\main\java\controllers\home.java
-C:\xampp\htdocs\Esprit-PIDEV-\src\main\java\controllers\MainLayoutController.java
-C:\xampp\htdocs\Esprit-PIDEV-\src\main\java\controllers\operation\Ajout_Op_Controller.java
-C:\xampp\htdocs\Esprit-PIDEV-\src\main\java\controllers\operation\ListeOpController.java
-C:\xampp\htdocs\Esprit-PIDEV-\src\main\java\controllers\operation\ModifierOpController.java
-C:\xampp\htdocs\Esprit-PIDEV-\src\main\java\entities\advancedfeatures\ChatMessage.java
-C:\xampp\htdocs\Esprit-PIDEV-\src\main\java\entities\advancedfeatures\IrrigationPlan.java
-C:\xampp\htdocs\Esprit-PIDEV-\src\main\java\entities\advancedfeatures\Parcelle.java
-C:\xampp\htdocs\Esprit-PIDEV-\src\main\java\entities\advancedfeatures\RecommandationCulture.java
-C:\xampp\htdocs\Esprit-PIDEV-\src\main\java\entities\advancedfeatures\Weather.java
-C:\xampp\htdocs\Esprit-PIDEV-\src\main\java\entities\commande\Article.java
-C:\xampp\htdocs\Esprit-PIDEV-\src\main\java\entities\commande\Order.java
-C:\xampp\htdocs\Esprit-PIDEV-\src\main\java\entities\commande\Todo.java
-C:\xampp\htdocs\Esprit-PIDEV-\src\main\java\entities\Equipement.java
-C:\xampp\htdocs\Esprit-PIDEV-\src\main\java\entities\forum\Commentaire.java
-C:\xampp\htdocs\Esprit-PIDEV-\src\main\java\entities\forum\Jaime.java
-C:\xampp\htdocs\Esprit-PIDEV-\src\main\java\entities\forum\Notification.java
-C:\xampp\htdocs\Esprit-PIDEV-\src\main\java\entities\forum\Reputation.java
-C:\xampp\htdocs\Esprit-PIDEV-\src\main\java\entities\forum\thread.java
-C:\xampp\htdocs\Esprit-PIDEV-\src\main\java\entities\forum\Vote.java
-C:\xampp\htdocs\Esprit-PIDEV-\src\main\java\entities\Operation.java
-C:\xampp\htdocs\Esprit-PIDEV-\src\main\java\entities\Role.java
-C:\xampp\htdocs\Esprit-PIDEV-\src\main\java\entities\User.java
-C:\xampp\htdocs\Esprit-PIDEV-\src\main\java\interfaces\IService.java
-C:\xampp\htdocs\Esprit-PIDEV-\src\main\java\services\advancedfeatures\AgriChatbotService.java
-C:\xampp\htdocs\Esprit-PIDEV-\src\main\java\services\advancedfeatures\IrrigationService.java
-C:\xampp\htdocs\Esprit-PIDEV-\src\main\java\services\advancedfeatures\PlantDiseaseService.java
-C:\xampp\htdocs\Esprit-PIDEV-\src\main\java\services\advancedfeatures\RotationCultureService.java
-C:\xampp\htdocs\Esprit-PIDEV-\src\main\java\services\advancedfeatures\WeatherService.java
-C:\xampp\htdocs\Esprit-PIDEV-\src\main\java\services\commande\ArticleDAO.java
-C:\xampp\htdocs\Esprit-PIDEV-\src\main\java\services\commande\ConsultantBot.java
-C:\xampp\htdocs\Esprit-PIDEV-\src\main\java\services\commande\OrderDAO.java
-C:\xampp\htdocs\Esprit-PIDEV-\src\main\java\services\commande\TodoDAO.java
-C:\xampp\htdocs\Esprit-PIDEV-\src\main\java\services\EmailService.java
-C:\xampp\htdocs\Esprit-PIDEV-\src\main\java\services\EquipementService.java
-C:\xampp\htdocs\Esprit-PIDEV-\src\main\java\services\forum\IService.java
-C:\xampp\htdocs\Esprit-PIDEV-\src\main\java\services\forum\ServiceCommentaire.java
-C:\xampp\htdocs\Esprit-PIDEV-\src\main\java\services\forum\ServiceJaime.java
-C:\xampp\htdocs\Esprit-PIDEV-\src\main\java\services\forum\ServiceNotification.java
-C:\xampp\htdocs\Esprit-PIDEV-\src\main\java\services\forum\ServiceReputation.java
-C:\xampp\htdocs\Esprit-PIDEV-\src\main\java\services\forum\ServiceThreads.java
-C:\xampp\htdocs\Esprit-PIDEV-\src\main\java\services\forum\ServiceVote.java
-C:\xampp\htdocs\Esprit-PIDEV-\src\main\java\services\Iservice.java
-C:\xampp\htdocs\Esprit-PIDEV-\src\main\java\services\OperationService.java
-C:\xampp\htdocs\Esprit-PIDEV-\src\main\java\services\PasswordResetService.java
-C:\xampp\htdocs\Esprit-PIDEV-\src\main\java\services\UserService.java
-C:\xampp\htdocs\Esprit-PIDEV-\src\main\java\TestDB.java
-C:\xampp\htdocs\Esprit-PIDEV-\src\main\java\testes\Main.java
-C:\xampp\htdocs\Esprit-PIDEV-\src\main\java\tools\myConnection.java
-C:\xampp\htdocs\Esprit-PIDEV-\src\main\java\utilies\MyDataBase.java
+C:\Users\ASUS\Desktop\java integree\Esprit-PIDEV-3A10-2526-FlahaSmart\Esprit-PIDEV-3A10-2526-FlahaSmart\src\main\java\api\ApiClient.java
+C:\Users\ASUS\Desktop\java integree\Esprit-PIDEV-3A10-2526-FlahaSmart\Esprit-PIDEV-3A10-2526-FlahaSmart\src\main\java\api\ModerationAPI.java
+C:\Users\ASUS\Desktop\java integree\Esprit-PIDEV-3A10-2526-FlahaSmart\Esprit-PIDEV-3A10-2526-FlahaSmart\src\main\java\controllers\Admin\AddAdminController.java
+C:\Users\ASUS\Desktop\java integree\Esprit-PIDEV-3A10-2526-FlahaSmart\Esprit-PIDEV-3A10-2526-FlahaSmart\src\main\java\controllers\Admin\AfficherUser.java
+C:\Users\ASUS\Desktop\java integree\Esprit-PIDEV-3A10-2526-FlahaSmart\Esprit-PIDEV-3A10-2526-FlahaSmart\src\main\java\controllers\Admin\ListUser.java
+C:\Users\ASUS\Desktop\java integree\Esprit-PIDEV-3A10-2526-FlahaSmart\Esprit-PIDEV-3A10-2526-FlahaSmart\src\main\java\controllers\Admin\LoginAdmin.java
+C:\Users\ASUS\Desktop\java integree\Esprit-PIDEV-3A10-2526-FlahaSmart\Esprit-PIDEV-3A10-2526-FlahaSmart\src\main\java\controllers\Admin\UpdateUser.java
+C:\Users\ASUS\Desktop\java integree\Esprit-PIDEV-3A10-2526-FlahaSmart\Esprit-PIDEV-3A10-2526-FlahaSmart\src\main\java\controllers\advancedfeatures\ChatbotController.java
+C:\Users\ASUS\Desktop\java integree\Esprit-PIDEV-3A10-2526-FlahaSmart\Esprit-PIDEV-3A10-2526-FlahaSmart\src\main\java\controllers\advancedfeatures\DashboardController.java
+C:\Users\ASUS\Desktop\java integree\Esprit-PIDEV-3A10-2526-FlahaSmart\Esprit-PIDEV-3A10-2526-FlahaSmart\src\main\java\controllers\advancedfeatures\IrrigationController.java
+C:\Users\ASUS\Desktop\java integree\Esprit-PIDEV-3A10-2526-FlahaSmart\Esprit-PIDEV-3A10-2526-FlahaSmart\src\main\java\controllers\advancedfeatures\PlantDiseaseController.java
+C:\Users\ASUS\Desktop\java integree\Esprit-PIDEV-3A10-2526-FlahaSmart\Esprit-PIDEV-3A10-2526-FlahaSmart\src\main\java\controllers\advancedfeatures\RotationCultureController.java
+C:\Users\ASUS\Desktop\java integree\Esprit-PIDEV-3A10-2526-FlahaSmart\Esprit-PIDEV-3A10-2526-FlahaSmart\src\main\java\controllers\advancedfeatures\WeatherWidgetController.java
+C:\Users\ASUS\Desktop\java integree\Esprit-PIDEV-3A10-2526-FlahaSmart\Esprit-PIDEV-3A10-2526-FlahaSmart\src\main\java\controllers\Auth\ForgotPassword.java
+C:\Users\ASUS\Desktop\java integree\Esprit-PIDEV-3A10-2526-FlahaSmart\Esprit-PIDEV-3A10-2526-FlahaSmart\src\main\java\controllers\Auth\Login.java
+C:\Users\ASUS\Desktop\java integree\Esprit-PIDEV-3A10-2526-FlahaSmart\Esprit-PIDEV-3A10-2526-FlahaSmart\src\main\java\controllers\Auth\Register.java
+C:\Users\ASUS\Desktop\java integree\Esprit-PIDEV-3A10-2526-FlahaSmart\Esprit-PIDEV-3A10-2526-FlahaSmart\src\main\java\controllers\Auth\Session.java
+C:\Users\ASUS\Desktop\java integree\Esprit-PIDEV-3A10-2526-FlahaSmart\Esprit-PIDEV-3A10-2526-FlahaSmart\src\main\java\controllers\commande\ArticleUpdateDialogSimple.java
+C:\Users\ASUS\Desktop\java integree\Esprit-PIDEV-3A10-2526-FlahaSmart\Esprit-PIDEV-3A10-2526-FlahaSmart\src\main\java\controllers\commande\HelloController.java
+C:\Users\ASUS\Desktop\java integree\Esprit-PIDEV-3A10-2526-FlahaSmart\Esprit-PIDEV-3A10-2526-FlahaSmart\src\main\java\controllers\commande\OrderUpdateDialog.java
+C:\Users\ASUS\Desktop\java integree\Esprit-PIDEV-3A10-2526-FlahaSmart\Esprit-PIDEV-3A10-2526-FlahaSmart\src\main\java\controllers\commande\TodoController.java
+C:\Users\ASUS\Desktop\java integree\Esprit-PIDEV-3A10-2526-FlahaSmart\Esprit-PIDEV-3A10-2526-FlahaSmart\src\main\java\controllers\commande\TodoUpdateDialog.java
+C:\Users\ASUS\Desktop\java integree\Esprit-PIDEV-3A10-2526-FlahaSmart\Esprit-PIDEV-3A10-2526-FlahaSmart\src\main\java\controllers\Dashbord\ClientHomeController.java
+C:\Users\ASUS\Desktop\java integree\Esprit-PIDEV-3A10-2526-FlahaSmart\Esprit-PIDEV-3A10-2526-FlahaSmart\src\main\java\controllers\Dashbord\DashboardAdmController.java
+C:\Users\ASUS\Desktop\java integree\Esprit-PIDEV-3A10-2526-FlahaSmart\Esprit-PIDEV-3A10-2526-FlahaSmart\src\main\java\controllers\Dashbord\DashboardAgriculteurController.java
+C:\Users\ASUS\Desktop\java integree\Esprit-PIDEV-3A10-2526-FlahaSmart\Esprit-PIDEV-3A10-2526-FlahaSmart\src\main\java\controllers\Dashbord\DashboardHomeController.java
+C:\Users\ASUS\Desktop\java integree\Esprit-PIDEV-3A10-2526-FlahaSmart\Esprit-PIDEV-3A10-2526-FlahaSmart\src\main\java\controllers\Dashbord\DashboardNut.java
+C:\Users\ASUS\Desktop\java integree\Esprit-PIDEV-3A10-2526-FlahaSmart\Esprit-PIDEV-3A10-2526-FlahaSmart\src\main\java\controllers\Dashbord\DashboardUser.java
+C:\Users\ASUS\Desktop\java integree\Esprit-PIDEV-3A10-2526-FlahaSmart\Esprit-PIDEV-3A10-2526-FlahaSmart\src\main\java\controllers\Dashbord\ProfileUserController.java
+C:\Users\ASUS\Desktop\java integree\Esprit-PIDEV-3A10-2526-FlahaSmart\Esprit-PIDEV-3A10-2526-FlahaSmart\src\main\java\controllers\Dashbord\StatistiquesController.java
+C:\Users\ASUS\Desktop\java integree\Esprit-PIDEV-3A10-2526-FlahaSmart\Esprit-PIDEV-3A10-2526-FlahaSmart\src\main\java\controllers\equipement\Ajout_Eq_Controller.java
+C:\Users\ASUS\Desktop\java integree\Esprit-PIDEV-3A10-2526-FlahaSmart\Esprit-PIDEV-3A10-2526-FlahaSmart\src\main\java\controllers\equipement\ListeEqController.java
+C:\Users\ASUS\Desktop\java integree\Esprit-PIDEV-3A10-2526-FlahaSmart\Esprit-PIDEV-3A10-2526-FlahaSmart\src\main\java\controllers\equipement\ModifierEqController.java
+C:\Users\ASUS\Desktop\java integree\Esprit-PIDEV-3A10-2526-FlahaSmart\Esprit-PIDEV-3A10-2526-FlahaSmart\src\main\java\controllers\forum\AjouterThreadController.java
+C:\Users\ASUS\Desktop\java integree\Esprit-PIDEV-3A10-2526-FlahaSmart\Esprit-PIDEV-3A10-2526-FlahaSmart\src\main\java\controllers\forum\CommentaireController.java
+C:\Users\ASUS\Desktop\java integree\Esprit-PIDEV-3A10-2526-FlahaSmart\Esprit-PIDEV-3A10-2526-FlahaSmart\src\main\java\controllers\forum\ModifierThreadController.java
+C:\Users\ASUS\Desktop\java integree\Esprit-PIDEV-3A10-2526-FlahaSmart\Esprit-PIDEV-3A10-2526-FlahaSmart\src\main\java\controllers\forum\ThreadController.java
+C:\Users\ASUS\Desktop\java integree\Esprit-PIDEV-3A10-2526-FlahaSmart\Esprit-PIDEV-3A10-2526-FlahaSmart\src\main\java\controllers\home.java
+C:\Users\ASUS\Desktop\java integree\Esprit-PIDEV-3A10-2526-FlahaSmart\Esprit-PIDEV-3A10-2526-FlahaSmart\src\main\java\controllers\MainLayoutController.java
+C:\Users\ASUS\Desktop\java integree\Esprit-PIDEV-3A10-2526-FlahaSmart\Esprit-PIDEV-3A10-2526-FlahaSmart\src\main\java\controllers\operation\Ajout_Op_Controller.java
+C:\Users\ASUS\Desktop\java integree\Esprit-PIDEV-3A10-2526-FlahaSmart\Esprit-PIDEV-3A10-2526-FlahaSmart\src\main\java\controllers\operation\ListeOpController.java
+C:\Users\ASUS\Desktop\java integree\Esprit-PIDEV-3A10-2526-FlahaSmart\Esprit-PIDEV-3A10-2526-FlahaSmart\src\main\java\controllers\operation\ModifierOpController.java
+C:\Users\ASUS\Desktop\java integree\Esprit-PIDEV-3A10-2526-FlahaSmart\Esprit-PIDEV-3A10-2526-FlahaSmart\src\main\java\controllers\produit\ApiConsommationDetailController.java
+C:\Users\ASUS\Desktop\java integree\Esprit-PIDEV-3A10-2526-FlahaSmart\Esprit-PIDEV-3A10-2526-FlahaSmart\src\main\java\controllers\produit\CardStockAchriController.java
+C:\Users\ASUS\Desktop\java integree\Esprit-PIDEV-3A10-2526-FlahaSmart\Esprit-PIDEV-3A10-2526-FlahaSmart\src\main\java\controllers\produit\CardStockController.java
+C:\Users\ASUS\Desktop\java integree\Esprit-PIDEV-3A10-2526-FlahaSmart\Esprit-PIDEV-3A10-2526-FlahaSmart\src\main\java\controllers\produit\CardStockFrontController.java
+C:\Users\ASUS\Desktop\java integree\Esprit-PIDEV-3A10-2526-FlahaSmart\Esprit-PIDEV-3A10-2526-FlahaSmart\src\main\java\controllers\produit\ConsommationDetailController.java
+C:\Users\ASUS\Desktop\java integree\Esprit-PIDEV-3A10-2526-FlahaSmart\Esprit-PIDEV-3A10-2526-FlahaSmart\src\main\java\controllers\produit\ConsommationPopupController.java
+C:\Users\ASUS\Desktop\java integree\Esprit-PIDEV-3A10-2526-FlahaSmart\Esprit-PIDEV-3A10-2526-FlahaSmart\src\main\java\controllers\produit\RoleSelectionController.java
+C:\Users\ASUS\Desktop\java integree\Esprit-PIDEV-3A10-2526-FlahaSmart\Esprit-PIDEV-3A10-2526-FlahaSmart\src\main\java\controllers\produit\StockAgrichController.java
+C:\Users\ASUS\Desktop\java integree\Esprit-PIDEV-3A10-2526-FlahaSmart\Esprit-PIDEV-3A10-2526-FlahaSmart\src\main\java\controllers\produit\StockBackController.java
+C:\Users\ASUS\Desktop\java integree\Esprit-PIDEV-3A10-2526-FlahaSmart\Esprit-PIDEV-3A10-2526-FlahaSmart\src\main\java\controllers\produit\StockFrontController.java
+C:\Users\ASUS\Desktop\java integree\Esprit-PIDEV-3A10-2526-FlahaSmart\Esprit-PIDEV-3A10-2526-FlahaSmart\src\main\java\entities\advancedfeatures\ChatMessage.java
+C:\Users\ASUS\Desktop\java integree\Esprit-PIDEV-3A10-2526-FlahaSmart\Esprit-PIDEV-3A10-2526-FlahaSmart\src\main\java\entities\advancedfeatures\IrrigationPlan.java
+C:\Users\ASUS\Desktop\java integree\Esprit-PIDEV-3A10-2526-FlahaSmart\Esprit-PIDEV-3A10-2526-FlahaSmart\src\main\java\entities\advancedfeatures\Parcelle.java
+C:\Users\ASUS\Desktop\java integree\Esprit-PIDEV-3A10-2526-FlahaSmart\Esprit-PIDEV-3A10-2526-FlahaSmart\src\main\java\entities\advancedfeatures\RecommandationCulture.java
+C:\Users\ASUS\Desktop\java integree\Esprit-PIDEV-3A10-2526-FlahaSmart\Esprit-PIDEV-3A10-2526-FlahaSmart\src\main\java\entities\advancedfeatures\Weather.java
+C:\Users\ASUS\Desktop\java integree\Esprit-PIDEV-3A10-2526-FlahaSmart\Esprit-PIDEV-3A10-2526-FlahaSmart\src\main\java\entities\commande\Article.java
+C:\Users\ASUS\Desktop\java integree\Esprit-PIDEV-3A10-2526-FlahaSmart\Esprit-PIDEV-3A10-2526-FlahaSmart\src\main\java\entities\commande\Order.java
+C:\Users\ASUS\Desktop\java integree\Esprit-PIDEV-3A10-2526-FlahaSmart\Esprit-PIDEV-3A10-2526-FlahaSmart\src\main\java\entities\commande\Todo.java
+C:\Users\ASUS\Desktop\java integree\Esprit-PIDEV-3A10-2526-FlahaSmart\Esprit-PIDEV-3A10-2526-FlahaSmart\src\main\java\entities\ConsommationProduit.java
+C:\Users\ASUS\Desktop\java integree\Esprit-PIDEV-3A10-2526-FlahaSmart\Esprit-PIDEV-3A10-2526-FlahaSmart\src\main\java\entities\Equipement.java
+C:\Users\ASUS\Desktop\java integree\Esprit-PIDEV-3A10-2526-FlahaSmart\Esprit-PIDEV-3A10-2526-FlahaSmart\src\main\java\entities\forum\Commentaire.java
+C:\Users\ASUS\Desktop\java integree\Esprit-PIDEV-3A10-2526-FlahaSmart\Esprit-PIDEV-3A10-2526-FlahaSmart\src\main\java\entities\forum\Jaime.java
+C:\Users\ASUS\Desktop\java integree\Esprit-PIDEV-3A10-2526-FlahaSmart\Esprit-PIDEV-3A10-2526-FlahaSmart\src\main\java\entities\forum\Notification.java
+C:\Users\ASUS\Desktop\java integree\Esprit-PIDEV-3A10-2526-FlahaSmart\Esprit-PIDEV-3A10-2526-FlahaSmart\src\main\java\entities\forum\Reputation.java
+C:\Users\ASUS\Desktop\java integree\Esprit-PIDEV-3A10-2526-FlahaSmart\Esprit-PIDEV-3A10-2526-FlahaSmart\src\main\java\entities\forum\thread.java
+C:\Users\ASUS\Desktop\java integree\Esprit-PIDEV-3A10-2526-FlahaSmart\Esprit-PIDEV-3A10-2526-FlahaSmart\src\main\java\entities\forum\Vote.java
+C:\Users\ASUS\Desktop\java integree\Esprit-PIDEV-3A10-2526-FlahaSmart\Esprit-PIDEV-3A10-2526-FlahaSmart\src\main\java\entities\Operation.java
+C:\Users\ASUS\Desktop\java integree\Esprit-PIDEV-3A10-2526-FlahaSmart\Esprit-PIDEV-3A10-2526-FlahaSmart\src\main\java\entities\Role.java
+C:\Users\ASUS\Desktop\java integree\Esprit-PIDEV-3A10-2526-FlahaSmart\Esprit-PIDEV-3A10-2526-FlahaSmart\src\main\java\entities\StockProduit.java
+C:\Users\ASUS\Desktop\java integree\Esprit-PIDEV-3A10-2526-FlahaSmart\Esprit-PIDEV-3A10-2526-FlahaSmart\src\main\java\entities\User.java
+C:\Users\ASUS\Desktop\java integree\Esprit-PIDEV-3A10-2526-FlahaSmart\Esprit-PIDEV-3A10-2526-FlahaSmart\src\main\java\interfaces\IService.java
+C:\Users\ASUS\Desktop\java integree\Esprit-PIDEV-3A10-2526-FlahaSmart\Esprit-PIDEV-3A10-2526-FlahaSmart\src\main\java\scheduler\NotificationScheduler.java
+C:\Users\ASUS\Desktop\java integree\Esprit-PIDEV-3A10-2526-FlahaSmart\Esprit-PIDEV-3A10-2526-FlahaSmart\src\main\java\services\advancedfeatures\AgriChatbotService.java
+C:\Users\ASUS\Desktop\java integree\Esprit-PIDEV-3A10-2526-FlahaSmart\Esprit-PIDEV-3A10-2526-FlahaSmart\src\main\java\services\advancedfeatures\IrrigationService.java
+C:\Users\ASUS\Desktop\java integree\Esprit-PIDEV-3A10-2526-FlahaSmart\Esprit-PIDEV-3A10-2526-FlahaSmart\src\main\java\services\advancedfeatures\PlantDiseaseService.java
+C:\Users\ASUS\Desktop\java integree\Esprit-PIDEV-3A10-2526-FlahaSmart\Esprit-PIDEV-3A10-2526-FlahaSmart\src\main\java\services\advancedfeatures\RotationCultureService.java
+C:\Users\ASUS\Desktop\java integree\Esprit-PIDEV-3A10-2526-FlahaSmart\Esprit-PIDEV-3A10-2526-FlahaSmart\src\main\java\services\advancedfeatures\WeatherService.java
+C:\Users\ASUS\Desktop\java integree\Esprit-PIDEV-3A10-2526-FlahaSmart\Esprit-PIDEV-3A10-2526-FlahaSmart\src\main\java\services\commande\ArticleDAO.java
+C:\Users\ASUS\Desktop\java integree\Esprit-PIDEV-3A10-2526-FlahaSmart\Esprit-PIDEV-3A10-2526-FlahaSmart\src\main\java\services\commande\ConsultantBot.java
+C:\Users\ASUS\Desktop\java integree\Esprit-PIDEV-3A10-2526-FlahaSmart\Esprit-PIDEV-3A10-2526-FlahaSmart\src\main\java\services\commande\OrderDAO.java
+C:\Users\ASUS\Desktop\java integree\Esprit-PIDEV-3A10-2526-FlahaSmart\Esprit-PIDEV-3A10-2526-FlahaSmart\src\main\java\services\commande\TodoDAO.java
+C:\Users\ASUS\Desktop\java integree\Esprit-PIDEV-3A10-2526-FlahaSmart\Esprit-PIDEV-3A10-2526-FlahaSmart\src\main\java\services\ConsommationProduitService.java
+C:\Users\ASUS\Desktop\java integree\Esprit-PIDEV-3A10-2526-FlahaSmart\Esprit-PIDEV-3A10-2526-FlahaSmart\src\main\java\services\EmailService.java
+C:\Users\ASUS\Desktop\java integree\Esprit-PIDEV-3A10-2526-FlahaSmart\Esprit-PIDEV-3A10-2526-FlahaSmart\src\main\java\services\EmailServices.java
+C:\Users\ASUS\Desktop\java integree\Esprit-PIDEV-3A10-2526-FlahaSmart\Esprit-PIDEV-3A10-2526-FlahaSmart\src\main\java\services\EquipementService.java
+C:\Users\ASUS\Desktop\java integree\Esprit-PIDEV-3A10-2526-FlahaSmart\Esprit-PIDEV-3A10-2526-FlahaSmart\src\main\java\services\forum\IService.java
+C:\Users\ASUS\Desktop\java integree\Esprit-PIDEV-3A10-2526-FlahaSmart\Esprit-PIDEV-3A10-2526-FlahaSmart\src\main\java\services\forum\ServiceCommentaire.java
+C:\Users\ASUS\Desktop\java integree\Esprit-PIDEV-3A10-2526-FlahaSmart\Esprit-PIDEV-3A10-2526-FlahaSmart\src\main\java\services\forum\ServiceJaime.java
+C:\Users\ASUS\Desktop\java integree\Esprit-PIDEV-3A10-2526-FlahaSmart\Esprit-PIDEV-3A10-2526-FlahaSmart\src\main\java\services\forum\ServiceNotification.java
+C:\Users\ASUS\Desktop\java integree\Esprit-PIDEV-3A10-2526-FlahaSmart\Esprit-PIDEV-3A10-2526-FlahaSmart\src\main\java\services\forum\ServiceReputation.java
+C:\Users\ASUS\Desktop\java integree\Esprit-PIDEV-3A10-2526-FlahaSmart\Esprit-PIDEV-3A10-2526-FlahaSmart\src\main\java\services\forum\ServiceThreads.java
+C:\Users\ASUS\Desktop\java integree\Esprit-PIDEV-3A10-2526-FlahaSmart\Esprit-PIDEV-3A10-2526-FlahaSmart\src\main\java\services\forum\ServiceVote.java
+C:\Users\ASUS\Desktop\java integree\Esprit-PIDEV-3A10-2526-FlahaSmart\Esprit-PIDEV-3A10-2526-FlahaSmart\src\main\java\services\Iservice.java
+C:\Users\ASUS\Desktop\java integree\Esprit-PIDEV-3A10-2526-FlahaSmart\Esprit-PIDEV-3A10-2526-FlahaSmart\src\main\java\services\NotificationService.java
+C:\Users\ASUS\Desktop\java integree\Esprit-PIDEV-3A10-2526-FlahaSmart\Esprit-PIDEV-3A10-2526-FlahaSmart\src\main\java\services\OperationService.java
+C:\Users\ASUS\Desktop\java integree\Esprit-PIDEV-3A10-2526-FlahaSmart\Esprit-PIDEV-3A10-2526-FlahaSmart\src\main\java\services\PasswordResetService.java
+C:\Users\ASUS\Desktop\java integree\Esprit-PIDEV-3A10-2526-FlahaSmart\Esprit-PIDEV-3A10-2526-FlahaSmart\src\main\java\services\StockProduitService.java
+C:\Users\ASUS\Desktop\java integree\Esprit-PIDEV-3A10-2526-FlahaSmart\Esprit-PIDEV-3A10-2526-FlahaSmart\src\main\java\services\UserService.java
+C:\Users\ASUS\Desktop\java integree\Esprit-PIDEV-3A10-2526-FlahaSmart\Esprit-PIDEV-3A10-2526-FlahaSmart\src\main\java\TestDB.java
+C:\Users\ASUS\Desktop\java integree\Esprit-PIDEV-3A10-2526-FlahaSmart\Esprit-PIDEV-3A10-2526-FlahaSmart\src\main\java\testes\Main.java
+C:\Users\ASUS\Desktop\java integree\Esprit-PIDEV-3A10-2526-FlahaSmart\Esprit-PIDEV-3A10-2526-FlahaSmart\src\main\java\tools\myConnection.java
+C:\Users\ASUS\Desktop\java integree\Esprit-PIDEV-3A10-2526-FlahaSmart\Esprit-PIDEV-3A10-2526-FlahaSmart\src\main\java\utilies\MyDataBase.java
+C:\Users\ASUS\Desktop\java integree\Esprit-PIDEV-3A10-2526-FlahaSmart\Esprit-PIDEV-3A10-2526-FlahaSmart\src\main\java\utilies\QRCodeGenerator.java

@@ -81,6 +81,10 @@
                         <graphic><FontAwesomeIconView glyphName="CUBES" size="16" styleClass="nav-icon"/></graphic>
                         <text>Liste équipements</text>
                     </Button>
+                    <Button styleClass="nav-item" maxWidth="Infinity" onAction="#handleProduit">
+                        <graphic><FontAwesomeIconView glyphName="CUBES" size="16" styleClass="nav-icon"/></graphic>
+                        <text>Gestion Produit</text>
+                    </Button>
 
                     <Label text="OUTILS AGRICOLES" styleClass="nav-section"/>
                     <Button styleClass="nav-item" maxWidth="Infinity" onAction="#handleMeteo">

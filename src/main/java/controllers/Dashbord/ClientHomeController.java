@@ -131,4 +131,19 @@ public class ClientHomeController implements Initializable {
         alert.setContentText(message);
         alert.showAndWait();
     }
+
+    @FXML
+    public void handleProduit(ActionEvent event) {
+        loadPage("/produit/FrontStock.fxml");
+    }
+    private void loadPage(String fxml) {
+        try {
+            FXMLLoader loader = new FXMLLoader(getClass().getResource(fxml));
+            Parent view = loader.load();
+            rootPane.setCenter(view);
+        } catch (IOException e) {
+            e.printStackTrace();
+            showNotification("Erreur", "Impossible de charger la page");
+        }
+    }
 }

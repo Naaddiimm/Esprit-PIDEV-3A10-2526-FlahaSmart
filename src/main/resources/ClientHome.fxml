@@ -35,6 +35,8 @@
                     <Button text="Marketplace" styleClass="nav-link" onAction="#handleMarketplace"/>
                     <Button text="Forum" styleClass="nav-link" onAction="#handleForum"/>
                     <Button text="Actualités" styleClass="nav-link" onAction="#handleActualites"/>
+                    <Button text="Produits" styleClass="nav-link" onAction="#handleProduit"/>
+
                     <Button text="Contact" styleClass="nav-link" onAction="#handleContact"/>
                 </HBox>
 

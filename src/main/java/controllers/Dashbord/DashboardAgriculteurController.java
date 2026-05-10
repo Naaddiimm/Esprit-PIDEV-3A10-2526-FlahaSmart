@@ -90,6 +90,18 @@ public class DashboardAgriculteurController implements Initializable {
         alert.showAndWait();
     }
 
+
+    @FXML
+    private void handleListeOperations() {
+        try {
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("/views/operation/ListeOp.fxml"));
+            Parent root = loader.load();
+            contentArea.getChildren().setAll(root);
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
+
     // ===== HANDLERS POUR LES NOUVEAUX BOUTONS =====
     @FXML
     private void handleGestionArticles(ActionEvent event) {
@@ -232,5 +244,9 @@ public class DashboardAgriculteurController implements Initializable {
         if (contentArea != null && contentArea.getScene() != null)
             return (Stage) contentArea.getScene().getWindow();
         return null;
+    }
+
+    public void handleProduit(ActionEvent actionEvent) {
+        loadView("/produit/AgrichStock.fxml");
     }
 }

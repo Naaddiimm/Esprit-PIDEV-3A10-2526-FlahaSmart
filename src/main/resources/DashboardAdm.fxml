@@ -16,6 +16,10 @@
 
     <!-- Menu latéral gauche -->
     <left>
+        <ScrollPane fitToWidth="true"
+                    style="-fx-background: #1e293b; -fx-background-color: #1e293b; -fx-border-color: transparent;">
+
+        <content>
         <VBox spacing="10" style="-fx-background-color: #1e293b; -fx-padding: 20; -fx-pref-width: 280;"
               BorderPane.alignment="TOP_CENTER">
 
@@ -172,6 +176,8 @@
                 <Text text="© 2024 FlahaSmart" style="-fx-fill: #475569; -fx-font-size: 10px;" textAlignment="CENTER"/>
             </VBox>
         </VBox>
+        </content>
+        </ScrollPane>
     </left>
 
     <!-- Contenu principal -->

@@ -5,7 +5,10 @@ import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.stage.Stage;
+import scheduler.NotificationScheduler;
 import tools.myConnection;
+import utilies.MyDataBase;
+
 import java.sql.Connection;
 
 public class home extends Application {
@@ -30,11 +33,15 @@ public class home extends Application {
             Parent root = FXMLLoader.load(getClass().getResource("/Login.fxml"));
             Scene scene = new Scene(root);
             stage.setScene(scene);
+            NotificationScheduler.startDailyNotification();
+
             //stage.setFullScreen(true);
             //stage.setMaximized(true);
             scene.getStylesheets().add(
                     getClass().getResource("/styles/style_css.css").toExternalForm()
             );
+            System.out.println("Test connexion: " + MyDataBase.getInstance().getConnection());
+
             stage.setTitle("FlahaSmart - Connexion");
             stage.show();
 

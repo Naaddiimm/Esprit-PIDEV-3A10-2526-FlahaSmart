@@ -4,6 +4,7 @@ import entities.User;
 import entities.Role;
 import interfaces.IService;
 import tools.myConnection;
+import utilies.MyDataBase;
 
 import java.sql.*;
 import java.util.ArrayList;
@@ -14,9 +15,14 @@ public class UserService implements IService<User> {
     private Connection connection;
 
     public UserService() {
-        this.connection = myConnection.getInstance().getCnx();
-    }
+        this.connection = MyDataBase.getInstance().getConnection();
 
+        if (connection == null) {
+            System.out.println("Connexion NULL");
+        } else {
+            System.out.println("Connexion OK");
+        }
+    }
     @Override
     public void addEntity(User user) {
         String query = "INSERT INTO users (nom, prenom, email, password, telephone, adresse, ville, photo_profil, role, actif, date_creation) " +
@@ -230,5 +236,15 @@ public class UserService implements IService<User> {
         }
 
         return user;
+    }
+    public String getEmailById(int userId) throws SQLException {
+        String sql = "SELECT email FROM users WHERE id_user = ?";
+        PreparedStatement ps = connection.prepareStatement(sql);
+        ps.setInt(1, userId);
+        ResultSet rs = ps.executeQuery();
+        if (rs.next()) {
+            return rs.getString("email");
+        }
+        return null;
     }
 }
